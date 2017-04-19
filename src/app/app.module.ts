@@ -3,20 +3,28 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import {MdButtonModule, MdCheckboxModule} from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import{MaterialDesignModule} from './material-design/material-design.module';
+import{RoutesModule} from './routes/routes.module';
+
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MdButtonModule,
-    MdCheckboxModule
+    MaterialDesignModule,
+    RoutesModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

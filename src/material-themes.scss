@@ -1,0 +1,10 @@
+@import '~@angular/material/_theming';
+@include mat-core();
+
+//tripxpense-theme
+$tripx-primary: mat-palette($mat-light-green, 600);
+$tripx-accent: mat-palette($mat-light-blue, A400);
+$tripx-warn:    mat-palette($mat-red, 600);
+$tripxpense-theme: mat-light-theme($tripx-primary, $tripx-accent, $tripx-warn);
+
+@include angular-material-theme($tripxpense-theme);

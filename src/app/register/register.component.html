@@ -1,17 +1,61 @@
 <div fxLayout="row" fxLayoutAlign="center start">
-  <md-card fxFlex="50">
-      <md-card-title>Register</md-card-title>
-      <hr>
+  <md-card fxFlex="100" fxFlex.gt-xs="50">
+      <md-card-title>Register <hr></md-card-title>
+      
       <md-card-content>
-        <form action="" fxLayout="row" fxLayoutAlign="space-around start">
+        <form action="" [formGroup]="registerForm" fxLayout.gt-sm="row" fxLayout="column" fxLayoutAlign.gt-sm="space-around start" fxLayoutWrap>
 
-          <md-input-container class="" fxFlex="45">
-            <input mdInput placeholder="Name" value="">
+          <md-input-container class="" fxFlex="100" fxFlex.gt-sm="45">
+            <input
+              #name
+              mdInput
+              type="text"
+              placeholder="Name"
+              [formControl]="registerForm.controls['name']"
+              required
+            >
           </md-input-container>
 
-          <md-input-container class="" fxFlex="45">
-            <input type="email" mdInput placeholder="Email" value="">
+          <md-input-container class="" fxFlex="100" fxFlex.gt-sm="45">
+            <input
+              #email
+              mdInput
+              type="email"
+              placeholder="Email"
+              [formControl]="registerForm.controls['email']"
+              required
+            >
           </md-input-container>
+
+          <md-input-container class="" fxFlex="100" fxFlex.gt-sm="45">
+            <input
+              #password
+              mdInput
+              type="password"
+              placeholder="Password"
+              [formControl]="registerForm.controls['password']"
+              required
+            >
+          </md-input-container>
+
+          <md-input-container class="" fxFlex="100" fxFlex.gt-sm="45">
+            <input
+              #confirmPassword
+              mdInput
+              type="password"
+              placeholder="Confirm Password"
+              [formControl]="registerForm.controls['confirm-password']"
+              required
+            >
+          </md-input-container>
+          
+     <!--     <md-input-container class="" fxFlex="100" fxFlex.gt-sm="45">
+            <input type="password" mdInput placeholder="Password" value="">
+          </md-input-container>
+          
+          <md-input-container class="" fxFlex="100" fxFlex.gt-sm="45">
+            <input type="password" mdInput placeholder="Confirm Password" value="">
+          </md-input-container>-->
 
         </form>
       </md-card-content>

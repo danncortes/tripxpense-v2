@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
 import{MaterialDesignModule} from './material-design/material-design.module';
 import{RoutesModule} from './routes/routes.module';
 
@@ -23,8 +22,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule,
     HttpModule,
     MaterialDesignModule,
-    RoutesModule,
-    FlexLayoutModule
+    RoutesModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

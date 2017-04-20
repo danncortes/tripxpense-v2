@@ -6,12 +6,14 @@ import { RouterModule, Routes} from '@angular/router';
 
 //Dashboard
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import { RegisterComponent } from '../register/register.component';
 
 
 const appRoutes: Routes = [
   //Dashboard
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-  { path: 'dashboard', component:DashboardComponent}
+  { path: 'dashboard', component:DashboardComponent},
+  { path: 'register', component:RegisterComponent}
 ]
 
 @NgModule({

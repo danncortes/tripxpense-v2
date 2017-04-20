@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {MdButtonModule, MdCheckboxModule, MdToolbarModule} from '@angular/material';
+import {MdButtonModule, MdCheckboxModule, MdToolbarModule, MdCardModule, MdInputModule} from '@angular/material';
 
 let modules = [
   CommonModule,
   MdButtonModule,
   MdCheckboxModule,
-  MdToolbarModule
+  MdToolbarModule,
+  MdCardModule,
+  MdInputModule
 ];
 
 @NgModule({

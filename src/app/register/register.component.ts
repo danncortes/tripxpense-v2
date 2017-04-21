@@ -32,14 +32,13 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.savingData = false;
-    console.log(this.registerForm)
   }
 
-  registerUser = function(userData) {
+  registerUser(userData) {
     this.savingData = true;
     this.UserService.create(userData)
       .subscribe(
-        (data) => {
+        (data):any => {
             console.log(data)
             this.savingData = false;
         },

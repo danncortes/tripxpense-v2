@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MdButtonModule, MdCheckboxModule, MdToolbarModule, MdCardModule, MdInputModule} from '@angular/material';
+import {MdButtonModule, MdCheckboxModule, MdToolbarModule, MdCardModule, MdInputModule, MdProgressSpinnerModule} from '@angular/material';
 
 let modules = [
   CommonModule,
@@ -11,7 +11,8 @@ let modules = [
   MdToolbarModule,
   FlexLayoutModule,
   MdCardModule,
-  MdInputModule
+  MdInputModule,
+  MdProgressSpinnerModule
 ];
 
 @NgModule({

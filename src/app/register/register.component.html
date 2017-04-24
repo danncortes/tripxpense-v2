@@ -14,6 +14,10 @@
                 [formControl]="registerForm.controls['name']"
                 required
               >
+
+              <md-error>
+                <span *ngIf="registerForm.controls.name.invalid">Field Required</span>
+              </md-error>
             </md-input-container>
 
             <md-input-container class="" fxFlex="100" fxFlex.gt-sm="45">
@@ -41,7 +45,7 @@
                 required
               >
               <md-error>
-                <span *ngIf="registerForm.controls.password.value === null">Field Required</span>
+                <span *ngIf="registerForm.controls.password.invalid">Field Required</span>
               </md-error>
             </md-input-container>
 
@@ -54,6 +58,9 @@
                 [formControl]="registerForm.controls['confirm-password']"
                 required
               >
+              <md-error>
+                <span *ngIf="registerForm.controls.confirm-password.invalid">Field Required</span>
+              </md-error>
             </md-input-container>      
         </md-card-content>
 

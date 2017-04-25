@@ -12,7 +12,7 @@ export class UserService {
   constructor(private http: Http) { }
 
   create(userFormData) {
-    return this.http.post(environment.apiUrl + '/pay_method/create', userFormData)
+    return this.http.post(environment.apiUrl + '/user/create', userFormData)
       .map(
         (data):any => data.json()
       )

@@ -51,15 +51,15 @@
 
             <md-input-container class="" fxFlex="100" fxFlex.gt-sm="45">
               <input
-                #confirmPassword
+                #passwordConfirmation
                 mdInput
                 type="password"
                 placeholder="Confirm Password"
-                [formControl]="registerForm.controls['confirm-password']"
+                [formControl]="registerForm.controls['password_confirmation']"
                 required
               >
               <md-error>
-                <span *ngIf="registerForm.controls.confirm-password.invalid">Field Required</span>
+                <span *ngIf="registerForm.controls.password_confirmation.invalid">Field Required</span>
               </md-error>
             </md-input-container>      
         </md-card-content>

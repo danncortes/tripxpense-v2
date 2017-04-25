@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
           Validators.pattern('^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$')
         ])],
        'password' :  [null, Validators.required],
-       'confirm-password' :  [null, Validators.required]
+       'password_confirmation' :  [null, Validators.required]
     });
 
    }

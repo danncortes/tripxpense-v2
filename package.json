@@ -25,6 +25,8 @@
     "@angular/platform-browser-dynamic": "^4.0.2",
     "@angular/router": "^4.0.2",
     "@types/jasmine": "^2.5.47",
+    "angular2-jwt": "^0.2.2",
+    "auth0-lock": "^10.15.1",
     "codelyzer": "^2.1.1",
     "core-js": "^2.4.1",
     "jasmine-spec-reporter": "^3.3.0",

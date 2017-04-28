@@ -7,12 +7,17 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialDesignModule} from './material-design/material-design.module';
 import {RoutesModule} from './routes/routes.module';
 
+import { Auth } from './services/auth-service/auth.service';
+
 //Components
 import { AppComponent } from './app.component';
+
 import { HeaderComponent } from './header/header.component';
+
+import { WelcomeComponent } from './welcome/welcome.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,8 @@ import { LoginComponent } from './login/login.component';
     HeaderComponent,
     DashboardComponent,
     RegisterComponent,
-    LoginComponent
+    WelcomeComponent,
+    MainComponent
   ],
   imports: [
 //Modules
@@ -33,7 +39,9 @@ import { LoginComponent } from './login/login.component';
     RoutesModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    Auth
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,17 +1,38 @@
 import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
+import { authConfig } from './auth.config';
 
 declare var Auth0Lock: any;
 
+
 @Injectable()
-export class AuthService {
+export class Auth {
   // Configure Auth0
-  lock = new Auth0Lock('vr58-dvu3gMKrBJw_nzExEJdv3sirBPi', 'tripxpense.auth0.com', {});
+  lock = new Auth0Lock( authConfig.clientID, authConfig.domain, authConfig.options);
+
+  //Store profile object in auth class
+  userProfile: Object;
 
   constructor() {
+    this.userProfile = JSON.parse(localStorage.getItem('profile'));
+
     // Add callback for lock `authenticated` event
-    this.lock.on("authenticated", (authResult) => {
+    this.lock.on('authenticated', (authResult) => {
+      
       localStorage.setItem('id_token', authResult.idToken);
+
+      // Fetch profile information
+      this.lock.getProfile(authResult.idToken, (error, profile) => {
+      if (error) {
+        // Handle error
+        alert(error);
+        return;
+      }
+
+      localStorage.setItem('profile', JSON.stringify(profile));
+      this.userProfile = profile;
+
+      });
     });
   }
 
@@ -29,5 +50,7 @@ export class AuthService {
   public logout() {
     // Remove token from localStorage
     localStorage.removeItem('id_token');
+    localStorage.removeItem('profile');
+    this.userProfile = undefined;
   }
 }

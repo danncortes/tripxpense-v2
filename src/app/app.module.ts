@@ -5,9 +5,8 @@ import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {MaterialDesignModule} from './material-design/material-design.module';
-import {RoutesModule} from './routes/routes.module';
 
-import { Auth } from './services/auth-service/auth.service';
+import {RoutesModule} from './routes/routes.module';
 
 //Components
 import { AppComponent } from './app.component';
@@ -39,9 +38,7 @@ import { MainComponent } from './main/main.component';
     RoutesModule,
     BrowserAnimationsModule
   ],
-  providers: [
-    Auth
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,7 +6,7 @@ declare var Auth0Lock: any;
 
 
 @Injectable()
-export class Auth {
+export class AuthService {
   // Configure Auth0
   lock = new Auth0Lock( authConfig.clientID, authConfig.domain, authConfig.options);
 

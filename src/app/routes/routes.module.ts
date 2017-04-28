@@ -2,7 +2,6 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes} from '@angular/router';
 
-import { AuthGuard } from '../auth.guard';
 
 //Components
 import { WelcomeComponent } from '../welcome/welcome.component';
@@ -12,6 +11,7 @@ import { MainComponent } from '../main/main.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { RegisterComponent } from '../register/register.component';
 
+import { AuthGuard } from '../auth.guard';
 
 const appRoutes: Routes = [
   //Dashboard
@@ -24,14 +24,13 @@ const appRoutes: Routes = [
   
 ]
 
-export const appRoutingProviders: any[] = [
-  AuthGuard
-];
-
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forRoot(appRoutes)
+  ],
+  providers:[
+    AuthGuard
   ],
   exports: [
     RouterModule

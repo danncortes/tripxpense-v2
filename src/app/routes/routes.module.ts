@@ -2,7 +2,6 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes} from '@angular/router';
 
-
 //Components
 import { WelcomeComponent } from '../welcome/welcome.component';
 import { MainComponent } from '../main/main.component';
@@ -16,11 +15,13 @@ import { AuthGuard } from '../auth.guard';
 const appRoutes: Routes = [
   //Dashboard
   { path: 'welcome', component:WelcomeComponent},
-  { path: '', component:MainComponent, canActivate: [ AuthGuard ], children:[
-    { path: 'dashboard', component:DashboardComponent},
-    { path: 'register', component:RegisterComponent}
-  ]},
-  { path: '**', redirectTo: '/welcome', pathMatch:'full'}
+  { path: 'auth', component:MainComponent, canActivate: [AuthGuard], children:[
+      { path: '', redirectTo: 'dashboard', pathMatch:'full'},
+      { path: 'dashboard', component:DashboardComponent},
+      { path: 'register', component:RegisterComponent}
+    ]},
+  { path: '**', redirectTo: '/welcome', pathMatch:'full'},
+  { path: '', redirectTo: '/welcome', pathMatch:'full'}
   
 ]
 

@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {MaterialDesignModule} from './material-design/material-design.module';
 
+import {AuthModule} from './auth/auth.module';
 import {RoutesModule} from './routes/routes.module';
 
 //Components
@@ -30,6 +31,7 @@ import { MainComponent } from './main/main.component';
   ],
   imports: [
 //Modules
+    AuthModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

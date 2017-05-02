@@ -7,15 +7,14 @@ import { environment } from '../../../environments/environment';
 import 'rxjs/Rx';
 
 @Injectable()
-export class UserService {
+export class PaymethodService {
 
   constructor(private http: Http) { }
 
-  create(userFormData) {
-    return this.http.post(environment.apiUrl + '/user/create', userFormData)
+  get() {
+    return this.http.get(environment.apiUrl + '/pay_method')
       .map(
-        (data):any => data.json()
-      )
+        (data): any => data.json()
+      );
   }
-
 }

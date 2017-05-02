@@ -16,8 +16,10 @@ import { HeaderComponent } from './header/header.component';
 
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
+import { TravelListComponent } from './travel-list/travel-list.component';
+import { PaymethodListComponent } from './pay-method/paymethod-list/paymethod-list.component';
+import { PaymethodItemComponent } from './pay-method/paymethod-item/paymethod-item.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,11 @@ import { MainComponent } from './main/main.component';
     AppComponent,
     HeaderComponent,
     DashboardComponent,
-    RegisterComponent,
     WelcomeComponent,
-    MainComponent
+    MainComponent,
+    TravelListComponent,
+    PaymethodListComponent,
+    PaymethodItemComponent
   ],
   imports: [
 //Modules

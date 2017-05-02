@@ -1,0 +1,10 @@
+<md-spinner class="spinner-loading-secc" *ngIf="!this.loadedData"></md-spinner>
+
+<div *ngIf="this.loadedData" fxLayout="row" fxLayoutWrap>
+
+  <app-paymethod-item fxFlex="30"
+    *ngFor=" let payMethod of payMethods"
+    [payMethod]="payMethod"
+  ></app-paymethod-item>
+  
+</div>

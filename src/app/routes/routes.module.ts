@@ -8,7 +8,10 @@ import { MainComponent } from '../main/main.component';
 
 //Dashboard
 import { DashboardComponent } from '../dashboard/dashboard.component';
-import { RegisterComponent } from '../register/register.component';
+
+//travel
+import { TravelListComponent } from '../travel-list/travel-list.component';
+import { PaymethodListComponent } from '../pay-method/paymethod-list/paymethod-list.component';
 
 import { AuthGuard } from '../auth.guard';
 
@@ -18,7 +21,8 @@ const appRoutes: Routes = [
   { path: 'auth', component:MainComponent, canActivate: [AuthGuard], children:[
       { path: '', redirectTo: 'dashboard', pathMatch:'full'},
       { path: 'dashboard', component:DashboardComponent},
-      { path: 'register', component:RegisterComponent}
+      { path: 'travels', component:TravelListComponent},
+      { path: 'paymethods', component:PaymethodListComponent}
     ]},
   { path: '**', redirectTo: '/welcome', pathMatch:'full'},
   { path: '', redirectTo: '/welcome', pathMatch:'full'}

@@ -1,5 +1,7 @@
 <md-spinner class="spinner-loading-secc" *ngIf="this.processing"></md-spinner>
 
+<button md-raised-button (click)="createPayMethodDialog()">Create Pay Method</button>
+
 <div *ngIf="!this.processing" fxLayout="row" fxLayoutWrap>
 
   <app-paymethod-item fxFlex="30"

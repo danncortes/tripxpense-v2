@@ -20,6 +20,7 @@ import { MainComponent } from './main/main.component';
 import { TravelListComponent } from './travel-list/travel-list.component';
 import { PaymethodListComponent } from './pay-method/paymethod-list/paymethod-list.component';
 import { PaymethodItemComponent } from './pay-method/paymethod-item/paymethod-item.component';
+import { PaymethodCreateComponent } from './pay-method/paymethod-create/paymethod-create.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PaymethodItemComponent } from './pay-method/paymethod-item/paymethod-it
     MainComponent,
     TravelListComponent,
     PaymethodListComponent,
-    PaymethodItemComponent
+    PaymethodItemComponent,
+    PaymethodCreateComponent
   ],
   imports: [
 //Modules
@@ -43,6 +45,9 @@ import { PaymethodItemComponent } from './pay-method/paymethod-item/paymethod-it
     MaterialDesignModule,
     RoutesModule,
     BrowserAnimationsModule
+  ],
+  entryComponents:[
+    PaymethodCreateComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,4 +17,11 @@ export class PaymethodService {
         (data): any => data.json()
       );
   }
+
+  delete(id){
+	  return this.http.delete(environment.apiUrl + '/pay_method/' + id)
+      .map(
+        data => data.json()
+      )
+	}
 }

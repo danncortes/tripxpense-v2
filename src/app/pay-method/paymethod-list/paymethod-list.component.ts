@@ -11,23 +11,22 @@ import { PaymethodService } from '../../services/paymethod/paymethod.service';
 })
 export class PaymethodListComponent implements OnInit {
 
-  loadedData: boolean;
+  processing: boolean;
   payMethods: Object;
 
-  constructor(private PaymethodService: PaymethodService) { }
+  constructor(private paymethodService: PaymethodService) { }
 
   ngOnInit() {
     this.getPayMethods();
   }
 
   getPayMethods(){
-    this.loadedData = false;
-    this.PaymethodService.get().subscribe(
+    this.processing = true;
+    this.paymethodService.get().subscribe(
         data => {
             this.payMethods = data;
-            this.loadedData = true;
+            this.processing = false;
         }
     )
   }
-
 }

@@ -1,8 +1,9 @@
-<md-spinner class="spinner-loading-secc" *ngIf="!this.loadedData"></md-spinner>
+<md-spinner class="spinner-loading-secc" *ngIf="this.processing"></md-spinner>
 
-<div *ngIf="this.loadedData" fxLayout="row" fxLayoutWrap>
+<div *ngIf="!this.processing" fxLayout="row" fxLayoutWrap>
 
   <app-paymethod-item fxFlex="30"
+    (updateView)="ngOnInit()"
     *ngFor=" let payMethod of payMethods"
     [payMethod]="payMethod"
   ></app-paymethod-item>

@@ -22,6 +22,7 @@ export class AuthService {
     this.lock.on('authenticated', (authResult) => {
 
       localStorage.setItem('id_token', authResult.idToken);
+      console.log('logged')
 
       // Fetch profile information
       this.lock.getProfile(authResult.idToken, (error, profile) => {
@@ -30,7 +31,6 @@ export class AuthService {
           alert(error);
           return;
         }
-
         localStorage.setItem('profile', JSON.stringify(profile));
         this.userProfile = profile;
         this.router.navigate(['auth']);
@@ -54,6 +54,6 @@ export class AuthService {
     localStorage.removeItem('id_token');
     localStorage.removeItem('profile');
     this.userProfile = undefined;
-    this.router.navigate(['welcome']);
+    this.router.navigateByUrl('/welcome');
   }
 }

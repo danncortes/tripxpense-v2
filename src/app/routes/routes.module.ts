@@ -24,8 +24,8 @@ const appRoutes: Routes = [
       { path: 'travels', component:TravelListComponent},
       { path: 'paymethods', component:PaymethodListComponent}
     ]},
-  { path: '**', redirectTo: '/welcome', pathMatch:'full'},
-  { path: '', redirectTo: '/welcome', pathMatch:'full'}
+  { path: '**', redirectTo: 'welcome', pathMatch:'full'},
+  { path: '', redirectTo: 'welcome', pathMatch:'full'}
   
 ]
 

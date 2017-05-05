@@ -35,9 +35,9 @@ export class PaymethodListComponent implements OnInit {
 
   createPayMethodDialog = () => {
     let dialogRef = this.dialog.open(PaymethodCreateComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      this.selectedOption = result;
-      console.log(result)
+    dialogRef.afterClosed().subscribe(data => {
+      this.selectedOption = data;
+      console.log(data)
     });
   }
 }

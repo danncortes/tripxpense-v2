@@ -13,4 +13,5 @@ export class PaymethodCreateComponent implements OnInit {
   ngOnInit() {
   }
 
+  data = 'ended';
 }

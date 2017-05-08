@@ -18,6 +18,13 @@ export class PaymethodService {
       );
   }
 
+  create(payMethod){ 
+    return this.http.post(environment.apiUrl + '/pay_method/create', payMethod)
+        .map(
+          data => data.json()
+        )
+  }
+
   delete(id){
 	  return this.http.delete(environment.apiUrl + '/pay_method/' + id)
       .map(

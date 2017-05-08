@@ -1,4 +1,26 @@
+<md-toolbar>
+  <span>Create a Pay Method</span>
+</md-toolbar>
+
+<form action="" [formGroup]="createPayMethodForm" (ngSubmit)="createPaymethod(createPayMethodForm.value)">
+  <md-input-container>
+    <input
+      #name
+      mdInput
+      type="email"
+      placeholder="Name"
+      [formControl]="createPayMethodForm.controls['name']"
+      required>
+
+      <md-error>
+        <span *ngIf="createPayMethodForm.controls.name.invalid">A name is required</span>
+      </md-error>
+  </md-input-container>
+  <button type="submit" md-raised-button> Create</button>
+</form>
+
 <p>
+
   paymethod-create works!
    <button type="button" md-raised-button 
             (click)="dialogRef.close(data)">OK</button>

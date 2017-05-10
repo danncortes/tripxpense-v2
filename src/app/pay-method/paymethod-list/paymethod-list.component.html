@@ -1,14 +1,18 @@
 <md-spinner class="spinner-loading-secc" *ngIf="this.processing"></md-spinner>
 
-<button md-raised-button (click)="createPayMethodDialog()">Create Pay Method</button>
+<section *ngIf="!this.processing">
 
-<div *ngIf="!this.processing" fxLayout="row" fxLayoutWrap>
+  <button md-raised-button (click)="createPayMethodDialog()">Create Pay Method</button>
+  <br>
+  <br>
+  <div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="space-between start">
 
-  <app-paymethod-item fxFlex="30"
-    (updateView)="ngOnInit()"
-    (toggleProcessing)="toggleProcessing()"
-    *ngFor=" let payMethod of payMethods"
-    [payMethod]="payMethod"
-  ></app-paymethod-item>
-  
-</div>
+    <app-paymethod-item fxFlex="100%" fxFlex.gt-xs="33%"
+      (updateView)="ngOnInit()"
+      (toggleProcessing)="toggleProcessing()"
+      *ngFor=" let payMethod of payMethods"
+      [payMethod]="payMethod"
+    ></app-paymethod-item>
+    
+  </div>
+</section>

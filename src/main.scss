@@ -32,3 +32,26 @@ md-spinner.mat-spinner{
         left:50%;
     }
 }
+
+md-dialog-container.mat-dialog-container{
+    padding:0;
+    .dialog-header{
+    }
+    .trip-md-dialog-container{
+        padding: 24px;
+    }
+}
+
+md-card.trip-md-card{
+    padding: 16px;
+    background-color: #555;
+    color: #eee; 
+}
+
+app-paymethod-item{
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}

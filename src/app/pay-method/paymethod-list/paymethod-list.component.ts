@@ -38,7 +38,9 @@ export class PaymethodListComponent implements OnInit {
   }
 
   createPayMethodDialog = () => {
-    let dialogRef = this.dialog.open(PaymethodCreateComponent);
+    let dialogRef = this.dialog.open(PaymethodCreateComponent, {
+      width: '300px'
+    });
     dialogRef.afterClosed().subscribe(data => {
       if(data){
         this.ngOnInit();

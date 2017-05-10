@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PaymethodService } from '../../services/paymethod/paymethod.service';
-import {MdDialog, MdDialogRef} from '@angular/material';
+import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
 import {PaymethodCreateComponent } from '../paymethod-create/paymethod-create.component';
 
 @Component({
@@ -17,7 +17,11 @@ export class PaymethodListComponent implements OnInit {
   payMethods: Object;
   selectedOption: string;
 
-  constructor(private paymethodService: PaymethodService, public dialog: MdDialog) { }
+  constructor(
+    private paymethodService: PaymethodService,
+    public dialog: MdDialog,
+    public snackBar: MdSnackBar
+  ) { }
 
   ngOnInit() {
     this.getPayMethods();
@@ -36,8 +40,9 @@ export class PaymethodListComponent implements OnInit {
   createPayMethodDialog = () => {
     let dialogRef = this.dialog.open(PaymethodCreateComponent);
     dialogRef.afterClosed().subscribe(data => {
-      this.selectedOption = data;
-      console.log(data)
+      if(data){
+        this.ngOnInit();
+      }
     });
   }
 }

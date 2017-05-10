@@ -6,6 +6,7 @@
 
   <app-paymethod-item fxFlex="30"
     (updateView)="ngOnInit()"
+    (toggleProcessing)="toggleProcessing()"
     *ngFor=" let payMethod of payMethods"
     [payMethod]="payMethod"
   ></app-paymethod-item>

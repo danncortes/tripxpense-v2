@@ -22,6 +22,7 @@ export class AuthService {
     this.lock.on('authenticated', (authResult) => {
 
       localStorage.setItem('id_token', authResult.idToken);
+      
       console.log('logged')
 
       // Fetch profile information

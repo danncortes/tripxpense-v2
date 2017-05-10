@@ -11,7 +11,7 @@ export const authConfig: AuthConfiguration = {
         allowedConnections: ['Username-Password-Authentication', 'facebook', 'google-oauth2'],
         auth: {
             redirectUrl: location.origin,
-            responseType: 'token'
+            responseType: 'code'
         }
     }
     

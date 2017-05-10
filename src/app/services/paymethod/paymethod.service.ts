@@ -18,8 +18,23 @@ export class PaymethodService {
       );
   }
 
+  find(data) {
+    return this.http.get(environment.apiUrl + '/pay_method/' + data.id)
+      .map(
+        (data): any => data.json()
+      );
+  }
+
   create(payMethod){ 
     return this.http.post(environment.apiUrl + '/pay_method/create', payMethod)
+        .map(
+          data => data.json()
+        )
+  }
+
+  update(payMethod, id){
+    console.log(payMethod)
+    return this.http.put(environment.apiUrl + '/pay_method/update/' + id, payMethod)
         .map(
           data => data.json()
         )

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {MdDialog, MdDialogRef} from '@angular/material';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { PaymethodService } from '../../services/paymethod/paymethod.service';
@@ -6,44 +6,49 @@ import { RouterModule, Router} from '@angular/router';
 import {ToastService} from '../../services/toast/toast.service';
 
 @Component({
-  selector: 'app-paymethod-create',
-  templateUrl: './paymethod-create.component.html',
-  styleUrls: ['./paymethod-create.component.scss'],
+  selector: 'app-paymethod-edit',
+  templateUrl: './paymethod-edit.component.html',
+  styleUrls: ['./paymethod-edit.component.scss'],
   providers: [
     PaymethodService,
     ToastService
   ]
 })
-export class PaymethodCreateComponent implements OnInit {
+export class PaymethodEditComponent implements OnInit {
 
-  createPayMethodForm: FormGroup;
+  editPayMethodForm: FormGroup;
   processing: boolean;
 
+  @Input() payMethod: any;
+
   constructor(
-    public dialogRef: MdDialogRef<PaymethodCreateComponent>,
+    public dialogRef: MdDialogRef<PaymethodEditComponent>,
     formBuilder: FormBuilder,
     private payMethodService: PaymethodService,
     private router: Router,
     public toastService: ToastService
-  ) {
+  ) { 
 
-    this.createPayMethodForm = formBuilder.group({
+    this.editPayMethodForm = formBuilder.group({
       'name' :  [null, Validators.required]
     });
+
   }
 
   ngOnInit() {
+    console.log(this.payMethod)
   }
 
-  createPaymethod(formData){
+  editPaymethod(formData){
+    let id = this.payMethod.id;
     this.processing = true;
 
-    this.payMethodService.create(formData)
+    this.payMethodService.update(formData, id)
       .subscribe(
           (data) => {
               this.processing = false;
               this.dialogRef.close(true);
-              this.toastService.success({message: 'Pay Method Created!'});
+              this.toastService.success({message: 'Pay Method Saved!'});
           },
           (err) => {
               this.processing = false;
@@ -56,4 +61,5 @@ export class PaymethodCreateComponent implements OnInit {
           }
       )
   }
+
 }

@@ -1,0 +1,25 @@
+<md-toolbar>
+  <span>Edit a Pay Method</span>
+</md-toolbar>
+
+<form action="" [formGroup]="editPayMethodForm" (ngSubmit)="editPaymethod(editPayMethodForm.value)">
+  <md-input-container>
+    <input
+      #name
+      mdInput
+      type="email"
+      placeholder="Name"
+      [formControl]="editPayMethodForm.controls['name']"
+      [value]="payMethod.name"
+      required
+      >
+
+      <md-error>
+        <span *ngIf="editPayMethodForm.controls.name.invalid">A name is required</span>
+      </md-error>
+  </md-input-container>
+  <button type="submit" md-raised-button [disabled]="editPayMethodForm.invalid || processing">
+    <span *ngIf="!this.processing">Save</span>
+    <md-spinner *ngIf="this.processing"></md-spinner>
+  </button>
+</form>

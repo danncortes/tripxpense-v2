@@ -22,6 +22,7 @@ import { PaymethodListComponent } from './pay-method/paymethod-list/paymethod-li
 import { PaymethodItemComponent } from './pay-method/paymethod-item/paymethod-item.component';
 import { PaymethodCreateComponent } from './pay-method/paymethod-create/paymethod-create.component';
 import { PaymethodEditComponent } from './pay-method/paymethod-edit/paymethod-edit.component';
+import { ToastComponent } from './toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PaymethodEditComponent } from './pay-method/paymethod-edit/paymethod-ed
     PaymethodListComponent,
     PaymethodItemComponent,
     PaymethodCreateComponent,
-    PaymethodEditComponent
+    PaymethodEditComponent,
+    ToastComponent
   ],
   imports: [
 //Modules
@@ -50,7 +52,8 @@ import { PaymethodEditComponent } from './pay-method/paymethod-edit/paymethod-ed
   ],
   entryComponents:[
     PaymethodCreateComponent,
-    PaymethodEditComponent
+    PaymethodEditComponent,
+    ToastComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

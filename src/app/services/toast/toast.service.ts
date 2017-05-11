@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {MdSnackBar} from '@angular/material';
+import {ToastComponent} from '../../toast/toast.component';
 
 interface options{
   message: string;
@@ -9,15 +10,7 @@ interface options{
 @Injectable()
 export class ToastService {
 
-  constructor(public snackBar: MdSnackBar) { }
-
-  error(data: options){
-    var time = data.time ? data.time : 4000;
-
-    this.snackBar.open(data.message, '', {
-      duration: time,
-      extraClasses: ['error-toast']
-    });
+  constructor(public snackBar: MdSnackBar) {
   }
 
   success(data: options){
@@ -26,6 +19,16 @@ export class ToastService {
     this.snackBar.open(data.message, '', {
       duration: time,
       extraClasses: ['success-toast']
+    });
+  }
+
+  error(data: options){
+    var time = data.time ? data.time : 4000;
+    var text = 'text from service'
+
+    this.snackBar.openFromComponent(ToastComponent, {
+      duration: time,
+      extraClasses: ['error-toast']
     });
   }
 

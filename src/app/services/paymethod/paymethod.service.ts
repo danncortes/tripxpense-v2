@@ -33,7 +33,6 @@ export class PaymethodService {
   }
 
   update(payMethod, id){
-    console.log(payMethod)
     return this.http.put(environment.apiUrl + '/pay_method/update/' + id, payMethod)
         .map(
           data => data.json()

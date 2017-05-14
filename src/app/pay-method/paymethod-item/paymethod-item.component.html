@@ -1,7 +1,7 @@
-<md-card class="trip-md-card paymethod-card">
+<md-card class="trip-md-card">
   <p [innerHTML]="payMethod.name"></p>
-  <div fxLayout="row" fxLayoutAlign="end start">
-    <button md-mini-fab (click)="removePaymethod(payMethod)"><md-icon>remove</md-icon> </button>
+  <div fxLayout="row" fxLayoutAlign="end start" class="area-controls">
     <button md-mini-fab (click)="editPaymethod(payMethod)"><md-icon>edit</md-icon> </button>
+    <button md-mini-fab (click)="removePaymethod(payMethod)"><md-icon>delete</md-icon> </button>
   </div>
 </md-card>

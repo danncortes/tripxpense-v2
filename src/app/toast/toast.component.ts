@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ToastComponent implements OnInit {
 
-  @Input() text: string;
+  @Input() data: any;
 
   constructor() { }
 

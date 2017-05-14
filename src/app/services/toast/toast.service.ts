@@ -4,7 +4,8 @@ import {ToastComponent} from '../../toast/toast.component';
 
 interface options{
   message: string;
-  time?: number
+  time?: number;
+  success?: boolean;
 }
 
 @Injectable()
@@ -14,22 +15,25 @@ export class ToastService {
   }
 
   success(data: options){
-    var time = data.time ? data.time : 4000;
+    let time = data.time ? data.time : 4000;
+    data.success = true;
 
-    this.snackBar.open(data.message, '', {
+    let successSnackBar = this.snackBar.openFromComponent(ToastComponent, {
       duration: time,
       extraClasses: ['success-toast']
     });
+    successSnackBar.instance.data = data;
   }
 
   error(data: options){
-    var time = data.time ? data.time : 4000;
-    var text = 'text from service'
+    let time = data.time ? data.time : 4000;
+    data.success = false;
 
-    this.snackBar.openFromComponent(ToastComponent, {
+    let errorSnackBar = this.snackBar.openFromComponent(ToastComponent, {
       duration: time,
       extraClasses: ['error-toast']
     });
+    errorSnackBar.instance.data = data;
   }
 
 }

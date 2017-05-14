@@ -2,12 +2,15 @@
 
 <section *ngIf="!this.processing">
 
-  <button md-raised-button (click)="createPayMethodDialog()">Create Pay Method</button>
+  <section fxLayout="row" fxLayoutAlign="space-between center">
+    <h3 class="title-section">Pay Methods</h3>
+    <button md-raised-button (click)="createPayMethodDialog()"><md-icon>add_circle</md-icon> Create Pay Method</button>
+  </section>
   <br>
   <br>
-  <div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="space-between start">
+  <div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start">
 
-    <app-paymethod-item fxFlex="100%" fxFlex.gt-xs="33%"
+    <app-paymethod-item fxFlex="100%" fxFlex.gt-xs="33.3%"
       (updateView)="ngOnInit()"
       (toggleProcessing)="toggleProcessing()"
       *ngFor=" let payMethod of payMethods"

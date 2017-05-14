@@ -10,7 +10,7 @@ import { MainComponent } from '../main/main.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 
 //travel
-import { TravelListComponent } from '../travel-list/travel-list.component';
+import { TravelListComponent } from '../travel/travel-list/travel-list.component';
 import { PaymethodListComponent } from '../pay-method/paymethod-list/paymethod-list.component';
 
 import { AuthGuard } from '../auth.guard';

@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TravelListComponent implements OnInit {
 
+  processing: boolean;
+
   constructor() { }
 
   ngOnInit() {
+    this.getTravels()
+  }
+
+  getTravels(){
+    
   }
 
 }

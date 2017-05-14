@@ -1,2 +1,5 @@
-error
-  {{this.text}}
+<div fxLayout="row">
+  <md-icon class="icon-toast" *ngIf="data.success">check_circle</md-icon>
+  <md-icon class="icon-toast" *ngIf="!data.success">error</md-icon>
+  <span [innerHTML]="data.message"></span>
+</div>

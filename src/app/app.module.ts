@@ -17,12 +17,13 @@ import { HeaderComponent } from './header/header.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
-import { TravelListComponent } from './travel-list/travel-list.component';
 import { PaymethodListComponent } from './pay-method/paymethod-list/paymethod-list.component';
 import { PaymethodItemComponent } from './pay-method/paymethod-item/paymethod-item.component';
 import { PaymethodCreateComponent } from './pay-method/paymethod-create/paymethod-create.component';
 import { PaymethodEditComponent } from './pay-method/paymethod-edit/paymethod-edit.component';
 import { ToastComponent } from './toast/toast.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { TravelListComponent } from './travel/travel-list/travel-list.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +33,13 @@ import { ToastComponent } from './toast/toast.component';
     DashboardComponent,
     WelcomeComponent,
     MainComponent,
-    TravelListComponent,
     PaymethodListComponent,
     PaymethodItemComponent,
     PaymethodCreateComponent,
     PaymethodEditComponent,
-    ToastComponent
+    ToastComponent,
+    ConfirmDialogComponent,
+    TravelListComponent
   ],
   imports: [
 //Modules
@@ -53,7 +55,8 @@ import { ToastComponent } from './toast/toast.component';
   entryComponents:[
     PaymethodCreateComponent,
     PaymethodEditComponent,
-    ToastComponent
+    ToastComponent,
+    ConfirmDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

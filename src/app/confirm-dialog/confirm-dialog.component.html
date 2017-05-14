@@ -1,0 +1,9 @@
+<section class="trip-md-dialog-container">
+  <span class="align-center" [innerHTML]="message"></span>
+  <br>
+  <br>
+  <div fxLayout="row" fxLayoutAlign="space-around center">
+    <button md-button md-raised-button color="primary" (click)="confirm()">Yes, do it!</button>
+    <button md-button md-raised-button color="warn" (click)="cancel()">Cancel</button>
+  </div>
+</section>

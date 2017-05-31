@@ -24,6 +24,7 @@ import { PaymethodEditComponent } from './pay-method/paymethod-edit/paymethod-ed
 import { ToastComponent } from './toast/toast.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { TravelListComponent } from './travel/travel-list/travel-list.component';
+import { CategoryListComponent } from './category/category-list/category-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { TravelListComponent } from './travel/travel-list/travel-list.component'
     PaymethodEditComponent,
     ToastComponent,
     ConfirmDialogComponent,
-    TravelListComponent
+    TravelListComponent,
+    CategoryListComponent
   ],
   imports: [
 //Modules

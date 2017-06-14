@@ -11,7 +11,10 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 
 //travel
 import { TravelListComponent } from '../travel/travel-list/travel-list.component';
+//Pay Methods
 import { PaymethodListComponent } from '../pay-method/paymethod-list/paymethod-list.component';
+//Categories
+import { CategoryListComponent } from '../category/category-list/category-list.component';
 
 import { AuthGuard } from '../auth.guard';
 
@@ -23,7 +26,8 @@ const appRoutes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch:'full'},
       { path: 'dashboard', component:DashboardComponent},
       { path: 'travels', component:TravelListComponent},
-      { path: 'paymethods', component:PaymethodListComponent}
+      { path: 'paymethods', component:PaymethodListComponent},
+      { path: 'categories', component:CategoryListComponent}
     ]},
   { path: '**', redirectTo: 'welcome', pathMatch:'full'},
   { path: '', redirectTo: 'welcome', pathMatch:'full'}

@@ -1,4 +1,4 @@
-<md-toolbar color="primary" >
+<md-toolbar color="primary">
     <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
         <div>
             LOGO
@@ -6,16 +6,17 @@
         <div>
             <nav>
                 <div>
-                <!--<div *ngIf="auth.authenticated()">-->
+                    <!--<div *ngIf="auth.authenticated()">-->
                     <button md-button routerLink="/auth/dashboard">Dashboard</button>
                     <button md-button routerLink="/auth/operations">Operation</button>
                     <button md-button routerLink="/auth/travels">Travels</button>
                     <button md-button routerLink="/auth/paymethods">Payment Methods</button>
+                    <button md-button routerLink="/auth/categories">Categories</button>
                     <button md-button class="btn btn-primary btn-margin" (click)="auth.logout()">Log Out</button>
                 </div>
                 <!--<button md-raised-button class="btn btn-primary btn-margin" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>-->
             </nav>
         </div>
-    </div> 
-    
+    </div>
+
 </md-toolbar>

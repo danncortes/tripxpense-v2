@@ -29,7 +29,7 @@ export class PaymethodItemComponent implements OnInit {
   }
 
   removePaymethod = (elem) => {
-    var message  = 'The pay method "' + this.payMethod.name + '" will be deleted!';
+    let message  = 'The pay method "' + this.payMethod.name + '" will be deleted!';
 
     let dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '300px'

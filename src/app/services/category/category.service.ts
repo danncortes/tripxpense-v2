@@ -17,4 +17,11 @@ export class CategoryService {
         (data): any => data.json()
       );
   }
+
+  delete(id){
+    return this.http.delete(environment.apiUrl + '/category/' + id)
+      .map(
+        data => data.json()
+      );
+  }
 }

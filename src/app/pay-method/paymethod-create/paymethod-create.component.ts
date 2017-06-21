@@ -18,6 +18,9 @@ export class PaymethodCreateComponent implements OnInit {
 
   createPayMethodForm: FormGroup;
   processing: boolean;
+  /*formData: object = {
+    name:''
+  };*/
 
   constructor(
     public dialogRef: MdDialogRef<PaymethodCreateComponent>,
@@ -36,6 +39,7 @@ export class PaymethodCreateComponent implements OnInit {
   }
 
   createPaymethod(formData){
+    console.log(formData)
     this.processing = true;
 
     this.payMethodService.create(formData)

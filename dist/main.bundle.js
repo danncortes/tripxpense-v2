@@ -1,66 +1,11 @@
 webpackJsonp([1,4],{
 
-/***/ 110:
+/***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service_auth_service__ = __webpack_require__(55);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var AuthGuard = (function () {
-    function AuthGuard(authService, router) {
-        this.authService = authService;
-        this.router = router;
-    }
-    AuthGuard.prototype.canActivate = function (next, state) {
-        if (this.authService.authenticated()) {
-            /* if(this.auth.isAdmin()){*/
-            return true;
-            /* } else {
-               this.router.navigate(['unauthorized']);
-               return false;
-             }*/
-        }
-        else {
-            this.router.navigate(['welcome']);
-            // Save URL to redirect to after login and fetching profile to get roles
-            //localStorage.setItem('redirect_url', state.url);
-            //this.authService.login();
-            //this.router.navigate(['']);
-            return false;
-        }
-    };
-    return AuthGuard;
-}());
-AuthGuard = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
-], AuthGuard);
-
-var _a, _b;
-//# sourceMappingURL=auth.guard.js.map
-
-/***/ }),
-
-/***/ 111:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_category_category_service__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_category_category_service__ = __webpack_require__(116);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -93,8 +38,8 @@ var CategoryListComponent = (function () {
 CategoryListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-category-list',
-        template: __webpack_require__(293),
-        styles: [__webpack_require__(278)],
+        template: __webpack_require__(291),
+        styles: [__webpack_require__(276)],
         providers: [
             __WEBPACK_IMPORTED_MODULE_1__services_category_category_service__["a" /* CategoryService */]
         ]
@@ -107,7 +52,7 @@ var _a;
 
 /***/ }),
 
-/***/ 112:
+/***/ 110:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -133,8 +78,8 @@ var DashboardComponent = (function () {
 DashboardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-dashboard',
-        template: __webpack_require__(295),
-        styles: [__webpack_require__(280)]
+        template: __webpack_require__(293),
+        styles: [__webpack_require__(278)]
     }),
     __metadata("design:paramtypes", [])
 ], DashboardComponent);
@@ -143,7 +88,7 @@ DashboardComponent = __decorate([
 
 /***/ }),
 
-/***/ 113:
+/***/ 111:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -169,8 +114,8 @@ var MainComponent = (function () {
 MainComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-main',
-        template: __webpack_require__(297),
-        styles: [__webpack_require__(282)]
+        template: __webpack_require__(295),
+        styles: [__webpack_require__(280)]
     }),
     __metadata("design:paramtypes", [])
 ], MainComponent);
@@ -179,16 +124,16 @@ MainComponent = __decorate([
 
 /***/ }),
 
-/***/ 114:
+/***/ 112:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_paymethod_paymethod_service__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_toast_service__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_paymethod_paymethod_service__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_toast_service__ = __webpack_require__(56);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymethodCreateComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -244,8 +189,8 @@ var PaymethodCreateComponent = (function () {
 PaymethodCreateComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-paymethod-create',
-        template: __webpack_require__(298),
-        styles: [__webpack_require__(283)],
+        template: __webpack_require__(296),
+        styles: [__webpack_require__(281)],
         providers: [
             __WEBPACK_IMPORTED_MODULE_3__services_paymethod_paymethod_service__["a" /* PaymethodService */],
             __WEBPACK_IMPORTED_MODULE_5__services_toast_toast_service__["a" /* ToastService */]
@@ -259,16 +204,16 @@ var _a, _b, _c, _d, _e;
 
 /***/ }),
 
-/***/ 115:
+/***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_paymethod_paymethod_service__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_toast_service__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_paymethod_paymethod_service__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_toast_service__ = __webpack_require__(56);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymethodEditComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -326,8 +271,8 @@ __decorate([
 PaymethodEditComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-paymethod-edit',
-        template: __webpack_require__(299),
-        styles: [__webpack_require__(284)],
+        template: __webpack_require__(297),
+        styles: [__webpack_require__(282)],
         providers: [
             __WEBPACK_IMPORTED_MODULE_3__services_paymethod_paymethod_service__["a" /* PaymethodService */],
             __WEBPACK_IMPORTED_MODULE_5__services_toast_toast_service__["a" /* ToastService */]
@@ -341,14 +286,14 @@ var _a, _b, _c, _d, _e;
 
 /***/ }),
 
-/***/ 116:
+/***/ 114:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_paymethod_paymethod_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_paymethod_paymethod_service__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__paymethod_create_paymethod_create_component__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__paymethod_create_paymethod_create_component__ = __webpack_require__(112);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymethodListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -395,8 +340,8 @@ var PaymethodListComponent = (function () {
 PaymethodListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-paymethod-list',
-        template: __webpack_require__(301),
-        styles: [__webpack_require__(286)],
+        template: __webpack_require__(299),
+        styles: [__webpack_require__(284)],
         providers: [
             __WEBPACK_IMPORTED_MODULE_1__services_paymethod_paymethod_service__["a" /* PaymethodService */]
         ]
@@ -409,14 +354,89 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 117:
+/***/ 115:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_jwt__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_jwt__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_config__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(39);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var AuthService = (function () {
+    function AuthService(router) {
+        var _this = this;
+        this.router = router;
+        // Configure Auth0
+        this.lock = new Auth0Lock(__WEBPACK_IMPORTED_MODULE_2__auth_config__["a" /* authConfig */].clientID, __WEBPACK_IMPORTED_MODULE_2__auth_config__["a" /* authConfig */].domain, __WEBPACK_IMPORTED_MODULE_2__auth_config__["a" /* authConfig */].options);
+        this.userProfile = JSON.parse(localStorage.getItem('profile'));
+        // Add callback for lock `authenticated` event
+        this.lock.on('authenticated', function (authResult) {
+            localStorage.setItem('id_token', authResult.idToken);
+            console.log('logged');
+            // Fetch profile information
+            _this.lock.getProfile(authResult.idToken, function (error, profile) {
+                if (error) {
+                    // Handle error
+                    alert(error);
+                    return;
+                }
+                localStorage.setItem('profile', JSON.stringify(profile));
+                _this.userProfile = profile;
+                _this.router.navigate(['auth']);
+            });
+        });
+    }
+    AuthService.prototype.login = function () {
+        // Call the show method to display the widget.
+        this.lock.show();
+    };
+    AuthService.prototype.authenticated = function () {
+        // Check if there's an unexpired JWT
+        // This searches for an item in localStorage with key == 'id_token'
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_angular2_jwt__["tokenNotExpired"])('id_token');
+    };
+    AuthService.prototype.logout = function () {
+        // Remove token from localStorage
+        localStorage.removeItem('id_token');
+        localStorage.removeItem('profile');
+        this.userProfile = undefined;
+        this.router.navigateByUrl('/welcome');
+    };
+    return AuthService;
+}());
+AuthService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _a || Object])
+], AuthService);
+
+var _a;
+//# sourceMappingURL=auth.service.js.map
+
+/***/ }),
+
+/***/ 116:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -456,7 +476,7 @@ var _a;
 
 /***/ }),
 
-/***/ 118:
+/***/ 117:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -486,8 +506,8 @@ __decorate([
 ToastComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-toast',
-        template: __webpack_require__(302),
-        styles: [__webpack_require__(287)]
+        template: __webpack_require__(300),
+        styles: [__webpack_require__(285)]
     }),
     __metadata("design:paramtypes", [])
 ], ToastComponent);
@@ -496,7 +516,7 @@ ToastComponent = __decorate([
 
 /***/ }),
 
-/***/ 119:
+/***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -525,8 +545,8 @@ var TravelListComponent = (function () {
 TravelListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-travel-list',
-        template: __webpack_require__(303),
-        styles: [__webpack_require__(288)]
+        template: __webpack_require__(301),
+        styles: [__webpack_require__(286)]
     }),
     __metadata("design:paramtypes", [])
 ], TravelListComponent);
@@ -535,13 +555,13 @@ TravelListComponent = __decorate([
 
 /***/ }),
 
-/***/ 120:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service_auth_service__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service_auth_service__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(39);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WelcomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -573,8 +593,8 @@ var WelcomeComponent = (function () {
 WelcomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-welcome',
-        template: __webpack_require__(304),
-        styles: [__webpack_require__(289)]
+        template: __webpack_require__(302),
+        styles: [__webpack_require__(287)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service_auth_service__["a" /* AuthService */]) === "function" && _b || Object])
 ], WelcomeComponent);
@@ -584,7 +604,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 187:
+/***/ 186:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -593,20 +613,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 187;
+webpackEmptyContext.id = 186;
 
 
 /***/ }),
 
-/***/ 188:
+/***/ 187:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(76);
 
 
 
@@ -619,7 +639,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 212:
+/***/ 211:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -644,8 +664,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
-        template: __webpack_require__(291),
-        styles: [__webpack_require__(276)],
+        template: __webpack_require__(289),
+        styles: [__webpack_require__(274)],
         providers: []
     }),
     __metadata("design:paramtypes", [])
@@ -655,32 +675,31 @@ AppComponent = __decorate([
 
 /***/ }),
 
-/***/ 213:
+/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__material_design_material_design_module__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__auth_auth_module__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routes_routes_module__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__header_header_component__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__welcome_welcome_component__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__dashboard_dashboard_component__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__main_main_component__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pay_method_paymethod_list_paymethod_list_component__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pay_method_paymethod_item_paymethod_item_component__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pay_method_paymethod_create_paymethod_create_component__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pay_method_paymethod_edit_paymethod_edit_component__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__toast_toast_component__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__confirm_dialog_confirm_dialog_component__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__travel_travel_list_travel_list_component__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__category_category_list_category_list_component__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__category_category_item_category_item_component__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__material_design_material_design_module__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__routes_routes_module__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__header_header_component__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__welcome_welcome_component__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__dashboard_dashboard_component__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__main_main_component__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pay_method_paymethod_list_paymethod_list_component__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pay_method_paymethod_item_paymethod_item_component__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pay_method_paymethod_create_paymethod_create_component__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pay_method_paymethod_edit_paymethod_edit_component__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__toast_toast_component__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__confirm_dialog_confirm_dialog_component__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__travel_travel_list_travel_list_component__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__category_category_list_category_list_component__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__category_category_item_category_item_component__ = __webpack_require__(213);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -688,7 +707,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -720,40 +738,40 @@ AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
             //Components
-            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__header_header_component__["a" /* HeaderComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__welcome_welcome_component__["a" /* WelcomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__main_main_component__["a" /* MainComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__pay_method_paymethod_list_paymethod_list_component__["a" /* PaymethodListComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__pay_method_paymethod_item_paymethod_item_component__["a" /* PaymethodItemComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__pay_method_paymethod_create_paymethod_create_component__["a" /* PaymethodCreateComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__pay_method_paymethod_edit_paymethod_edit_component__["a" /* PaymethodEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__toast_toast_component__["a" /* ToastComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__confirm_dialog_confirm_dialog_component__["a" /* ConfirmDialogComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__travel_travel_list_travel_list_component__["a" /* TravelListComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__category_category_list_category_list_component__["a" /* CategoryListComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__category_category_item_category_item_component__["a" /* CategoryItemComponent */]
+            __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__header_header_component__["a" /* HeaderComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__welcome_welcome_component__["a" /* WelcomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__main_main_component__["a" /* MainComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__pay_method_paymethod_list_paymethod_list_component__["a" /* PaymethodListComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__pay_method_paymethod_item_paymethod_item_component__["a" /* PaymethodItemComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__pay_method_paymethod_create_paymethod_create_component__["a" /* PaymethodCreateComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__pay_method_paymethod_edit_paymethod_edit_component__["a" /* PaymethodEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__toast_toast_component__["a" /* ToastComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__confirm_dialog_confirm_dialog_component__["a" /* ConfirmDialogComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__travel_travel_list_travel_list_component__["a" /* TravelListComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__category_category_list_category_list_component__["a" /* CategoryListComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__category_category_item_category_item_component__["a" /* CategoryItemComponent */]
         ],
         imports: [
             //Modules
-            __WEBPACK_IMPORTED_MODULE_6__auth_auth_module__["a" /* AuthModule */],
+            //AuthModule,
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
             __WEBPACK_IMPORTED_MODULE_5__material_design_material_design_module__["a" /* MaterialDesignModule */],
-            __WEBPACK_IMPORTED_MODULE_7__routes_routes_module__["a" /* RoutesModule */],
+            __WEBPACK_IMPORTED_MODULE_6__routes_routes_module__["a" /* RoutesModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]
         ],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_15__pay_method_paymethod_create_paymethod_create_component__["a" /* PaymethodCreateComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__pay_method_paymethod_edit_paymethod_edit_component__["a" /* PaymethodEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__toast_toast_component__["a" /* ToastComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__confirm_dialog_confirm_dialog_component__["a" /* ConfirmDialogComponent */]
+            __WEBPACK_IMPORTED_MODULE_14__pay_method_paymethod_create_paymethod_create_component__["a" /* PaymethodCreateComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__pay_method_paymethod_edit_paymethod_edit_component__["a" /* PaymethodEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__toast_toast_component__["a" /* ToastComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__confirm_dialog_confirm_dialog_component__["a" /* ConfirmDialogComponent */]
         ],
         providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -761,56 +779,15 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 214:
+/***/ 213:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service_auth_service__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__auth_guard__ = __webpack_require__(110);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthModule; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-var AuthModule = (function () {
-    function AuthModule() {
-    }
-    return AuthModule;
-}());
-AuthModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_common__["c" /* CommonModule */]
-        ],
-        providers: [
-            __WEBPACK_IMPORTED_MODULE_2__services_auth_service_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_3__auth_guard__["a" /* AuthGuard */]
-        ],
-        declarations: []
-    })
-], AuthModule);
-
-//# sourceMappingURL=auth.module.js.map
-
-/***/ }),
-
-/***/ 215:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_category_category_service__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_toast_service__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_category_category_service__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_toast_service__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__confirm_dialog_confirm_dialog_component__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__confirm_dialog_confirm_dialog_component__ = __webpack_require__(75);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryItemComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -869,8 +846,8 @@ __decorate([
 CategoryItemComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-category-item',
-        template: __webpack_require__(292),
-        styles: [__webpack_require__(277)],
+        template: __webpack_require__(290),
+        styles: [__webpack_require__(275)],
         providers: [
             __WEBPACK_IMPORTED_MODULE_1__services_category_category_service__["a" /* CategoryService */],
             __WEBPACK_IMPORTED_MODULE_2__services_toast_toast_service__["a" /* ToastService */]
@@ -884,12 +861,12 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 216:
+/***/ 214:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service_auth_service__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service_auth_service__ = __webpack_require__(115);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -913,8 +890,8 @@ var HeaderComponent = (function () {
 HeaderComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-header',
-        template: __webpack_require__(296),
-        styles: [__webpack_require__(281)],
+        template: __webpack_require__(294),
+        styles: [__webpack_require__(279)],
         providers: [
             __WEBPACK_IMPORTED_MODULE_1__services_auth_service_auth_service__["a" /* AuthService */]
         ]
@@ -927,13 +904,13 @@ var _a;
 
 /***/ }),
 
-/***/ 217:
+/***/ 215:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_flex_layout__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_flex_layout__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__(25);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MaterialDesignModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -978,16 +955,16 @@ MaterialDesignModule = __decorate([
 
 /***/ }),
 
-/***/ 218:
+/***/ 216:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_paymethod_paymethod_service__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_toast_service__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_paymethod_paymethod_service__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_toast_service__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__paymethod_edit_paymethod_edit_component__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__confirm_dialog_confirm_dialog_component__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__paymethod_edit_paymethod_edit_component__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__confirm_dialog_confirm_dialog_component__ = __webpack_require__(75);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymethodItemComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1057,8 +1034,8 @@ __decorate([
 PaymethodItemComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-paymethod-item',
-        template: __webpack_require__(300),
-        styles: [__webpack_require__(285)],
+        template: __webpack_require__(298),
+        styles: [__webpack_require__(283)],
         providers: [
             __WEBPACK_IMPORTED_MODULE_1__services_paymethod_paymethod_service__["a" /* PaymethodService */],
             __WEBPACK_IMPORTED_MODULE_2__services_toast_toast_service__["a" /* ToastService */]
@@ -1072,20 +1049,19 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 219:
+/***/ 217:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__welcome_welcome_component__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__main_main_component__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__travel_travel_list_travel_list_component__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pay_method_paymethod_list_paymethod_list_component__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__category_category_list_category_list_component__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__auth_guard__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__welcome_welcome_component__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__main_main_component__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__travel_travel_list_travel_list_component__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pay_method_paymethod_list_paymethod_list_component__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__category_category_list_category_list_component__ = __webpack_require__(109);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoutesModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1107,7 +1083,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 //Categories
 
-
+//import { AuthGuard } from '../auth.guard';
 var appRoutes = [
     //Dashboard
     { path: 'welcome', component: __WEBPACK_IMPORTED_MODULE_3__welcome_welcome_component__["a" /* WelcomeComponent */] },
@@ -1133,9 +1109,7 @@ RoutesModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["c" /* CommonModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot(appRoutes)
         ],
-        providers: [
-            __WEBPACK_IMPORTED_MODULE_9__auth_guard__["a" /* AuthGuard */]
-        ],
+        providers: [],
         exports: [
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */]
         ],
@@ -1147,7 +1121,7 @@ RoutesModule = __decorate([
 
 /***/ }),
 
-/***/ 220:
+/***/ 218:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1164,6 +1138,42 @@ var authConfig = {
     }
 };
 //# sourceMappingURL=auth.config.js.map
+
+/***/ }),
+
+/***/ 274:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(9)();
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 275:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(9)();
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
 
 /***/ }),
 
@@ -1337,7 +1347,7 @@ exports = module.exports = __webpack_require__(9)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".icon-toast {\n  margin-right: 10px;\n  font-size: 20px; }\n", ""]);
 
 // exports
 
@@ -1373,24 +1383,6 @@ exports = module.exports = __webpack_require__(9)();
 
 
 // module
-exports.push([module.i, ".icon-toast {\n  margin-right: 10px;\n  font-size: 20px; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 288:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(9)();
-// imports
-
-
-// module
 exports.push([module.i, "", ""]);
 
 // exports
@@ -1402,118 +1394,108 @@ module.exports = module.exports.toString();
 /***/ }),
 
 /***/ 289:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(9)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 291:
 /***/ (function(module, exports) {
 
 module.exports = "<app-header></app-header>\n<div class=\"main-container\">\n  <router-outlet>\n  </router-outlet>\n</div>\n"
 
 /***/ }),
 
-/***/ 292:
+/***/ 290:
 /***/ (function(module, exports) {
 
 module.exports = "<md-card class=\"trip-md-card\">\n    <p [innerHTML]=\"category.name\"></p>\n    <div fxLayout=\"row\" fxLayoutAlign=\"end start\" class=\"area-controls\">\n        <button md-mini-fab (click)=\"editCategory(category)\"><md-icon>edit</md-icon> </button>\n        <button md-mini-fab (click)=\"removeCategory(category)\"><md-icon>delete</md-icon> </button>\n    </div>\n</md-card>"
 
 /***/ }),
 
-/***/ 293:
+/***/ 291:
 /***/ (function(module, exports) {
 
 module.exports = "<md-spinner class=\"spinner-loading-secc\" *ngIf=\"this.processing\"></md-spinner>\n\n<section *ngIf=\"!this.processing\">\n\n    <section fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\n        <h3 class=\"title-section\">Categories</h3>\n        <!--<button md-raised-button (click)=\"createPayMethodDialog()\"><md-icon>add_circle</md-icon> Create Pay Method</button>-->\n    </section>\n    <br>\n    <br>\n    <div fxLayout.gt-xs=\"row\" fxLayoutWrap fxLayoutAlign=\"start start\">\n\n        <app-category-item fxFlex=\"100%\" fxFlex.gt-xs=\"33.3%\" (updateView)=\"ngOnInit()\" *ngFor=\" let category of categories\" [category]=\"category\">\n        </app-category-item>\n\n    </div>\n</section>"
 
 /***/ }),
 
-/***/ 294:
+/***/ 292:
 /***/ (function(module, exports) {
 
 module.exports = "<section class=\"trip-md-dialog-container\">\n  <span class=\"align-center\" [innerHTML]=\"message\"></span>\n  <br>\n  <br>\n  <div fxLayout=\"row\" fxLayoutAlign=\"space-around center\">\n    <button md-button md-raised-button color=\"primary\" (click)=\"confirm()\">Yes, do it!</button>\n    <button md-button md-raised-button color=\"warn\" (click)=\"cancel()\">Cancel</button>\n  </div>\n</section>\n"
 
 /***/ }),
 
-/***/ 295:
+/***/ 293:
 /***/ (function(module, exports) {
 
 module.exports = "<h4>Dashboard</h4>"
 
 /***/ }),
 
-/***/ 296:
+/***/ 294:
 /***/ (function(module, exports) {
 
 module.exports = "<md-toolbar color=\"primary\">\n    <div fxFlex=\"100\" fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\n        <div>\n            LOGO\n        </div>\n        <div>\n            <nav>\n                <div>\n                    <!--<div *ngIf=\"auth.authenticated()\">-->\n                    <button md-button routerLink=\"/auth/dashboard\">Dashboard</button>\n                    <button md-button routerLink=\"/auth/operations\">Operation</button>\n                    <button md-button routerLink=\"/auth/travels\">Travels</button>\n                    <button md-button routerLink=\"/auth/paymethods\">Payment Methods</button>\n                    <button md-button routerLink=\"/auth/categories\">Categories</button>\n                    <button md-button class=\"btn btn-primary btn-margin\" (click)=\"auth.logout()\">Log Out</button>\n                </div>\n                <!--<button md-raised-button class=\"btn btn-primary btn-margin\" (click)=\"auth.login()\" *ngIf=\"!auth.authenticated()\">Log In</button>-->\n            </nav>\n        </div>\n    </div>\n\n</md-toolbar>"
 
 /***/ }),
 
-/***/ 297:
+/***/ 295:
 /***/ (function(module, exports) {
 
 module.exports = "<router-outlet>\n</router-outlet>"
 
 /***/ }),
 
-/***/ 298:
+/***/ 296:
 /***/ (function(module, exports) {
 
 module.exports = "<md-toolbar class=\"dialog-header\">\n    <span>Create a Pay Method</span>\n</md-toolbar>\n<section class=\"trip-md-dialog-container\">\n\n    <!--<form #form=\"ngForm\" (ngSubmit)=\"createPaymethod(form.value)\" fxLayoutWrap fxLayout=\"row\">\n        <md-input-container fxFlex=\"100\">\n            <input mdInput placeholder=\"Name\" type=\"text\" name=\"name\" #name=\"ngModel\" [ngModel]=\"formData.name\" required>\n            <md-error>\n                <span *ngIf=\"name.errors?.required || form.dirty\">A name is required</span>\n            </md-error>\n        </md-input-container>\n        <section fxFlex=\"100\" fxLayout=\"row\" fxLayoutAlign=\"end start\">\n            <button type=\"submit\" md-raised-button [disabled]=\"form.invalid || processing\">\n            <span *ngIf=\"!this.processing\">Create</span>\n            <md-spinner *ngIf=\"this.processing\"></md-spinner>\n          </button>\n        </section>\n    </form>-->\n\n    <form action=\"\" [formGroup]=\"createPayMethodForm\" (ngSubmit)=\"createPaymethod(createPayMethodForm.value)\" fxLayoutWrap fxLayout=\"row\">\n        <md-input-container fxFlex=\"100\">\n            <input #name mdInput type=\"email\" placeholder=\"Name\" [formControl]=\"createPayMethodForm.controls['name']\" required>\n\n            <md-error>\n                <span *ngIf=\"createPayMethodForm.controls.name.invalid\">A name is required</span>\n            </md-error>\n        </md-input-container>\n        <section fxFlex=\"100\" fxLayout=\"row\" fxLayoutAlign=\"end start\">\n            <button type=\"submit\" md-raised-button [disabled]=\"createPayMethodForm.invalid || processing\">\n        <span *ngIf=\"!this.processing\">Create</span>\n        <md-spinner *ngIf=\"this.processing\"></md-spinner>\n      </button>\n        </section>\n    </form>\n\n</section>"
 
 /***/ }),
 
-/***/ 299:
+/***/ 297:
 /***/ (function(module, exports) {
 
 module.exports = "<md-toolbar>\n  <span>Edit a Pay Method</span>\n</md-toolbar>\n<section class=\"trip-md-dialog-container\">\n  <form action=\"\" [formGroup]=\"editPayMethodForm\" (ngSubmit)=\"editPaymethod(editPayMethodForm.value)\" fxLayoutWrap fxLayout=\"row\">\n    <md-input-container fxFlex=\"100\">\n      <input\n        #name\n        mdInput\n        type=\"email\"\n        placeholder=\"Name\"\n        [formControl]=\"editPayMethodForm.controls['name']\"\n        [value]=\"payMethod.name\"\n        required\n        >\n\n        <md-error>\n          <span *ngIf=\"editPayMethodForm.controls.name.invalid\">A name is required</span>\n        </md-error>\n    </md-input-container>\n\n    <section fxFlex=\"100\" fxLayout=\"row\" fxLayoutAlign=\"end start\" >\n      <button type=\"submit\" md-raised-button [disabled]=\"editPayMethodForm.invalid || processing\">\n        <span *ngIf=\"!this.processing\">Save</span>\n        <md-spinner *ngIf=\"this.processing\"></md-spinner>\n      </button>\n    </section>\n  </form>\n</section>"
 
 /***/ }),
 
-/***/ 300:
+/***/ 298:
 /***/ (function(module, exports) {
 
 module.exports = "<md-card class=\"trip-md-card\">\n  <p [innerHTML]=\"payMethod.name\"></p>\n  <div fxLayout=\"row\" fxLayoutAlign=\"end start\" class=\"area-controls\">\n    <button md-mini-fab (click)=\"editPaymethod(payMethod)\"><md-icon>edit</md-icon> </button>\n    <button md-mini-fab (click)=\"removePaymethod(payMethod)\"><md-icon>delete</md-icon> </button>\n  </div>\n</md-card>\n"
 
 /***/ }),
 
-/***/ 301:
+/***/ 299:
 /***/ (function(module, exports) {
 
 module.exports = "<md-spinner class=\"spinner-loading-secc\" *ngIf=\"this.processing\"></md-spinner>\n\n<section *ngIf=\"!this.processing\">\n\n    <section fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\n        <h3 class=\"title-section\">Pay Methods</h3>\n        <button md-raised-button (click)=\"createPayMethodDialog()\"><md-icon>add_circle</md-icon> Create Pay Method</button>\n    </section>\n    <br>\n    <br>\n    <div fxLayout.gt-xs=\"row\" fxLayoutWrap fxLayoutAlign=\"start start\">\n\n        <app-paymethod-item fxFlex=\"100%\" fxFlex.gt-xs=\"33.3%\" (updateView)=\"ngOnInit()\" *ngFor=\" let payMethod of payMethods\" [payMethod]=\"payMethod\"></app-paymethod-item>\n\n    </div>\n</section>"
 
 /***/ }),
 
-/***/ 302:
+/***/ 300:
 /***/ (function(module, exports) {
 
 module.exports = "<div fxLayout=\"row\">\n  <md-icon class=\"icon-toast\" *ngIf=\"data.success\">check_circle</md-icon>\n  <md-icon class=\"icon-toast\" *ngIf=\"!data.success\">error</md-icon>\n  <span [innerHTML]=\"data.message\"></span>\n</div>"
 
 /***/ }),
 
-/***/ 303:
+/***/ 301:
 /***/ (function(module, exports) {
 
 module.exports = "<p>\n  travel-list works!\n</p>\n"
 
 /***/ }),
 
-/***/ 304:
+/***/ 302:
 /***/ (function(module, exports) {
 
 module.exports = "<p>\n  welcome works!\n</p>\n"
+
+/***/ }),
+
+/***/ 549:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(187);
+
 
 /***/ }),
 
@@ -1522,92 +1504,9 @@ module.exports = "<p>\n  welcome works!\n</p>\n"
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_jwt__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_jwt__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_config__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(36);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var AuthService = (function () {
-    function AuthService(router) {
-        var _this = this;
-        this.router = router;
-        // Configure Auth0
-        this.lock = new Auth0Lock(__WEBPACK_IMPORTED_MODULE_2__auth_config__["a" /* authConfig */].clientID, __WEBPACK_IMPORTED_MODULE_2__auth_config__["a" /* authConfig */].domain, __WEBPACK_IMPORTED_MODULE_2__auth_config__["a" /* authConfig */].options);
-        this.userProfile = JSON.parse(localStorage.getItem('profile'));
-        // Add callback for lock `authenticated` event
-        this.lock.on('authenticated', function (authResult) {
-            localStorage.setItem('id_token', authResult.idToken);
-            console.log('logged');
-            // Fetch profile information
-            _this.lock.getProfile(authResult.idToken, function (error, profile) {
-                if (error) {
-                    // Handle error
-                    alert(error);
-                    return;
-                }
-                localStorage.setItem('profile', JSON.stringify(profile));
-                _this.userProfile = profile;
-                _this.router.navigate(['auth']);
-            });
-        });
-    }
-    AuthService.prototype.login = function () {
-        // Call the show method to display the widget.
-        this.lock.show();
-    };
-    AuthService.prototype.authenticated = function () {
-        // Check if there's an unexpired JWT
-        // This searches for an item in localStorage with key == 'id_token'
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_angular2_jwt__["tokenNotExpired"])('id_token');
-    };
-    AuthService.prototype.logout = function () {
-        // Remove token from localStorage
-        localStorage.removeItem('id_token');
-        localStorage.removeItem('profile');
-        this.userProfile = undefined;
-        this.router.navigateByUrl('/welcome');
-    };
-    return AuthService;
-}());
-AuthService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _a || Object])
-], AuthService);
-
-var _a;
-//# sourceMappingURL=auth.service.js.map
-
-/***/ }),
-
-/***/ 551:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(188);
-
-
-/***/ }),
-
-/***/ 56:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymethodService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1659,13 +1558,13 @@ var _a;
 
 /***/ }),
 
-/***/ 57:
+/***/ 56:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__toast_toast_component__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__toast_toast_component__ = __webpack_require__(117);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToastService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1713,7 +1612,7 @@ var _a;
 
 /***/ }),
 
-/***/ 76:
+/***/ 75:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1752,8 +1651,8 @@ __decorate([
 ConfirmDialogComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-confirm-dialog',
-        template: __webpack_require__(294),
-        styles: [__webpack_require__(279)]
+        template: __webpack_require__(292),
+        styles: [__webpack_require__(277)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["j" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["j" /* MdDialogRef */]) === "function" && _a || Object])
 ], ConfirmDialogComponent);
@@ -1763,7 +1662,7 @@ var _a;
 
 /***/ }),
 
-/***/ 77:
+/***/ 76:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1782,5 +1681,5 @@ var environment = {
 
 /***/ })
 
-},[551]);
+},[549]);
 //# sourceMappingURL=main.bundle.js.map

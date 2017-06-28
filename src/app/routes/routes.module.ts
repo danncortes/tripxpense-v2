@@ -16,7 +16,7 @@ import { PaymethodListComponent } from '../pay-method/paymethod-list/paymethod-l
 //Categories
 import { CategoryListComponent } from '../category/category-list/category-list.component';
 
-import { AuthGuard } from '../auth.guard';
+//import { AuthGuard } from '../auth.guard';
 
 const appRoutes: Routes = [
   //Dashboard
@@ -40,7 +40,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers:[
-    AuthGuard
+    //AuthGuard
   ],
   exports: [
     RouterModule

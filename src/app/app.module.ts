@@ -47,7 +47,7 @@ import { CategoryItemComponent } from './category/category-item/category-item.co
   ],
   imports: [
 //Modules
-    AuthModule,
+    //AuthModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

@@ -32,6 +32,16 @@ export class AuthService {
         window.location.hash = '';
         this.setSession(authResult);
         this.router.navigate(['/auth']);
+
+        if (this.userProfile) {
+          this.profile = this.userProfile;
+        } else {
+          this.getProfile((err, profile) => {
+            this.profile = profile;
+            localStorage.setItem('profile', JSON.stringify(this.profile));
+          });
+        }
+        
       } else if (err) {
         this.router.navigate(['/welcome']);
         console.log(err);
@@ -68,6 +78,7 @@ export class AuthService {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
+    localStorage.removeItem('profile');
     // Go back to the home route
     this.router.navigate(['/']);
   }
@@ -77,5 +88,9 @@ export class AuthService {
     // access token's expiry time
     const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
+  }
+
+  public isAdmin(){
+    console.log(JSON.parse(localStorage.getItem('profile')))
   }
 }

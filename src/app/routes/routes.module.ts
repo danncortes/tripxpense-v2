@@ -6,6 +6,8 @@ import { RouterModule, Routes} from '@angular/router';
 import { WelcomeComponent } from '../welcome/welcome.component';
 import { MainComponent } from '../main/main.component';
 
+import { ProfileComponent } from '../profile/profile.component';
+
 //Dashboard
 import { DashboardComponent } from '../dashboard/dashboard.component';
 
@@ -16,18 +18,20 @@ import { PaymethodListComponent } from '../pay-method/paymethod-list/paymethod-l
 //Categories
 import { CategoryListComponent } from '../category/category-list/category-list.component';
 
-//import { AuthGuard } from '../auth.guard';
+import { AuthGuardService } from '../services/auth-guard/auth-guard.service';
+import { AdminGuardService } from '../services/admin-guard/admin-guard.service';
 
 const appRoutes: Routes = [
   //Dashboard
   { path: 'welcome', component:WelcomeComponent},
-  { path: 'auth', component:MainComponent, children:[
-  //{ path: 'auth', component:MainComponent, canActivate: [AuthGuard], children:[
+  //{ path: 'auth', component:MainComponent, children:[
+  { path: 'auth', component:MainComponent, canActivate: [AuthGuardService], children:[
       { path: '', redirectTo: 'dashboard', pathMatch:'full'},
       { path: 'dashboard', component:DashboardComponent},
       { path: 'travels', component:TravelListComponent},
-      { path: 'paymethods', component:PaymethodListComponent},
-      { path: 'categories', component:CategoryListComponent}
+      { path: 'paymethods', component:PaymethodListComponent, canActivate: [AdminGuardService]},
+      { path: 'categories', component:CategoryListComponent},
+      { path: 'profile', component:ProfileComponent}
     ]},
   { path: '**', redirectTo: 'welcome', pathMatch:'full'},
   { path: '', redirectTo: 'welcome', pathMatch:'full'}

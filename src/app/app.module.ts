@@ -6,7 +6,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {MaterialDesignModule} from './material-design/material-design.module';
 
-import {AuthModule} from './auth/auth.module';
 import {RoutesModule} from './routes/routes.module';
 
 //Components
@@ -26,6 +25,11 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 import { TravelListComponent } from './travel/travel-list/travel-list.component';
 import { CategoryListComponent } from './category/category-list/category-list.component';
 import { CategoryItemComponent } from './category/category-item/category-item.component';
+import { ProfileComponent } from './profile/profile.component';
+
+import { AuthService } from './services/auth-service/auth.service';
+import { AuthGuardService } from './services/auth-guard/auth-guard.service';
+import { AdminGuardService } from './services/admin-guard/admin-guard.service';
 
 @NgModule({
   declarations: [
@@ -43,11 +47,11 @@ import { CategoryItemComponent } from './category/category-item/category-item.co
     ConfirmDialogComponent,
     TravelListComponent,
     CategoryListComponent,
-    CategoryItemComponent
+    CategoryItemComponent,
+    ProfileComponent
   ],
   imports: [
 //Modules
-    AuthModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -62,7 +66,7 @@ import { CategoryItemComponent } from './category/category-item/category-item.co
     ToastComponent,
     ConfirmDialogComponent
   ],
-  providers: [],
+  providers: [AuthService, AuthGuardService, AdminGuardService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

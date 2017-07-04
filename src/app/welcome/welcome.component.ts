@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth-service/auth.service';
 import { RouterModule, Router} from '@angular/router';
 
 @Component({
@@ -9,17 +8,10 @@ import { RouterModule, Router} from '@angular/router';
 })
 export class WelcomeComponent implements OnInit {
 
-
-  constructor(private router:Router, private auth: AuthService) { }
-
-  ngOnInit() {
-    this.redirect()
+  constructor() {
   }
 
-  redirect(){
-    if(this.auth.authenticated){
-      this.router.navigate(['auth'])
-    }
+  ngOnInit() {
   }
 
 }

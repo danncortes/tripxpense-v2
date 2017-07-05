@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/category/category.service';
+import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
+import { CategoryCreateComponent } from '../category-create/category-create.component';
 
 @Component({
   selector: 'app-category-list',
@@ -15,7 +17,9 @@ export class CategoryListComponent implements OnInit {
   categories: object;
 
   constructor(
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    public dialog: MdDialog,
+    public snackBar: MdSnackBar
   ) { }
 
   ngOnInit() {
@@ -30,6 +34,17 @@ export class CategoryListComponent implements OnInit {
         this.processing = false;
       }
     )
+  }
+
+  createCategoryDialog = () => {
+    let dialogRef = this.dialog.open(CategoryCreateComponent, {
+      width: '300px'
+    });
+    dialogRef.afterClosed().subscribe(data => {
+      if (data) {
+        this.ngOnInit();
+      }
+    });
   }
 
 }

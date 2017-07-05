@@ -30,6 +30,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthService } from './services/auth-service/auth.service';
 import { AuthGuardService } from './services/auth-guard/auth-guard.service';
 import { AdminGuardService } from './services/admin-guard/admin-guard.service';
+import { CategoryCreateComponent } from './category/category-create/category-create.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { AdminGuardService } from './services/admin-guard/admin-guard.service';
     TravelListComponent,
     CategoryListComponent,
     CategoryItemComponent,
-    ProfileComponent
+    ProfileComponent,
+    CategoryCreateComponent
   ],
   imports: [
 //Modules
@@ -62,6 +64,7 @@ import { AdminGuardService } from './services/admin-guard/admin-guard.service';
   ],
   entryComponents:[
     PaymethodCreateComponent,
+    CategoryCreateComponent,
     PaymethodEditComponent,
     ToastComponent,
     ConfirmDialogComponent

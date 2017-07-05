@@ -13,8 +13,10 @@
                     <button md-button routerLink="/auth/dashboard">Dashboard</button>
                     <button md-button routerLink="/auth/operations">Operation</button>
                     <button md-button routerLink="/auth/travels">Travels</button>
-                    <button md-button routerLink="/auth/paymethods">Payment Methods</button>
-                    <button md-button routerLink="/auth/categories">Categories</button>
+                    <span *ngIf="auth.isAdmin()">
+                        <button md-button routerLink="/auth/paymethods">Payment Methods</button>
+                        <button md-button routerLink="/auth/categories">Categories</button>
+                    </span>
                     <button md-button routerLink="/auth/profile">Profile</button>
                     <button md-button class="btn btn-primary btn-margin" (click)="auth.logout()">Log Out</button>
                 </div>

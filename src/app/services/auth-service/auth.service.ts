@@ -31,7 +31,6 @@ export class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         this.setSession(authResult);
-        this.router.navigate(['/auth']);
 
         if (this.userProfile) {
           this.profile = this.userProfile;
@@ -39,9 +38,9 @@ export class AuthService {
           this.getProfile((err, profile) => {
             this.profile = profile;
             localStorage.setItem('profile', JSON.stringify(this.profile));
+            this.router.navigate(['/auth']);
           });
         }
-        
       } else if (err) {
         this.router.navigate(['/welcome']);
         console.log(err);
@@ -91,6 +90,7 @@ export class AuthService {
   }
 
   public isAdmin(){
-    console.log(JSON.parse(localStorage.getItem('profile')))
+    let profile = JSON.parse(localStorage.getItem('profile'));
+    return profile && profile.hasOwnProperty('admin') ? profile.admin : false;
   }
 }

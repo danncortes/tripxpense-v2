@@ -1,0 +1,23 @@
+<md-toolbar class="dialog-header">
+    <span>Create a Category</span>
+</md-toolbar>
+<section class="trip-md-dialog-container">
+
+    <form action="" [formGroup]="createCategoryForm" (ngSubmit)="createCategory(createCategoryForm.value)" fxLayoutWrap fxLayout="row">
+        <md-input-container fxFlex="100">
+            <input #name mdInput type="text" placeholder="Name" [formControl]="createCategoryForm.controls['name']" required>
+            <md-error>
+                <span *ngIf="createCategoryForm.controls.name.invalid">A name is required</span>
+            </md-error>
+        </md-input-container>
+
+        <!--<input name="archivo" #archivo="ngModel" [ngModel]="archivo" type="text " placeholder="File " required> {{archivo.value}}-->
+
+        <section fxFlex="100" fxLayout="row" fxLayoutAlign="end start">
+            <button type="submit" md-raised-button [disabled]="createCategoryForm.invalid || processing">
+        <span *ngIf="!this.processing">Create</span>
+        <md-spinner *ngIf="this.processing"></md-spinner>
+      </button>
+        </section>
+    </form>
+</section>

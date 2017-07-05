@@ -10,7 +10,7 @@ export class AdminGuardService {
   constructor(public auth: AuthService, public router: Router) {}
 
   canActivate(): boolean {
-    return false
+    return this.auth.isAdmin()
   }
 
 }

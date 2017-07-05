@@ -30,7 +30,7 @@ const appRoutes: Routes = [
       { path: 'dashboard', component:DashboardComponent},
       { path: 'travels', component:TravelListComponent},
       { path: 'paymethods', component:PaymethodListComponent, canActivate: [AdminGuardService]},
-      { path: 'categories', component:CategoryListComponent},
+      { path: 'categories', component:CategoryListComponent, canActivate: [AdminGuardService]},
       { path: 'profile', component:ProfileComponent}
     ]},
   { path: '**', redirectTo: 'welcome', pathMatch:'full'},

@@ -8,8 +8,6 @@ import { AuthService } from '../services/auth-service/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  aja: any;
-
   constructor(public auth: AuthService) {
     auth.handleAuthentication();
   }

@@ -1,29 +1,21 @@
 <md-toolbar>
-  <span>Edit a Pay Method</span>
+    <span>Edit a Pay Method</span>
 </md-toolbar>
 <section class="trip-md-dialog-container">
-  <form action="" [formGroup]="editPayMethodForm" (ngSubmit)="editPaymethod(editPayMethodForm.value)" fxLayoutWrap fxLayout="row">
-    <md-input-container fxFlex="100">
-      <input
-        #name
-        mdInput
-        type="email"
-        placeholder="Name"
-        [formControl]="editPayMethodForm.controls['name']"
-        [value]="payMethod.name"
-        required
-        >
+    <form action="" [formGroup]="editPayMethodForm" (ngSubmit)="editPaymethod(editPayMethodForm.value)" fxLayoutWrap fxLayout="row">
+        <md-input-container fxFlex="100">
+            <input #name mdInput type="email" placeholder="Name" [formControl]="editPayMethodForm.controls['name']" [value]="payMethod.name" required>
 
-        <md-error>
-          <span *ngIf="editPayMethodForm.controls.name.invalid">A name is required</span>
-        </md-error>
-    </md-input-container>
+            <md-error>
+                <span *ngIf="editPayMethodForm.controls.name.invalid">A name is required</span>
+            </md-error>
+        </md-input-container>
 
-    <section fxFlex="100" fxLayout="row" fxLayoutAlign="end start" >
-      <button type="submit" md-raised-button [disabled]="editPayMethodForm.invalid || processing">
+        <section fxFlex="100" fxLayout="row" fxLayoutAlign="end start">
+            <button type="submit" md-raised-button color="primary" [disabled]="editPayMethodForm.invalid || processing">
         <span *ngIf="!this.processing">Save</span>
         <md-spinner *ngIf="this.processing"></md-spinner>
       </button>
-    </section>
-  </form>
+        </section>
+    </form>
 </section>

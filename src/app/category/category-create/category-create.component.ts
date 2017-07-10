@@ -17,37 +17,33 @@ import {ToastService} from '../../services/toast/toast.service';
 export class CategoryCreateComponent implements OnInit {
 
   createCategoryForm: FormGroup;
-  processing: boolean;
-  form:any
-  
+  processing: boolean; 
+  form: any
 
   constructor(
     public dialogRef: MdDialogRef<CategoryCreateComponent>,
-    //formBuilder: FormBuilder,
+    formBuilder: FormBuilder,
     private categoryService: CategoryService,
     private router: Router,
     public toastService: ToastService
   ) {
 
-    /*this.createCategoryForm = formBuilder.group({
+    this.createCategoryForm = formBuilder.group({
       'name' :  ['', Validators.required],
       'sort' : '',
       'pic': ['', Validators.required]
-    });*/
+    });
   }
 
   ngOnInit() {
-    console.log(this.form)
   }
 
-  inputFileFunc(event){
-    let inputValue =  event.target.value.replace('C:\\fakepath\\', '');
-    console.log(inputValue);
-
+  selectInputFile(event){
+    this.createCategoryForm.controls['pic'].setValue(event.target.files[0].name);
   }
 
   createCategory(formData){
-    console.log(formData)
+    console.log('datos', formData)
   }
 
 }

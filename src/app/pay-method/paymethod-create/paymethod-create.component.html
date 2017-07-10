@@ -12,7 +12,7 @@
             </md-error>
         </md-input-container>
         <section fxFlex="100" fxLayout="row" fxLayoutAlign="end start">
-            <button type="submit" md-raised-button [disabled]="createPayMethodForm.invalid || processing">
+            <button type="submit" md-raised-button color="primary" [disabled]="createPayMethodForm.invalid || processing">
         <span *ngIf="!this.processing">Create</span>
         <md-spinner *ngIf="this.processing"></md-spinner>
       </button>

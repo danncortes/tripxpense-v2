@@ -3,23 +3,32 @@
 </md-toolbar>
 <section class="trip-md-dialog-container">
 
-    <form #form="ngForm" (ngSubmit)="createCategory(createCategoryForm.value)" fxLayoutWrap fxLayout="row">
+    <form [formGroup]="createCategoryForm" (ngSubmit)="createCategory(createCategoryForm.value)" fxLayoutWrap fxLayout="row">
         <md-input-container fxFlex="100">
-            <input mdInput name="name" #name="ngModel" [ngModel]="form.name" type="text" placeholder="Name" required>
+            <input mdInput [formControl]="createCategoryForm.controls['name']" type="text" placeholder="Name" required>
             <md-error>
-                <span *ngIf="name.invalid">A name is required</span>
+                <span *ngIf="createCategoryForm.controls.name.invalid">A name is required</span>
             </md-error>
         </md-input-container>
-        <!--<input name="archivo" #archivo="ngModel" [ngModel]="archivo" type="text " placeholder="File " required> {{archivo.value}}-->
+        <md-input-container fxFlex="100">
+            <input mdInput [formControl]="createCategoryForm.controls['pic']" type="text" placeholder="Pic" required readonly>
+            <md-hint align="start">Select below a .PNG file as Category Icon </md-hint>
+            <md-error>
+                <span *ngIf="createCategoryForm.controls.pic.invalid">A name is required</span>
+            </md-error>
+        </md-input-container>
 
-        <input name="name2" #name2="ngModel" [ngModel]="form.name2" type="file" placeholder="Name" (change)="inputFileFunc($event)" required> {{form.value | json}}
-
+        <label fxFlex="100" class="mat-raised-button" fxLayout="row" fxLayoutAlign="center center" style="margin-bottom:14px">
+            <i class="material-icons">file_upload</i>
+            Icon File Upload (.PNG)
+            <input type="file" placeholder="" (change)="selectInputFile($event)" hidden accept="image/png">
+        </label>
 
         <section fxFlex="100" fxLayout="row" fxLayoutAlign="end start">
-            <button type="submit" md-raised-button [disabled]="form.invalid || processing">
-        <span *ngIf="!this.processing">Create</span>
-        <md-spinner *ngIf="this.processing"></md-spinner>
-      </button>
+            <button type="submit" md-raised-button color="primary" [disabled]="createCategoryForm.invalid || processing ">
+                <span *ngIf="!this.processing ">Create</span>
+                <md-spinner *ngIf="this.processing "></md-spinner>
+            </button>
         </section>
     </form>
 </section>

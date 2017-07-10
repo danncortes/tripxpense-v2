@@ -12,7 +12,7 @@
         </md-input-container>
         <!--<input name="archivo" #archivo="ngModel" [ngModel]="archivo" type="text " placeholder="File " required> {{archivo.value}}-->
 
-        <input name="name2" #name2="ngModel" [ngModel]="form.name2" type="file" placeholder="Name" required> {{form.value | json}}
+        <input name="name2" #name2="ngModel" [ngModel]="form.name2" type="file" placeholder="Name" (change)="inputFileFunc($event)" required> {{form.value | json}}
 
 
         <section fxFlex="100" fxLayout="row" fxLayoutAlign="end start">

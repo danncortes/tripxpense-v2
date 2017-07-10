@@ -40,6 +40,12 @@ export class CategoryCreateComponent implements OnInit {
     console.log(this.form)
   }
 
+  inputFileFunc(event){
+    let inputValue =  event.target.value.replace('C:\\fakepath\\', '');
+    console.log(inputValue);
+
+  }
+
   createCategory(formData){
     console.log(formData)
   }

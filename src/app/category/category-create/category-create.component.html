@@ -11,10 +11,10 @@
             </md-error>
         </md-input-container>
         <md-input-container fxFlex="100">
-            <input mdInput [formControl]="createCategoryForm.controls['pic']" type="text" placeholder="Pic" required readonly>
+            <input mdInput [formControl]="createCategoryForm.controls['pic']" type="text" placeholder="File Icon" required readonly>
             <md-hint align="start">Select below a .PNG file as Category Icon </md-hint>
             <md-error>
-                <span *ngIf="createCategoryForm.controls.pic.invalid">A name is required</span>
+                <span *ngIf="createCategoryForm.controls.pic.invalid">A file is required</span>
             </md-error>
         </md-input-container>
 

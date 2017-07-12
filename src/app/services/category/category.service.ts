@@ -18,6 +18,13 @@ export class CategoryService {
       );
   }
 
+  create(category) {
+    return this.http.post(environment.apiUrl + '/category/create', category)
+      .map(
+        (data): any => data.json()
+      );
+  }
+
   delete(id){
     return this.http.delete(environment.apiUrl + '/category/' + id)
       .map(

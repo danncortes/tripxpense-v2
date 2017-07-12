@@ -31,7 +31,8 @@ export class CategoryCreateComponent implements OnInit {
     this.createCategoryForm = formBuilder.group({
       'name' :  ['', Validators.required],
       'sort' : '',
-      'pic': ['', Validators.required]
+      'pic': ['', Validators.required],
+      'file' : ''
     });
   }
 
@@ -40,10 +41,29 @@ export class CategoryCreateComponent implements OnInit {
 
   selectInputFile(event){
     this.createCategoryForm.controls['pic'].setValue(event.target.files[0].name);
+    this.createCategoryForm.controls['file'].setValue(event.target.files[0]);
   }
 
   createCategory(formData){
-    console.log('datos', formData)
+    this.processing = true;
+    console.log(formData)
+    this.categoryService.create(formData)
+      .subscribe(
+          (data) => {
+              this.processing = false;
+              this.dialogRef.close(true);
+              this.toastService.success({message: 'Category Created!'});
+          },
+          (err) => {
+              this.processing = false;
+              this.dialogRef.close(false);
+              if(err.status === 422){
+                  this.toastService.error({message: 'The name has been already taken!'});
+                  return;
+              }
+              this.toastService.error({message: 'An error has occur!'});
+          }
+      )
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryService } from '../../services/category/category.service';
 import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
+import { CategoryService } from '../../services/category/category.service';
 import { CategoryCreateComponent } from '../category-create/category-create.component';
 
 @Component({

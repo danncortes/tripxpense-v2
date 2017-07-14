@@ -1,30 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
-import { TravelService } from '../../services/travel/travel.service';
+import { Observable } from 'rxjs/Rx';
+import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
 
-@Component({
-  selector: 'app-travel-list',
-  templateUrl: './travel-list.component.html',
-  styleUrls: ['./travel-list.component.scss'],
-  providers:[
-    TravelService
-  ]
-})
-export class TravelListComponent implements OnInit {
+import { environment } from '../../../environments/environment';
 
-  processing: boolean;
-  travels:any
+import 'rxjs/Rx';
 
-  constructor(
-    private travelService: TravelService
-  ) { }
+@Injectable()
+export class TravelService {
 
-  ngOnInit() {
-    this.getTravels()
-  }
+  constructor(private http: Http) { }
 
-  getTravels(){
-    this.travels = [
+  get() {
+    return [
       {
         name: 'Usa',
         start_date: 1499961325000,
@@ -33,19 +21,19 @@ export class TravelListComponent implements OnInit {
         debit_start_balance: 1600,
         cash_start_balance: 1000,
         stats : {
-          'CREDIT CARD' : {
+          tdc : {
             current_balance: 2450,
             spent: 50,
             income: 0,
             operations:1
           },
-          'DEBIT_CARD' : {
+          debit : {
             current_balance: 1590,
             spent: 10,
             income: 0,
             operations:2
           },
-          'CASH' : {
+          cash : {
             current_balance: 1000,
             spent: 0,
             income: 0,
@@ -67,23 +55,23 @@ export class TravelListComponent implements OnInit {
         debit_start_balance: 1200,
         cash_start_balance: 900,
         stats : {
-          'CREDIT CARD' : {
+          tdc : {
             current_balance: 1650,
             spent: 150,
             income: 0,
             operations:3
           },
-          'DEBIT CARD' : {
+          debit : {
             current_balance: 1120,
             spent: 80,
             income: 0,
             operations:4
           },
-          'CASH' : {
+          cash : {
             current_balance: 1000,
             spent: 0,
             income: 100,
-            operations:2
+            operations:1
           },
           categories:{
             'food': {
@@ -95,5 +83,8 @@ export class TravelListComponent implements OnInit {
       }
     ]
   }
-
+    // return this.http.get(environment.apiUrl + '/category')
+    //   .map(
+    //     (data): any => data.json()
+    //   );
 }

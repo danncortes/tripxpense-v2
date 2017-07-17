@@ -1,13 +1,41 @@
-<md-card class="trip-md-card">
-    <p [innerHTML]="travel.name"></p>
-    <p [innerHTML]="travel.start_date | date:'EE. MM-d-y'"></p>
-    <p [innerHTML]="travel.finish_date | date:'EE. MM-d-y'"></p>
-    <p [innerHTML]="travel.start_tdc_balance"></p>
-    <p [innerHTML]="travel.current_tdc_balance"></p>
-    <p [innerHTML]="travel.start_tdd_balance"></p>
-    <p [innerHTML]="travel.current_tdd_balance"></p>
-    <p [innerHTML]="travel.start_cash_balance | number"></p>
-    <p [innerHTML]="travel.current_cash_balance"></p>
+<md-card class="trip-md-card travel-card">
+    <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
+        <h2 class="name" [innerHTML]="travel.name"></h2>
+        <div class="dates">
+            <span>Start: <span [innerHTML]="travel.start_date | date:'EE. MM-d-y'"></span></span>
+            <span>Finish: <span [innerHTML]="travel.finish_date | date:'EE. MM-d-y'"></span></span>
+        </div>
+    </div>
+    <div class="content">
+        <div class="table-data" fxLayout="row" fxLayoutWrap fxLayoutAlign="space-between start">
+            <div fxFlex="15"></div>
+            <div fxFlex="25">
+                <i class="material-icons">credit_card</i>
+            </div>
+            <div fxFlex="25">
+                <i class="material-icons">credit_card</i>
+            </div>
+            <div fxFlex="25">
+                <i class="material-icons">credit_card</i>
+            </div>
+            <div fxFlex="15">
+                <h4>Current</h4>
+                <h4>Initial</h4>
+            </div>
+            <div fxFlex="25">
+                <p [innerHTML]="travel.current_tdc_balance"></p>
+                <p [innerHTML]="travel.start_tdc_balance"></p>
+            </div>
+            <div fxFlex="25">
+                <p [innerHTML]="travel.current_cash_balance"></p>
+                <p [innerHTML]="travel.start_cash_balance | number"></p>
+            </div>
+            <div fxFlex="25">
+                <p [innerHTML]="travel.current_tdd_balance"></p>
+                <p [innerHTML]="travel.start_tdd_balance"></p>
+            </div>
+        </div>
+    </div>
     <div fxLayout="row" fxLayoutAlign="end start" class="area-controls">
         <button md-mini-fab (click)="editTravel(travel)"><md-icon>edit</md-icon> </button>
         <button md-mini-fab (click)="removeTravel(travel)"><md-icon>delete</md-icon> </button>

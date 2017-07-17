@@ -1,0 +1,30 @@
+.trip-md-card.travel-card {
+    padding: 0;
+    .header {
+        padding: 8px 12px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        .name {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 200;
+        }
+        .dates {
+            span {
+                color: rgba(255, 255, 255, 0.2);
+                font-size: 11px;
+                &:first-child span {
+                    margin-right: 10px;
+                }
+                span {
+                    font-size: 12px;
+                    font-weight: 200;
+                    color: rgba(255, 255, 255, 0.4);
+                }
+            }
+        }
+    }
+    .content {
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        padding: 16px;
+    }
+}

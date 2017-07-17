@@ -5,7 +5,7 @@
 
     <form action="" [formGroup]="createPayMethodForm" (ngSubmit)="createPaymethod(createPayMethodForm.value)" fxLayoutWrap fxLayout="row">
         <md-input-container fxFlex="100">
-            <input #name mdInput type="text" placeholder="Name" [formControl]="createPayMethodForm.controls['name']" required>
+            <input mdInput type="text" placeholder="Name" [formControl]="createPayMethodForm.controls['name']" required>
 
             <md-error>
                 <span *ngIf="createPayMethodForm.controls.name.invalid">A name is required</span>

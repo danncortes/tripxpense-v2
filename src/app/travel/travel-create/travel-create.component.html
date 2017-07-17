@@ -1,0 +1,55 @@
+<md-toolbar class="dialog-header">
+    <span>Create a Travel</span>
+</md-toolbar>
+<section class="trip-md-dialog-container">
+
+    <form action="" [formGroup]="createTravelForm" (ngSubmit)="createTravel(createTravelForm.value)" fxLayoutWrap fxLayout="row">
+        <md-input-container fxFlex="100">
+            <input mdInput type="text" placeholder="Name" [formControl]="createTravelForm.controls['name']" required>
+            <md-error>
+                <span *ngIf="createTravelForm.controls.name.invalid">A name is required</span>
+            </md-error>
+        </md-input-container>
+
+        <div fxLayoutWrap fxLayout="row" fxLayoutAlign="space-between start" fxFlex="100">
+            <md-input-container fxFlex="45">
+                <input mdInput [mdDatepicker]="startDatePicker" [formControl]="createTravelForm.controls['start_date']" placeholder="Choose an start date" required>
+                <button mdSuffix [mdDatepickerToggle]="startDatePicker"></button>
+                <md-error>
+                    <span *ngIf="createTravelForm.controls.start_date.invalid">As start date is required</span>
+                </md-error>
+            </md-input-container>
+            <md-datepicker #startDatePicker></md-datepicker>
+
+            <md-input-container fxFlex="45">
+                <input mdInput [mdDatepicker]="endDatePicker" [formControl]="createTravelForm.controls['finish_date']" placeholder="Choose a finish date" required>
+                <button mdSuffix [mdDatepickerToggle]="endDatePicker"></button>
+                <md-error>
+                    <span *ngIf="createTravelForm.controls.finish_date.invalid">As finish date is required</span>
+                </md-error>
+            </md-input-container>
+            <md-datepicker #endDatePicker></md-datepicker>
+        </div>
+
+
+        <div fxLayoutWrap fxLayout="row" fxLayoutAlign="space-between start" fxFlex="100">
+            <md-input-container fxFlex="30">
+                <input mdInput type="number" placeholder="Cash Balance" [formControl]="createTravelForm.controls['start_cash_balance']">
+            </md-input-container>
+            <md-input-container fxFlex="30">
+                <input mdInput type="number" placeholder="Credit Card Balance" [formControl]="createTravelForm.controls['start_tdc_balance']">
+            </md-input-container>
+            <md-input-container fxFlex="30">
+                <input mdInput type="number" placeholder="Debit Card Balance" [formControl]="createTravelForm.controls['start_tdd_balance']">
+            </md-input-container>
+        </div>
+
+
+        <section fxFlex="100" fxLayout="row" fxLayoutAlign="end start">
+            <button type="submit" md-raised-button color="primary" [disabled]="createTravelForm.invalid || processing">
+        <span *ngIf="!this.processing">Create</span>
+        <md-spinner *ngIf="this.processing"></md-spinner>
+      </button>
+        </section>
+    </form>
+</section>

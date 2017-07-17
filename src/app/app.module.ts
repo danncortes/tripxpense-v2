@@ -31,6 +31,8 @@ import { AuthService } from './services/auth-service/auth.service';
 import { AuthGuardService } from './services/auth-guard/auth-guard.service';
 import { AdminGuardService } from './services/admin-guard/admin-guard.service';
 import { CategoryCreateComponent } from './category/category-create/category-create.component';
+import { TravelItemComponent } from './travel/travel-item/travel-item.component';
+import { TravelCreateComponent } from './travel/travel-create/travel-create.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { CategoryCreateComponent } from './category/category-create/category-cre
     CategoryListComponent,
     CategoryItemComponent,
     ProfileComponent,
-    CategoryCreateComponent
+    CategoryCreateComponent,
+    TravelItemComponent,
+    TravelCreateComponent
   ],
   imports: [
 //Modules
@@ -65,6 +69,7 @@ import { CategoryCreateComponent } from './category/category-create/category-cre
   entryComponents:[
     PaymethodCreateComponent,
     CategoryCreateComponent,
+    TravelCreateComponent,
     PaymethodEditComponent,
     ToastComponent,
     ConfirmDialogComponent

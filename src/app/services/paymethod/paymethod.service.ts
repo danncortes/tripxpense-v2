@@ -25,11 +25,11 @@ export class PaymethodService {
       );
   }
 
-  create(payMethod){ 
+  create(payMethod) { 
     return this.http.post(environment.apiUrl + '/pay_method/create', payMethod)
         .map(
           data => data.json()
-        )
+        );
   }
 
   update(payMethod, id){
@@ -40,9 +40,9 @@ export class PaymethodService {
   }
 
   delete(id){
-	  return this.http.delete(environment.apiUrl + '/pay_method/' + id)
+    return this.http.delete(environment.apiUrl + '/pay_method/' + id)
       .map(
         data => data.json()
-      )
-	}
+      );
+  }
 }

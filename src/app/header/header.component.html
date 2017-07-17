@@ -11,7 +11,7 @@
                 </div>
                 <div *ngIf="auth.isAuthenticated()">
                     <button md-button routerLink="/auth/dashboard" routerLinkActive="active">Dashboard</button>
-                    <button md-button routerLink="/auth/operations" routerLinkActive="active">Operation</button>
+                    <button *ngIf="false" md-button routerLink="/auth/operations" routerLinkActive="active">Operation</button>
                     <button md-button routerLink="/auth/travels" routerLinkActive="active">Travels</button>
                     <span *ngIf="auth.isAdmin()">
                         <button md-button routerLink="/auth/paymethods" routerLinkActive="active">Payment Methods</button>

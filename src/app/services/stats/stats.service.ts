@@ -4,24 +4,16 @@ import { Http, Response } from '@angular/http';
 
 import { environment } from '../../../environments/environment';
 
-import 'rxjs/Rx';
-
 @Injectable()
-export class TravelService {
+export class StatsService {
 
   constructor(private http: Http) { }
 
-  get(userId) {
-    return this.http.get(environment.apiUrl + '/travel/' + userId)
+  getPayMethodTravel(userId) {
+    return this.http.get(environment.apiUrl + '/stats/paymethod_travel/' + userId)
       .map(
         (data): any => data.json()
       );
   }
 
-  create(travel) { 
-    return this.http.post(environment.apiUrl + '/travel/create', travel)
-        .map(
-          data => data.json()
-        );
-  }
 }

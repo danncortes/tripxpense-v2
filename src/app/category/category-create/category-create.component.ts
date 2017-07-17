@@ -46,7 +46,6 @@ export class CategoryCreateComponent implements OnInit {
 
   createCategory(formData){
     this.processing = true;
-    console.log(formData)
     this.categoryService.create(formData)
       .subscribe(
           (data) => {

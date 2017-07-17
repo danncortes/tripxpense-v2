@@ -1,5 +1,10 @@
-<p>
-    travel-list works!
-</p>
+<md-spinner class="spinner-loading-secc" *ngIf="this.processing"></md-spinner>
 
-{{ travels | json }}
+<section fxLayout="row" fxLayoutAlign="space-between center">
+    <h3 class="title-section">Travels</h3>
+    <button md-raised-button (click)="createTravelDialog()"><md-icon>add_circle</md-icon> Create Travel</button>
+</section>
+
+<div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start">
+    <app-travel-item fxFlex="100%" fxFlex.gt-xs="50%" (updateView)="ngOnInit()" *ngFor="let travel of travels" [travel]="travel"></app-travel-item>
+</div>

@@ -13,6 +13,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 
 //travel
 import { TravelListComponent } from '../travel/travel-list/travel-list.component';
+import { TravelDetailComponent } from '../travel/travel-detail/travel-detail.component';
 //Pay Methods
 import { PaymethodListComponent } from '../pay-method/paymethod-list/paymethod-list.component';
 //Categories
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch:'full'},
       { path: 'dashboard', component:DashboardComponent},
       { path: 'travels', component:TravelListComponent},
+      { path: 'travel', component:TravelDetailComponent},
       { path: 'paymethods', component:PaymethodListComponent, canActivate: [AdminGuardService]},
       { path: 'categories', component:CategoryListComponent, canActivate: [AdminGuardService]},
       { path: 'profile', component:ProfileComponent}

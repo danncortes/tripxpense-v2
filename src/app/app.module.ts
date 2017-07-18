@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
 import {MaterialDesignModule} from './material-design/material-design.module';
 
 import {RoutesModule} from './routes/routes.module';
@@ -33,6 +32,7 @@ import { AdminGuardService } from './services/admin-guard/admin-guard.service';
 import { CategoryCreateComponent } from './category/category-create/category-create.component';
 import { TravelItemComponent } from './travel/travel-item/travel-item.component';
 import { TravelCreateComponent } from './travel/travel-create/travel-create.component';
+import { TravelDetailComponent } from './travel/travel-detail/travel-detail.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,8 @@ import { TravelCreateComponent } from './travel/travel-create/travel-create.comp
     ProfileComponent,
     CategoryCreateComponent,
     TravelItemComponent,
-    TravelCreateComponent
+    TravelCreateComponent,
+    TravelDetailComponent
   ],
   imports: [
 //Modules

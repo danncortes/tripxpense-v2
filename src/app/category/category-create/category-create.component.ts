@@ -30,9 +30,9 @@ export class CategoryCreateComponent implements OnInit {
 
     this.createCategoryForm = formBuilder.group({
       'name' :  ['', Validators.required],
-      'sort' : '',
+      /*'sort' : '',
       'pic': ['', Validators.required],
-      'file' : ''
+      'file' : ''*/
     });
   }
 

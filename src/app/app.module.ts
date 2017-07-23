@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialDesignModule} from './material-design/material-design.module';
+import {ChartsModule} from 'ng2-charts';
 
 import {RoutesModule} from './routes/routes.module';
 
@@ -65,7 +66,8 @@ import { TravelDetailComponent } from './travel/travel-detail/travel-detail.comp
     HttpModule,
     MaterialDesignModule,
     RoutesModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ChartsModule
   ],
   entryComponents:[
     PaymethodCreateComponent,

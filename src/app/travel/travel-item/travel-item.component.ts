@@ -18,9 +18,36 @@ export class TravelItemComponent implements OnInit {
   @Input() travel: any;
   @Output() updateView = new EventEmitter();
 
-  constructor() { }
+  constructor(
+    private travelService: TravelService,
+    public toastService: ToastService,
+    public dialog: MdDialog
+  ) { }
 
   ngOnInit() {
+  }
+
+  removeTravel(travel) {
+    let message = 'The travel "' + this.travel.name + '" will be deleted!';
+
+    let dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '300px'
+    });
+    dialogRef.componentInstance.message = message; //Passing data to the Dialog, this is received as 'payMethod'
+    dialogRef.afterClosed().subscribe(response => {
+      if (response) {
+        this.travelService.delete(travel.id)
+          .subscribe(
+          data => {
+            this.updateView.emit();
+            this.toastService.success({ message: 'Travel Deleted!' });
+          },
+          (err) => {
+            this.toastService.error({ message: 'An error has occur!' });
+          }
+          );
+      }
+    });
   }
 
 }

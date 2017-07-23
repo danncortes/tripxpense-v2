@@ -24,4 +24,11 @@ export class TravelService {
           data => data.json()
         );
   }
+
+  delete(id){
+    return this.http.delete(environment.apiUrl + '/travel/' + id)
+      .map(
+        data => data.json()
+      );
+  }
 }

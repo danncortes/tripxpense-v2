@@ -25,6 +25,10 @@ body {
     margin: 0;
 }
 
+.title-area {
+    margin-bottom: 30px;
+}
+
 md-spinner.mat-spinner {
     &.mat-spinner {
         width: 28px;
@@ -86,8 +90,8 @@ md-input-container {
 }
 
 .area-controls button.mat-mini-fab {
-    width: 29px;
-    height: 29px;
+    width: 30px;
+    height: 30px;
     background-color: rgba(255, 255, 255, 0.1);
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     md-icon.material-icons {
@@ -105,5 +109,86 @@ md-input-container {
     }
     &.remove-button:hover {
         background-color: orangered;
+    }
+}
+
+.trip-md-card.travel-card {
+    margin: 12px;
+    margin-bottom: 15px;
+    padding: 0;
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    .header {
+        padding: 8px 12px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        .name {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 200;
+        }
+        .dates {
+            span {
+                color: rgba(255, 255, 255, 0.2);
+                font-size: 11px;
+                &:first-child span {
+                    margin-right: 10px;
+                }
+                span {
+                    font-size: 12px;
+                    font-weight: 200;
+                    color: rgba(255, 255, 255, 0.4);
+                }
+            }
+        }
+    }
+    .content {
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        padding: 16px 16px 12px 16px;
+    }
+    .title {
+        margin: 0 0 6px 0;
+        font-weight: 200;
+        font-size: 13px;
+        i {
+            margin-right: 5px;
+            font-size: 18px;
+        }
+    }
+    .initial {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.4);
+    }
+    .tags {
+        span {
+            display: block;
+            padding: 7px;
+            text-align: right;
+            font-weight: 200;
+        }
+    }
+    .capsule {
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 7px 9px;
+        border-radius: 4px;
+        border-top: 1px solid rgba(0, 0, 0, 0.45);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        p {
+            margin: 0;
+            font-weight: 200;
+        }
+        .current {
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            color: mediumseagreen;
+        }
+        .initial {
+            padding-top: 6px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+    .area-controls {
+        padding: 0 16px 14px 16px;
     }
 }

@@ -48,8 +48,6 @@ export class TravelCreateComponent implements OnInit {
 
     formData.user_id = this.getUserId();
 
-    console.log(formData);
-
     this.processing = true;
 
     this.travelService.create(formData)

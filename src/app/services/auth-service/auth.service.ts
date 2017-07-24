@@ -93,4 +93,8 @@ export class AuthService {
     let profile = JSON.parse(localStorage.getItem('profile'));
     return profile && profile.hasOwnProperty('admin') ? profile.admin : false;
   }
+
+  public getUserId():any {
+    return JSON.parse(localStorage.getItem('profile')).identities[0].user_id;
+  }
 }

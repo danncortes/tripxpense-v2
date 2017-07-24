@@ -1,0 +1,51 @@
+<div class="header" fxLayout="row" fxLayoutAlign="space-between center">
+    <h2 class="name" [innerHTML]="travel.name"></h2>
+    <div class="dates">
+        <span>Start: <span [innerHTML]="travel.start_date | date:'EE. MM-d-y'"></span></span>
+        <span>Finish: <span [innerHTML]="travel.finish_date | date:'EE. MM-d-y'"></span></span>
+    </div>
+</div>
+<div class="content">
+    <div class="table-data" fxLayout="row" fxLayoutWrap fxLayoutAlign="space-between start">
+        <div fxFlex="15"></div>
+        <div fxFlex="25">
+            <h4 class="title" fxLayout="row" fxLayoutAlign="start center">
+                <i class="material-icons">credit_card</i> <span>Credit Card</span>
+            </h4>
+        </div>
+        <div fxFlex="25">
+            <h4 class="title" fxLayout="row" fxLayoutAlign="start center">
+                <i class="material-icons">credit_card</i> <span>Cash</span>
+            </h4>
+        </div>
+        <div fxFlex="25">
+            <h4 class="title" fxLayout="row" fxLayoutAlign="start center">
+                <i class="material-icons">credit_card</i> <span>Debit Cards</span>
+            </h4>
+        </div>
+        <div fxFlex="15">
+            <div class="tags">
+                <span class="current">Current</span>
+                <span class="initial">Initial</span>
+            </div>
+        </div>
+        <div fxFlex="25">
+            <div class="capsule">
+                <p class="current" [innerHTML]="travel.current_tdc_balance"></p>
+                <p class="initial" [innerHTML]="travel.start_tdc_balance"></p>
+            </div>
+        </div>
+        <div fxFlex="25">
+            <div class="capsule">
+                <p class="current" [innerHTML]="travel.current_cash_balance"></p>
+                <p class="initial" [innerHTML]="travel.start_cash_balance | number"></p>
+            </div>
+        </div>
+        <div fxFlex="25">
+            <div class="capsule">
+                <p class="current" [innerHTML]="travel.current_tdd_balance"></p>
+                <p class="initial" [innerHTML]="travel.start_tdd_balance"></p>
+            </div>
+        </div>
+    </div>
+</div>

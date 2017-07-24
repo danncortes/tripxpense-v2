@@ -4,6 +4,7 @@ import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { TravelService } from '../../services/travel/travel.service';
 import { RouterModule, Router} from '@angular/router';
 import {ToastService} from '../../services/toast/toast.service';
+import { AuthService } from '../../services/auth-service/auth.service';
 
 @Component({
   selector: 'app-travel-create',
@@ -24,7 +25,8 @@ export class TravelCreateComponent implements OnInit {
     formBuilder: FormBuilder,
     private travelService: TravelService,
     private router: Router,
-    public toastService: ToastService
+    public toastService: ToastService,
+    public auth: AuthService
   ) {
 
     this.createTravelForm = formBuilder.group({
@@ -40,13 +42,9 @@ export class TravelCreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  getUserId() {
-    return JSON.parse(localStorage.getItem('profile')).clientID;
-  }
-
   createTravel(formData) {
 
-    formData.user_id = this.getUserId();
+    formData.user_id = this.auth.getUserId();
 
     this.processing = true;
 

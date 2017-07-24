@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
 import { TravelService } from '../../services/travel/travel.service';
 import { TravelCreateComponent } from '../travel-create/travel-create.component';
+import { AuthService } from '../../services/auth-service/auth.service';
 
 @Component({
   selector: 'app-travel-list',
@@ -15,25 +16,22 @@ export class TravelListComponent implements OnInit {
 
   processing: boolean;
   travels: any;
-  userId: string =  this.getUserId();
 
   constructor(
     private travelService: TravelService,
     public dialog: MdDialog,
-    public snackBar: MdSnackBar
+    public snackBar: MdSnackBar,
+    public auth: AuthService
   ) { }
 
   ngOnInit() {
     this.getTravels();
   }
 
-  getUserId() {
-    return JSON.parse(localStorage.getItem('profile')).clientID;
-  }
-
   getTravels(){
+    var userId = this.auth.getUserId();
     this.processing = true;
-    this.travelService.get(this.userId).subscribe(
+    this.travelService.get(userId).subscribe(
       data => {
         this.travels = data;
         this.processing = false;

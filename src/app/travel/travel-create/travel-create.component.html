@@ -34,13 +34,13 @@
 
         <div fxLayoutWrap fxLayout="row" fxLayoutAlign="space-between start" fxFlex="100">
             <md-input-container fxFlex="30">
-                <input mdInput type="number" placeholder="Cash Balance" [formControl]="createTravelForm.controls['start_cash_balance']">
+                <input mdInput type="number" min="0" placeholder="Credit Card Balance" [formControl]="createTravelForm.controls['start_tdc_balance']">
             </md-input-container>
             <md-input-container fxFlex="30">
-                <input mdInput type="number" placeholder="Credit Card Balance" [formControl]="createTravelForm.controls['start_tdc_balance']">
+                <input mdInput type="number" min="0" placeholder="Cash Balance" [formControl]="createTravelForm.controls['start_cash_balance']">
             </md-input-container>
             <md-input-container fxFlex="30">
-                <input mdInput type="number" placeholder="Debit Card Balance" [formControl]="createTravelForm.controls['start_tdd_balance']">
+                <input mdInput type="number" min="0" placeholder="Debit Card Balance" [formControl]="createTravelForm.controls['start_tdd_balance']">
             </md-input-container>
         </div>
 

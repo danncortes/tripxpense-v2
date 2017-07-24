@@ -25,6 +25,13 @@ export class TravelService {
         );
   }
 
+  update(formData, travel_id){
+    return this.http.put(environment.apiUrl + '/travel/update/' + travel_id, formData)
+        .map(
+          data => data.json()
+        );
+  }
+
   delete(id){
     return this.http.delete(environment.apiUrl + '/travel/' + id)
       .map(

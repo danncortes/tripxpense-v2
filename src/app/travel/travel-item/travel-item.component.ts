@@ -3,6 +3,7 @@ import { TravelService } from '../../services/travel/travel.service';
 import { ToastService } from '../../services/toast/toast.service';
 import { MdDialog, MdDialogRef } from '@angular/material';
 import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
+import { TravelEditComponent } from '../travel-edit/travel-edit.component';
 
 @Component({
   selector: 'app-travel-item',
@@ -46,6 +47,19 @@ export class TravelItemComponent implements OnInit {
             this.toastService.error({ message: 'An error has occur!' });
           }
           );
+      }
+    });
+  }
+
+  editTravel(travel){
+    let dialogRef = this.dialog.open(TravelEditComponent, {
+      width: '500px'
+    });
+
+    dialogRef.componentInstance.travel = travel; //Passing data to the Dialog, this is received as 'payMethod'
+    dialogRef.afterClosed().subscribe(data => {
+      if(data){
+        this.updateView.emit();
       }
     });
   }

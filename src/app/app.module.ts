@@ -34,6 +34,7 @@ import { CategoryCreateComponent } from './category/category-create/category-cre
 import { TravelItemComponent } from './travel/travel-item/travel-item.component';
 import { TravelCreateComponent } from './travel/travel-create/travel-create.component';
 import { TravelDetailComponent } from './travel/travel-detail/travel-detail.component';
+import { TravelEditComponent } from './travel/travel-edit/travel-edit.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { TravelDetailComponent } from './travel/travel-detail/travel-detail.comp
     CategoryCreateComponent,
     TravelItemComponent,
     TravelCreateComponent,
-    TravelDetailComponent
+    TravelDetailComponent,
+    TravelEditComponent
   ],
   imports: [
 //Modules
@@ -74,6 +76,7 @@ import { TravelDetailComponent } from './travel/travel-detail/travel-detail.comp
     CategoryCreateComponent,
     TravelCreateComponent,
     PaymethodEditComponent,
+    TravelEditComponent,
     ToastComponent,
     ConfirmDialogComponent
   ],

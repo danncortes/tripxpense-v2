@@ -88,7 +88,7 @@ export class TravelDetailComponent implements OnInit {
         }
         this.hasOperations = data.find(function (d) {
           return d.operations > 0;
-        }).operations ? true : false;
+        }) === undefined ? false : true;
         this.stats = stats;
         this.processing = false;
         }

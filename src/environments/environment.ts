@@ -6,5 +6,6 @@
 export const environment = {
   production: false,
   envName: 'dev',
-  apiUrl : 'http://localhost:8888/www/develop/proyectos/tripxpense-api/public'
+  apiUrl : 'http://localhost:8888/www/develop/proyectos/tripxpense-api/public',
+  callback: 'http://localhost:4200/callback'
 };

@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialDesignModule} from './material-design/material-design.module';
 import {ChartsModule} from 'ng2-charts';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 import {RoutesModule} from './routes/routes.module';
 
@@ -80,7 +81,7 @@ import { TravelEditComponent } from './travel/travel-edit/travel-edit.component'
     ToastComponent,
     ConfirmDialogComponent
   ],
-  providers: [AuthService, AuthGuardService, AdminGuardService],
+  providers: [AuthService, AuthGuardService, AdminGuardService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -44,7 +44,7 @@ local_path: dist
 exclude:
     - .gitignore
     - dandelion.yml
-````
+```
 
 ## Deploy to production
 

@@ -28,3 +28,39 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Setting Deployment
+
+Create a file `dandelion.yml` with the next content.
+
+```
+adapter: sftp
+host: hostname.com
+username: username
+password: your_password
+path: public_html/tripxpense-v2
+local_path: dist
+
+exclude:
+    - .gitignore
+    - dandelion.yml
+````
+
+## Deploy to production
+
+Run `ng build --prod`.
+Run `dandelion deploy`.
+
+## .htaccess for Production
+
+Create a file .htaccess in the project directory with the next content:
+
+```
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+RewriteRule ^(.*) /index.html [NC,L]
+```

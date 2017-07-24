@@ -41,7 +41,7 @@ export class TravelDetailComponent implements OnInit {
   getStats(params){
     this.statsService.getPayMethodTravel(params).subscribe(
       data => {
-        var stats = {
+        /*var stats = {
           paymethod : {
             type : 'doughnut',
             options : {
@@ -85,11 +85,12 @@ export class TravelDetailComponent implements OnInit {
             stats.paymethod['operations'].labels.push(data[key].paymethod_name);
             stats.paymethod['operations'].data.push(data[key].operations);
           }
-        }
-        this.hasOperations = data.find(function (d) {
+        }*/
+        /*this.hasOperations = data.find(function (d) {
           return d.operations > 0;
-        }) === undefined ? false : true;
-        this.stats = stats;
+        }) === undefined ? false : true;*/
+        this.stats = data;
+        console.log(this.stats)
         this.processing = false;
         }
     );

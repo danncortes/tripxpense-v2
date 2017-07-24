@@ -14,7 +14,7 @@ export class TravelService {
   get(userId) {
     return this.http.get(environment.apiUrl + '/travel/' + userId)
       .map(
-        (data): any => data.json()
+        data => data.json()
       );
   }
 

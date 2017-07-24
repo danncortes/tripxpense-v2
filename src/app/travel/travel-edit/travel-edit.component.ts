@@ -41,6 +41,7 @@ export class TravelEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(typeof this.travel.operations === 'string');
     this.hasOperations = this.travel.operations === 0 ? false : true;
     if(this.hasOperations){
       this.editTravelForm.controls.start_cash_balance.disable();

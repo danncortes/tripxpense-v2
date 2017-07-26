@@ -1,0 +1,20 @@
+<section *ngIf="!processing" class="charts_per_paymethod" fxLayout="row" fxLayoutAlign="space-between start">
+    <div fxFlex="30">
+        <h3 class="title">Spent</h3>
+        <div style="display: block">
+            <canvas baseChart [data]="stats.paymethod.spent.data" [colors]="stats.paymethod.spent.colors" [labels]="stats.paymethod.spent.labels" [options]="stats.paymethod.options" [chartType]="stats.paymethod.type" (chartHover)="chartHovered($event)"></canvas>
+        </div>
+    </div>
+    <div fxFlex="30">
+        <h3 class="title">Operations</h3>
+        <div style="display: block">
+            <canvas baseChart [data]="stats.paymethod.operations.data" [colors]="stats.paymethod.operations.colors" [labels]="stats.paymethod.operations.labels" [options]="stats.paymethod.options" [chartType]="stats.paymethod.type" (chartHover)="chartHovered($event)"></canvas>
+        </div>
+    </div>
+    <div fxFlex="30">
+        <h3 class="title">Income</h3>
+        <div style="display: block">
+            <canvas baseChart [data]="stats.paymethod.income.data" [colors]="stats.paymethod.income.colors" [labels]="stats.paymethod.income.labels" [options]="stats.paymethod.options" [chartType]="stats.paymethod.type" (chartHover)="chartHovered($event)"></canvas>
+        </div>
+    </div>
+</section>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
 import { StatsService } from '../../services/stats/stats.service';
-import { chartsConfig } from '../../../assets/charts.config';
 
 @Component({
   selector: 'app-travel-detail',
@@ -16,7 +15,7 @@ export class TravelDetailComponent implements OnInit {
   travel: any;
   processing: boolean;
   stats: object;
-  hasOperations: boolean;
+  statsParam: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,70 +29,12 @@ export class TravelDetailComponent implements OnInit {
       .queryParams
       .subscribe(travel => {
         this.travel = travel;
-        const params = {
+        this.statsParam = {
           user_id: travel.user_id,
           travel_id: travel.id
         };
-        this.getStats(params);
-      });
-  }
-
-  getStats(params){
-    this.statsService.getPayMethodTravel(params).subscribe(
-      data => {
-        /*var stats = {
-          paymethod : {
-            type : 'doughnut',
-            options : {
-              legend : {
-                position : 'bottom',
-                labels : {
-                  fontSize: 11,
-                  usePointStyle : true
-                }
-              }
-            },
-            income : {
-              labels : [],
-              data : [],
-              colors : [{
-                backgroundColor: chartsConfig.colors.income
-              }]
-            },
-            spent : {
-              labels : [],
-              data : [],
-              colors : [{
-                backgroundColor: chartsConfig.colors.spent
-              }]
-            },
-            operations : {
-              labels : [],
-              data : [],
-              colors : [{
-                backgroundColor: chartsConfig.colors.operations
-              }]
-            }
-          }
-        };
-        for (let key in data) {
-          if (key) {
-            stats.paymethod['income'].labels.push(data[key].paymethod_name);
-            stats.paymethod['income'].data.push(data[key].income);
-            stats.paymethod['spent'].labels.push(data[key].paymethod_name);
-            stats.paymethod['spent'].data.push(data[key].spent);
-            stats.paymethod['operations'].labels.push(data[key].paymethod_name);
-            stats.paymethod['operations'].data.push(data[key].operations);
-          }
-        }*/
-        /*this.hasOperations = data.find(function (d) {
-          return d.operations > 0;
-        }) === undefined ? false : true;*/
-        this.stats = data;
-        console.log(this.stats)
         this.processing = false;
-        }
-    );
+      });
   }
 
 }

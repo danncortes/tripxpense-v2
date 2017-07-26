@@ -36,6 +36,8 @@ import { TravelCreateComponent } from './travel/travel-create/travel-create.comp
 import { TravelDetailComponent } from './travel/travel-detail/travel-detail.component';
 import { TravelEditComponent } from './travel/travel-edit/travel-edit.component';
 import { TravelCardContentComponent } from './travel/travel-card-content/travel-card-content.component';
+import { PaymethodStatsComponent } from './stats/paymethod-stats/paymethod-stats.component';
+import { CategoryStatsComponent } from './stats/category-stats/category-stats.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { TravelCardContentComponent } from './travel/travel-card-content/travel-
     TravelCreateComponent,
     TravelDetailComponent,
     TravelEditComponent,
-    TravelCardContentComponent
+    TravelCardContentComponent,
+    PaymethodStatsComponent,
+    CategoryStatsComponent
   ],
   imports: [
 //Modules

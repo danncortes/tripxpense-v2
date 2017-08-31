@@ -1,5 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { chartsConfig } from '../../../assets/charts.config';
+import { chartsColorConfig } from '../../../assets/charts.config';
 import { StatsService } from '../../services/stats/stats.service';
 
 @Component({
@@ -42,21 +42,21 @@ export class PaymethodStatsComponent implements OnInit {
               labels : [],
               data : [],
               colors : [{
-                backgroundColor: chartsConfig.colors.income
+                backgroundColor: chartsColorConfig.colors.income
               }]
             },
             spent : {
               labels : [],
               data : [],
               colors : [{
-                backgroundColor: chartsConfig.colors.spent
+                backgroundColor: chartsColorConfig.colors.spent
               }]
             },
             operations : {
               labels : [],
               data : [],
               colors : [{
-                backgroundColor: chartsConfig.colors.operations
+                backgroundColor: chartsColorConfig.colors.operations
               }]
             }
           }

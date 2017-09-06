@@ -39,3 +39,21 @@ export const chartPayMethodConfig = {
     }]
   }
 };
+
+export const chartCategoryConfig = {
+  type : 'doughnut',
+  options : {
+    legend : {
+      position : 'bottom',
+      labels : {
+        fontSize: 11,
+        usePointStyle : true
+      }
+    }
+  },
+  labels : ['Ropa', 'electronics', 'food'],
+  data : [[10, 20, 30], [50, 60, 90]],
+  colors : [{
+    backgroundColor: ['#e65c00', '#b34700', '#803300']
+  }]
+};

@@ -1,3 +1,7 @@
 <p>
-  category-stats works!
+    category-stats works!
 </p>
+
+<div style="display: block" *ngIf="!processing">
+    <canvas baseChart [data]="stats.category.data" [colors]="stats.category.colors" [labels]="stats.category.labels" [options]="stats.category.options" [chartType]="stats.category.type" (chartHover)="chartHovered($event)"></canvas>
+</div>

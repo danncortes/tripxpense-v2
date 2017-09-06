@@ -1,5 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { chartsColorConfig } from '../../../assets/charts.config';
+import { chartPayMethodConfig } from '../../../assets/charts.config';
 import { StatsService } from '../../services/stats/stats.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class PaymethodStatsComponent implements OnInit {
 
   @Input() statsParam: any;
   processing: boolean;
-  stats:object;
+  stats: Object;
   hasOperations: boolean;
 
   constructor(
@@ -22,45 +23,20 @@ export class PaymethodStatsComponent implements OnInit {
     this.getStats(this.statsParam);
   }
 
-  getStats(statsParam){
+  getStats(statsParam) {
     this.processing = true;
     this.statsService.getPayMethodTravel(statsParam).subscribe(
       data => {
-        var stats = {
-          paymethod : {
-            type : 'doughnut',
-            options : {
-              legend : {
-                position : 'bottom',
-                labels : {
-                  fontSize: 11,
-                  usePointStyle : true
-                }
-              }
-            },
-            income : {
-              labels : [],
-              data : [],
-              colors : [{
-                backgroundColor: chartsColorConfig.colors.income
-              }]
-            },
-            spent : {
-              labels : [],
-              data : [],
-              colors : [{
-                backgroundColor: chartsColorConfig.colors.spent
-              }]
-            },
-            operations : {
-              labels : [],
-              data : [],
-              colors : [{
-                backgroundColor: chartsColorConfig.colors.operations
-              }]
-            }
-          }
+        const stats = {
+          paymethod : chartPayMethodConfig
         };
+
+        stats.paymethod['income'].labels = [];
+        stats.paymethod['income'].data = [];
+        stats.paymethod['spent'].labels = [];
+        stats.paymethod['spent'].data = [];
+        stats.paymethod['operations'].labels = [];
+        stats.paymethod['operations'].data = [];
 
         for (let key in data) {
           if (key) {

@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
 import { environment } from '../../../environments/environment';
-import { chartsConfig } from '../../../assets/charts.config';
 
 import 'rxjs/Rx';
 

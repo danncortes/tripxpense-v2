@@ -1,6 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { chartsConfig } from '../../../assets/charts.config';
 import { StatsService } from '../../services/stats/stats.service';
+import { chartsColorConfig } from '../../../assets/charts.config';
+import { chartCategoryConfig } from '../../../assets/charts.config';
 
 @Component({
   selector: 'app-category-stats',
@@ -11,7 +12,7 @@ export class CategoryStatsComponent implements OnInit {
 
   @Input() statsParam: any;
   processing: boolean;
-  stats:object;
+  stats: Object;
   hasOperations: boolean;
 
   constructor(
@@ -27,6 +28,12 @@ export class CategoryStatsComponent implements OnInit {
     this.statsService.getCategoryTravel(statsParam).subscribe(
       data => {
         console.log(data);
+        const stats = {
+          category : chartCategoryConfig
+        };
+        this.stats = stats;
+        this.processing = false;
+        console.log(stats)
       }
     );
   }

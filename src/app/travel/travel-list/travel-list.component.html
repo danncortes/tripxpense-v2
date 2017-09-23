@@ -1,10 +1,19 @@
-<md-spinner class="spinner-loading-secc" *ngIf="this.processing"></md-spinner>
+<md-spinner class="spinner-loading-secc"
+            *ngIf="this.processing"></md-spinner>
 
-<section class="title-area" fxLayout="row" fxLayoutAlign="space-between center">
-    <h3 class="title-section">Travels</h3>
-    <button md-raised-button (click)="createTravelDialog()"><md-icon>add_circle</md-icon> Create Travel</button>
-</section>
+<app-title-section (createEvent)="createTravelDialog()">
+    <span class="title">Travels</span>
+    <span class="button-text"> Create Travel</span>
+</app-title-section>
 
-<div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start" *ngIf="!this.processing">
-    <app-travel-item fxFlex="100%" fxFlex.gt-xs="50%" (updateView)="ngOnInit()" *ngFor="let travel of travels" [travel]="travel"></app-travel-item>
+<div fxLayout.gt-xs="row"
+     fxLayoutWrap
+     fxLayoutAlign="start start"
+     *ngIf="!this.processing">
+    <app-travel-item fxFlex="100%"
+                     fxFlex.gt-xs="50%"
+                     (edit)="editTravel($event)"
+                     (delete)="deleteTravel($event)"
+                     *ngFor="let travel of travels"
+                     [travel]="travel"></app-travel-item>
 </div>

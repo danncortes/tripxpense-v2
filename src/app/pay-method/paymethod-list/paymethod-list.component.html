@@ -1,9 +1,20 @@
-<md-spinner class="spinner-loading-secc" *ngIf="this.processing"></md-spinner>
+<md-spinner class="spinner-loading-secc"
+            *ngIf="this.processing"></md-spinner>
 
-<section class="title-area" fxLayout="row" fxLayoutAlign="space-between center">
-    <h3 class="title-section">Pay Methods</h3>
-    <button md-raised-button (click)="createPayMethodDialog()"><md-icon>add_circle</md-icon> Create Pay Method</button>
-</section>
-<div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start" *ngIf="!this.processing">
-    <app-paymethod-item fxFlex="100%" fxFlex.gt-xs="33.3%" (updateView)="ngOnInit()" *ngFor=" let payMethod of payMethods" [payMethod]="payMethod"></app-paymethod-item>
+<app-title-section (createEvent)="createPayMethodDialog()">
+        <span class="title">Pay Methods</span>
+        <span class="button-text"> Create Pay Method</span>
+</app-title-section>
+
+<div fxLayout.gt-xs="row"
+     fxLayoutWrap
+     fxLayoutAlign="start start"
+     *ngIf="!this.processing">
+
+        <app-paymethod-item fxFlex="100%"
+                            fxFlex.gt-xs="33.3%"
+                            (edit)="editPayMethod($event)"
+                            (delete)="deletePayMethod($event)"
+                            *ngFor=" let payMethod of payMethods"
+                            [payMethod]="payMethod"></app-paymethod-item>
 </div>

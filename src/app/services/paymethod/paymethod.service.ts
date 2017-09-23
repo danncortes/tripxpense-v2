@@ -18,8 +18,8 @@ export class PaymethodService {
       );
   }
 
-  find(data) {
-    return this.http.get(environment.apiUrl + '/pay_method/' + data.id)
+  find(id) {
+    return this.http.get(environment.apiUrl + '/pay_method/' + id)
       .map(
         (data): any => data.json()
       );

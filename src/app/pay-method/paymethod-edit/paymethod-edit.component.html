@@ -2,9 +2,9 @@
     <span>Edit a Pay Method</span>
 </md-toolbar>
 <section class="trip-md-dialog-container">
-    <form action="" [formGroup]="editPayMethodForm" (ngSubmit)="editPaymethod(editPayMethodForm.value)" fxLayoutWrap fxLayout="row">
+    <form action="" [formGroup]="editPayMethodForm" (ngSubmit)="editPaymethod(editPayMethodForm.value)" fxLayoutWrap fxLayout="row" novalidate>
         <md-input-container fxFlex="100">
-            <input #name mdInput type="email" placeholder="Name" [formControl]="editPayMethodForm.controls['name']" [value]="payMethod.name" required>
+            <input mdInput type="text" placeholder="Name" [formControl]="editPayMethodForm.controls['name']" [ngModel]="payMethod.name" required>
 
             <md-error>
                 <span *ngIf="editPayMethodForm.controls.name.invalid">A name is required</span>
@@ -12,7 +12,7 @@
         </md-input-container>
 
         <section fxFlex="100" fxLayout="row" fxLayoutAlign="end start">
-            <button type="submit" md-raised-button color="primary" [disabled]="editPayMethodForm.invalid || processing">
+            <button type="submit" md-raised-button color="primary" [disabled]="editPayMethodForm.invalid || processing || editPayMethodForm.pristine">
         <span *ngIf="!this.processing">Save</span>
         <md-spinner *ngIf="this.processing"></md-spinner>
       </button>

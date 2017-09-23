@@ -1,24 +1,41 @@
 <md-toolbar color="primary">
-    <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxFlex="100"
+         fxLayout="row"
+         fxLayoutAlign="space-between center">
         <div>
             LOGO
         </div>
         <div>
             <nav>
                 <div *ngIf="!auth.isAuthenticated()">
-                    <button md-button routerLink="/welcome" routerLinkActive="active">Welcome</button>
-                    <button md-button class="btn btn-primary btn-margin" (click)="auth.login()">Log In</button>
+                    <button md-button
+                            routerLink="/welcome"
+                            routerLinkActive="active">Welcome</button>
+                    <button md-button
+                            class="btn btn-primary btn-margin"
+                            (click)="auth.login()">Log In</button>
                 </div>
                 <div *ngIf="auth.isAuthenticated()">
-                    <button md-button routerLink="/auth/dashboard" routerLinkActive="active">Dashboard</button>
-                    <button *ngIf="false" md-button routerLink="/auth/operations" routerLinkActive="active">Operation</button>
-                    <button md-button routerLink="/auth/travels" routerLinkActive="active">Travels</button>
+                    <button md-button
+                            routerLink="/auth/dashboard"
+                            routerLinkActive="active">Dashboard</button>
+                    <button *ngIf="false"
+                            md-button
+                            routerLink="/auth/operations"
+                            routerLinkActive="active">Operation</button>
+                    <button md-button
+                            routerLink="/auth/travels"
+                            routerLinkActive="active">Travels</button>
                     <span *ngIf="auth.isAdmin()">
                         <button md-button routerLink="/auth/paymethods" routerLinkActive="active">Payment Methods</button>
                         <button md-button routerLink="/auth/categories" routerLinkActive="active">Categories</button>
                     </span>
-                    <button md-button routerLink="/auth/profile" routerLinkActive="active">Profile</button>
-                    <button md-button class="btn btn-primary btn-margin" (click)="auth.logout()">Log Out</button>
+                    <button md-button
+                            routerLink="/auth/profile"
+                            routerLinkActive="active">Profile</button>
+                    <button md-button
+                            class="btn btn-primary btn-margin"
+                            (click)="auth.logout()">Log Out</button>
                 </div>
             </nav>
         </div>

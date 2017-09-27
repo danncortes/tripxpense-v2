@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {MdDialog, MdDialogRef, DateAdapter} from '@angular/material';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { TravelService } from '../../services/travel/travel.service';
-import { RouterModule, Router} from '@angular/router';
 import {ToastService} from '../../services/toast/toast.service';
 import { AuthService } from '../../services/auth-service/auth.service';
 
@@ -24,7 +23,6 @@ export class TravelCreateComponent implements OnInit {
     public dialogRef: MdDialogRef<TravelCreateComponent>,
     formBuilder: FormBuilder,
     private travelService: TravelService,
-    private router: Router,
     public toastService: ToastService,
     public auth: AuthService
   ) {

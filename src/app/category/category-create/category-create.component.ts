@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CategoryService } from '../../services/category/category.service';
-import { RouterModule, Router } from '@angular/router';
 import { ToastService } from '../../services/toast/toast.service';
 
 @Component({
@@ -24,7 +23,6 @@ export class CategoryCreateComponent implements OnInit {
         public dialogRef: MdDialogRef<CategoryCreateComponent>,
         formBuilder: FormBuilder,
         private categoryService: CategoryService,
-        private router: Router,
         public toastService: ToastService
     ) {
 

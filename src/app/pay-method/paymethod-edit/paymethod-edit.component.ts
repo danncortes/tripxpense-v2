@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PaymethodService } from '../../services/paymethod/paymethod.service';
-import { RouterModule, Router } from '@angular/router';
 import { ToastService } from '../../services/toast/toast.service';
 
 @Component({
@@ -25,7 +24,6 @@ export class PaymethodEditComponent implements OnInit {
         public dialogRef: MdDialogRef<PaymethodEditComponent>,
         formBuilder: FormBuilder,
         private payMethodService: PaymethodService,
-        private router: Router,
         public toastService: ToastService
     ) {
         this.editPayMethodForm = formBuilder.group({

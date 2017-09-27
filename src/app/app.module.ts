@@ -38,7 +38,6 @@ import { TravelEditComponent } from './travel/travel-edit/travel-edit.component'
 import { TravelCardContentComponent } from './travel/travel-card-content/travel-card-content.component';
 import { PaymethodStatsComponent } from './stats/paymethod-stats/paymethod-stats.component';
 import { CategoryStatsComponent } from './stats/category-stats/category-stats.component';
-import { TitleComponent } from './ui/title/title.component';
 import { TitleSectionComponent } from './ui/title-section/title-section.component';
 
 @NgModule({
@@ -67,7 +66,6 @@ import { TitleSectionComponent } from './ui/title-section/title-section.componen
     TravelCardContentComponent,
     PaymethodStatsComponent,
     CategoryStatsComponent,
-    TitleComponent,
     TitleSectionComponent
   ],
   imports: [

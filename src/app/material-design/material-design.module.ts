@@ -2,9 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MdButtonModule, MdCheckboxModule, MdToolbarModule, MdCardModule, MdInputModule, MdProgressSpinnerModule, MaterialModule, MdNativeDateModule, MdDatepickerModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdCheckboxModule, MdToolbarModule, MdCardModule, MdInputModule } from '@angular/material';
 
-let modules = [
+import {MdProgressSpinnerModule, MdDatepickerModule, MdSnackBarModule, MdNativeDateModule } from '@angular/material';
+
+const modules = [
+  BrowserAnimationsModule,
   CommonModule,
   MdButtonModule,
   MdCheckboxModule,
@@ -13,16 +17,16 @@ let modules = [
   MdCardModule,
   MdInputModule,
   MdProgressSpinnerModule,
-  MaterialModule,
-  MdNativeDateModule,
-  MdDatepickerModule
+  MdDatepickerModule,
+  MdSnackBarModule,
+  MdNativeDateModule
 ];
 
 @NgModule({
   imports: [
     modules
   ],
-  exports:[
+  exports: [
     modules
   ],
   declarations: []

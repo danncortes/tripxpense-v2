@@ -14,7 +14,7 @@
         <div fxLayoutWrap fxLayout="row" fxLayoutAlign="space-between start" fxFlex="100">
             <md-input-container fxFlex="45">
                 <input mdInput [mdDatepicker]="startDatePicker" [formControl]="createTravelForm.controls['start_date']" placeholder="Choose an start date" required>
-                <button mdSuffix [mdDatepickerToggle]="startDatePicker"></button>
+                <md-datepicker-toggle mdSuffix [for]="startDatePicker"></md-datepicker-toggle>
                 <md-error>
                     <span *ngIf="createTravelForm.controls.start_date.invalid">As start date is required</span>
                 </md-error>
@@ -23,7 +23,7 @@
 
             <md-input-container fxFlex="45">
                 <input mdInput [mdDatepicker]="endDatePicker" [formControl]="createTravelForm.controls['finish_date']" placeholder="Choose a finish date" required>
-                <button mdSuffix [mdDatepickerToggle]="endDatePicker"></button>
+                <md-datepicker-toggle mdSuffix [for]="endDatePicker"></md-datepicker-toggle>
                 <md-error>
                     <span *ngIf="createTravelForm.controls.finish_date.invalid">As finish date is required</span>
                 </md-error>

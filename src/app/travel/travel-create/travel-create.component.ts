@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MdDialog, MdDialogRef, DateAdapter} from '@angular/material';
+import {MdDialog, MdDialogRef} from '@angular/material';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { TravelService } from '../../services/travel/travel.service';
 import {ToastService} from '../../services/toast/toast.service';

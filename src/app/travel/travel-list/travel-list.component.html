@@ -1,9 +1,11 @@
 <md-spinner class="spinner-loading-secc"
             *ngIf="this.processing"></md-spinner>
 
-<app-title-section (createEvent)="createTravelDialog()">
+<app-title-section>
     <span class="title">Travels</span>
-    <span class="button-text"> Create Travel</span>
+    <app-create-button (createEvent)="createTravelDialog()">
+        <span class="button-text"> Create Travel</span>
+    </app-create-button>
 </app-title-section>
 
 <div fxLayout.gt-xs="row"

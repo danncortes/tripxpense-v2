@@ -39,6 +39,8 @@ import { TravelCardContentComponent } from './travel/travel-card-content/travel-
 import { PaymethodStatsComponent } from './stats/paymethod-stats/paymethod-stats.component';
 import { CategoryStatsComponent } from './stats/category-stats/category-stats.component';
 import { TitleSectionComponent } from './ui/title-section/title-section.component';
+import { CreateButtonComponent } from './ui/create-button/create-button.component';
+import { TripMdCardComponent } from './ui/trip-md-card/trip-md-card.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,9 @@ import { TitleSectionComponent } from './ui/title-section/title-section.componen
     TravelCardContentComponent,
     PaymethodStatsComponent,
     CategoryStatsComponent,
-    TitleSectionComponent
+    TitleSectionComponent,
+    CreateButtonComponent,
+    TripMdCardComponent
   ],
   imports: [
 //Modules

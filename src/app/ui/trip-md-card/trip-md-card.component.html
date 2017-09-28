@@ -1,0 +1,12 @@
+<md-card class="trip-md-card-1">
+    <h3 class="title">
+        <ng-content select=".title-cont"></ng-content>
+    </h3>
+    <p class="desc">
+        <ng-content select=".desc-cont"></ng-content>
+    </p>
+    <div fxLayout="row"
+         fxLayoutAlign="end start">
+        <ng-content select=".area-controls"></ng-content>
+    </div>
+</md-card>

@@ -1,9 +1,11 @@
 <md-spinner class="spinner-loading-secc"
             *ngIf="this.processing"></md-spinner>
 
-<app-title-section (createEvent)="createCategoryDialog()">
+<app-title-section>
     <span class="title">Categories</span>
-    <span class="button-text"> Create Category</span>
+    <app-create-button (createEvent)="createCategoryDialog()">
+        <span class="button-text"> Create Category</span>
+    </app-create-button>
 </app-title-section>
 
 <div fxLayout.gt-xs="row"

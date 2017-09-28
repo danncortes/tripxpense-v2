@@ -41,7 +41,7 @@ export class CategoryListComponent implements OnInit {
     }
 
     createCategoryDialog = () => {
-        let dialogRef = this.dialog.open(CategoryCreateComponent, {
+        const dialogRef = this.dialog.open(CategoryCreateComponent, {
             width: '300px'
         });
         dialogRef.afterClosed().subscribe(data => {
@@ -52,9 +52,9 @@ export class CategoryListComponent implements OnInit {
     }
 
     deleteCategory(category) {
-        let message = 'The category "' + category.name + '" will be deleted!';
+        const message = 'The category "' + category.name + '" will be deleted!';
 
-        let dialogRef = this.dialog.open(ConfirmDialogComponent, {
+        const dialogRef = this.dialog.open(ConfirmDialogComponent, {
             width: '300px'
         });
         dialogRef.componentInstance.message = message; //Passing data to the Dialog, this is received as 'payMethod'

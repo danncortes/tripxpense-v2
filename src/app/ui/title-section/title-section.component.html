@@ -4,6 +4,5 @@
     <h3 class="title-section">
         <ng-content select=".title"></ng-content>
     </h3>
-    <button md-raised-button
-            (click)="create()"><md-icon class="material-icons">add_circle</md-icon><ng-content select=".button-text"></ng-content></button>
+    <ng-content select="app-create-button"></ng-content>
 </section>

@@ -1,9 +1,9 @@
-<md-card class="trip-md-card travel-card">
+<md-card class="trip-md-card-1 travel-card">
     <a [routerLink]="['/auth/travels/travel']" [queryParams]="travel">
         <app-travel-card-content [travel]="travel"></app-travel-card-content>
     </a>
     <div fxLayout="row" fxLayoutAlign="end start" class="area-controls">
-        <button class="edit-button" md-mini-fab (click)="editTravel(travel.id)"><md-icon class="material-icons">edit</md-icon> </button>
-        <button class="remove-button" md-mini-fab (click)="deleteTravel(travel)"><md-icon class="material-icons">delete</md-icon> </button>
+        <app-edit-button (click)="editTravel(travel.id)"></app-edit-button>
+        <app-delete-button (click)="deleteTravel(travel)"></app-delete-button>
     </div>
 </md-card>

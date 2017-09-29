@@ -52,26 +52,6 @@ md-dialog-container.mat-dialog-container {
     }
 }
 
-md-card.trip-md-card-1 {
-    padding: 16px;
-    background-color: #333;
-    color: #eee;
-    margin: 10px;
-    .title{
-        font-weight: 200;
-    }
-    .desc{
-        font-size: 14px;
-        color: rgba(255,255,255,0.6);
-        font-weight: 200;
-    }
-    .area-controls {
-        button {
-            margin-left: 7px;
-        }
-    }
-}
-
 app-paymethod-item {
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -120,7 +100,9 @@ md-input-container {
     }
 }
 
-.trip-md-card.travel-card {
+.trip-md-card-1.travel-card {
+    background-color: #333;
+    color: #eee;
     margin: 12px;
     margin-bottom: 15px;
     padding: 0;

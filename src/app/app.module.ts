@@ -41,6 +41,8 @@ import { CategoryStatsComponent } from './stats/category-stats/category-stats.co
 import { TitleSectionComponent } from './ui/title-section/title-section.component';
 import { CreateButtonComponent } from './ui/create-button/create-button.component';
 import { TripMdCardComponent } from './ui/trip-md-card/trip-md-card.component';
+import { DeleteButtonComponent } from './ui/buttons/delete-button/delete-button.component';
+import { EditButtonComponent } from './ui/buttons/edit-button/edit-button.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { TripMdCardComponent } from './ui/trip-md-card/trip-md-card.component';
     CategoryStatsComponent,
     TitleSectionComponent,
     CreateButtonComponent,
-    TripMdCardComponent
+    TripMdCardComponent,
+    DeleteButtonComponent,
+    EditButtonComponent
   ],
   imports: [
 //Modules

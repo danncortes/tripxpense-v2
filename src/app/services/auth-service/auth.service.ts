@@ -79,7 +79,7 @@ export class AuthService {
     localStorage.removeItem('expires_at');
     localStorage.removeItem('profile');
     // Go back to the home route
-    this.router.navigate(['/']);
+    this.router.navigate(['/welcome']);
   }
 
   public isAuthenticated(): boolean {

@@ -43,6 +43,7 @@ import { CreateButtonComponent } from './ui/create-button/create-button.componen
 import { TripMdCardComponent } from './ui/trip-md-card/trip-md-card.component';
 import { DeleteButtonComponent } from './ui/buttons/delete-button/delete-button.component';
 import { EditButtonComponent } from './ui/buttons/edit-button/edit-button.component';
+import { OperationListComponent } from './operation/operation-list/operation-list.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { EditButtonComponent } from './ui/buttons/edit-button/edit-button.compon
     CreateButtonComponent,
     TripMdCardComponent,
     DeleteButtonComponent,
-    EditButtonComponent
+    EditButtonComponent,
+    OperationListComponent,
   ],
   imports: [
 //Modules

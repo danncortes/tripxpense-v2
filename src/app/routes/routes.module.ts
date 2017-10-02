@@ -19,6 +19,8 @@ import { PaymethodListComponent } from '../pay-method/paymethod-list/paymethod-l
 //Categories
 import { CategoryListComponent } from '../category/category-list/category-list.component';
 
+
+import { OperationListComponent} from '../operation/operation-list/operation-list.component';
 import { AuthGuardService } from '../services/auth-guard/auth-guard.service';
 import { AdminGuardService } from '../services/admin-guard/admin-guard.service';
 
@@ -29,8 +31,9 @@ const appRoutes: Routes = [
   { path: 'auth', component:MainComponent, canActivate: [AuthGuardService], children:[
       { path: '', redirectTo: 'dashboard', pathMatch:'full'},
       { path: 'dashboard', component:DashboardComponent},
+      { path: 'operations', component:OperationListComponent},
       { path: 'travels', component:TravelListComponent},
-      { path: 'travels/travel', component:TravelDetailComponent},
+      { path: 'travels/travel', component: TravelDetailComponent},
       { path: 'paymethods', component:PaymethodListComponent, canActivate: [AdminGuardService]},
       { path: 'categories', component:CategoryListComponent, canActivate: [AdminGuardService]},
       { path: 'profile', component:ProfileComponent}

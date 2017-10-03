@@ -44,6 +44,7 @@ import { TripMdCardComponent } from './ui/trip-md-card/trip-md-card.component';
 import { DeleteButtonComponent } from './ui/buttons/delete-button/delete-button.component';
 import { EditButtonComponent } from './ui/buttons/edit-button/edit-button.component';
 import { OperationListComponent } from './operation/operation-list/operation-list.component';
+import { OperationCreateComponent } from './operation/operation-create/operation-create.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { OperationListComponent } from './operation/operation-list/operation-lis
     DeleteButtonComponent,
     EditButtonComponent,
     OperationListComponent,
+    OperationCreateComponent,
   ],
   imports: [
 //Modules
@@ -96,7 +98,8 @@ import { OperationListComponent } from './operation/operation-list/operation-lis
     PaymethodEditComponent,
     TravelEditComponent,
     ToastComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    OperationCreateComponent
   ],
   providers: [AuthService, AuthGuardService, AdminGuardService],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 <app-trip-md-card>
     <span class="title-cont" [innerHTML]="payMethod.name"></span>
     <div class="area-controls">
-      <app-edit-button (click)="deletePayMethod(payMethod)"></app-edit-button>
-        <app-delete-button (click)="editPayMethod(payMethod.id)"></app-delete-button>
+      <app-edit-button (click)="editPayMethod(payMethod.id)"></app-edit-button>
+        <app-delete-button (click)="deletePayMethod(payMethod)"></app-delete-button>
     </div>
 </app-trip-md-card>

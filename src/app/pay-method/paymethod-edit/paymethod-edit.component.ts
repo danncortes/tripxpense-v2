@@ -34,18 +34,18 @@ export class PaymethodEditComponent implements OnInit {
     ngOnInit() {
     }
 
-    editPaymethod(formData) {
-        let id = this.payMethod.id;
+    editPaymethod = formData => {
+        const id = this.payMethod.id;
         this.processing = true;
 
         this.payMethodService.update(formData, id)
             .subscribe(
-            (data) => {
+            data => {
                 this.processing = false;
                 this.dialogRef.close(true);
                 this.toastService.success({ message: 'Pay Method Saved!' });
             },
-            (err) => {
+            err => {
                 this.processing = false;
                 this.dialogRef.close(false);
                 if (err.status === 422) {

@@ -19,11 +19,7 @@ export class PaymethodItemComponent implements OnInit {
     ngOnInit() {
     }
 
-    editPayMethod = (id) => {
-        this.edit.emit(id);
-    }
+    editPayMethod = id => this.edit.emit(id);
 
-    deletePayMethod = (elem) => {
-        this.delete.emit(elem);
-    }
+    deletePayMethod = elem => this.delete.emit(elem);
 }

@@ -19,12 +19,8 @@ export class TravelItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  deleteTravel(travel) {
-    this.delete.emit(travel);
-  };
+  deleteTravel = travel =>  this.delete.emit(travel);
 
-  editTravel(travelId) {
-    this.edit.emit(travelId);
-  };
+  editTravel = travelId => this.edit.emit(travelId);
 
 }

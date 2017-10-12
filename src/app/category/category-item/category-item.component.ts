@@ -18,7 +18,5 @@ export class CategoryItemComponent implements OnInit {
     ngOnInit() {
     };
 
-    deleteCategory(category) {
-        this.delete.emit(category);
-    }
+    deleteCategory = category => this.delete.emit(category);
 }

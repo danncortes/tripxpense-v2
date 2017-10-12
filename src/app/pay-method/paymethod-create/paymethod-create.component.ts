@@ -38,12 +38,12 @@ export class PaymethodCreateComponent implements OnInit {
 
         this.payMethodService.create(formData)
             .subscribe(
-            (data) => {
+            data => {
                 this.processing = false;
                 this.dialogRef.close(true);
                 this.toastService.success({ message: 'Pay Method Created!' });
             },
-            (err) => {
+            err => {
                 this.processing = false;
                 this.dialogRef.close(false);
                 if (err.status === 422) {

@@ -10,7 +10,7 @@ export class OperationService {
 
   constructor(private http: Http) { }
 
-  get(userId) {
+  get = userId => {
     return this.http.get(environment.apiUrl + '/operations/' + userId)
     .map(
       (data): any => data.json()

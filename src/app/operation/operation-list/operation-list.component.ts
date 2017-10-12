@@ -28,7 +28,7 @@ export class OperationListComponent implements OnInit {
         this.getOperations();
     }
 
-    getOperations() {
+    getOperations = () => {
         const userId = this.auth.getUserId();
         this.processing = true;
         this.operationService.get(userId).subscribe(
@@ -39,7 +39,7 @@ export class OperationListComponent implements OnInit {
         )
     }
 
-    createOperationDialog() {
+    createOperationDialog = () => {
         const dialogRef = this.dialog.open(OperationCreateComponent, {
             width: '500px'
         });

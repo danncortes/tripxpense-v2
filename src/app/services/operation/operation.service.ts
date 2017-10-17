@@ -17,4 +17,11 @@ export class OperationService {
     );
   }
 
+  create(operation) {
+    return this.http.post(environment.apiUrl + '/operation/create', operation)
+      .map(
+        (data): any => data.json()
+      );
+  }
+
 }

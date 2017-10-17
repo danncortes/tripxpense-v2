@@ -25,7 +25,7 @@
                 <input mdInput [mdDatepicker]="endDatePicker" [formControl]="createTravelForm.controls['finish_date']" placeholder="Choose a finish date" required>
                 <md-datepicker-toggle mdSuffix [for]="endDatePicker"></md-datepicker-toggle>
                 <md-error>
-                    <span *ngIf="createTravelForm.controls.finish_date.invalid">As finish date is required</span>
+                    <span *ngIf="createTravelForm.controls.finish_date.invalid">A finish date is required</span>
                 </md-error>
             </md-input-container>
             <md-datepicker #endDatePicker></md-datepicker>

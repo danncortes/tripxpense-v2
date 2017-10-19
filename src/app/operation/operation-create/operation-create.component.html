@@ -2,8 +2,9 @@
     <span>Create an Operation</span>
 </md-toolbar>
 <section class="trip-md-dialog-container">
-
-    <form [formGroup]="createOperationForm" (ngSubmit)="createOperation(createOperationForm.value)" fxLayoutWrap fxLayout="row">
+    <md-spinner class="spinner-loading-secc" *ngIf="!categories && !travels"></md-spinner>
+    <form *ngIf="categories && travels" [formGroup]="createOperationForm" (ngSubmit)="createOperation(createOperationForm.value)"
+        fxLayoutWrap fxLayout="row">
 
         <md-input-container fxFlex="100">
             <input mdInput [formControl]="createOperationForm.controls['title']" type="text" placeholder="Title" required>
@@ -16,34 +17,48 @@
             <input mdInput [formControl]="createOperationForm.controls['description']" type="text" placeholder="Description">
         </md-input-container>
 
-        <md-input-container fxFlex="30">
-            <input mdInput [formControl]="createOperationForm.controls['cost']" type="number" placeholder="Amount" required>
-            <md-error>
-                <span *ngIf="createOperationForm.controls.cost.invalid">A cost is required</span>
-            </md-error>
-        </md-input-container>
+        <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between start">
 
-        <md-input-container fxFlex="30">
-            <input mdInput [mdDatepicker]="date" [formControl]="createOperationForm.controls['date_op']" placeholder="Choose a date"
-                required>
-            <md-datepicker-toggle mdSuffix [for]="date"></md-datepicker-toggle>
-            <md-error>
-                <span *ngIf="createOperationForm.controls.date_op.invalid">An operation date is required</span>
-            </md-error>
-        </md-input-container>
-        <md-datepicker #date></md-datepicker>
+            <div fxFlex="30">
+                <md-input-container>
+                    <input mdInput [formControl]="createOperationForm.controls['cost']" type="number" placeholder="Amount" required>
+                    <md-error>
+                        <span *ngIf="createOperationForm.controls.cost.invalid">A cost is required</span>
+                    </md-error>
+                </md-input-container>
+            </div>
+            <div fxFlex="30">
+                <md-input-container>
+                    <input mdInput [mdDatepicker]="date" [formControl]="createOperationForm.controls['date_op']" placeholder="Choose a date"
+                        required>
+                    <md-datepicker-toggle mdSuffix [for]="date"></md-datepicker-toggle>
+                    <md-error>
+                        <span *ngIf="createOperationForm.controls.date_op.invalid">An operation date is required</span>
+                    </md-error>
+                </md-input-container>
+                <md-datepicker #date></md-datepicker>
+            </div>
 
-        <div fxFlex="30">
-            <md-select placeholder="Type" [formControl]="createOperationForm.controls['type']" required>
-                <md-option [value]="1">Outcome </md-option>
-                <md-option [value]="2">Income </md-option>
-            </md-select>
+            <div fxFlex="30">
+                <md-select placeholder="Type" [formControl]="createOperationForm.controls['type']" required>
+                    <md-option [value]="'outcome'">Outcome </md-option>
+                    <md-option [value]="'income'">Income </md-option>
+                </md-select>
+            </div>
         </div>
+        <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between start">
+            <div fxFlex="30">
+                <md-select placeholder="Type" [formControl]="createOperationForm.controls['cod_category']" required>
+                        <md-option *ngFor="let category of categories" [value]="category.id">{{category.name}}</md-option>
+                </md-select>
+            </div>
+        </div>
+
 
         <section fxFlex="100" fxLayout="row" fxLayoutAlign="end start">
             <button type="submit" md-raised-button color="primary" [disabled]="createOperationForm.invalid || processing ">
-                <span *ngIf="!this.processing ">Create</span>
-                <md-spinner *ngIf="this.processing "></md-spinner>
+                <span *ngIf="!processing ">Create</span>
+                <md-spinner *ngIf="processing "></md-spinner>
             </button>
         </section>
     </form>

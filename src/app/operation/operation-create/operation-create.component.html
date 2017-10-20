@@ -48,8 +48,18 @@
         </div>
         <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between start">
             <div fxFlex="30">
-                <md-select placeholder="Type" [formControl]="createOperationForm.controls['cod_category']" required>
-                        <md-option *ngFor="let category of categories" [value]="category.id">{{category.name}}</md-option>
+                <md-select placeholder="Category" [formControl]="createOperationForm.controls['cod_category']" required>
+                    <md-option *ngFor="let category of categories" [value]="category.id">{{category.name}}</md-option>
+                </md-select>
+            </div>
+            <div fxFlex="30">
+                <md-select placeholder="Pay Method" [formControl]="createOperationForm.controls['cod_method']" required>
+                    <md-option *ngFor="let payMethod of payMethods" [value]="payMethod.id">{{payMethod.name}}</md-option>
+                </md-select>
+            </div>
+            <div fxFlex="30">
+                <md-select placeholder="Travel" [formControl]="createOperationForm.controls['cod_travel']" required>
+                    <md-option *ngFor="let travel of travels" [value]="travel.id">{{travel.name}}</md-option>
                 </md-select>
             </div>
         </div>

@@ -84,6 +84,7 @@ export class OperationCreateComponent implements OnInit {
 
     createOperation(formData) {
         this.processing = true;
+        formData.user_id = this.auth.getUserId();
 
         this.OperationService.create(formData)
             .subscribe(

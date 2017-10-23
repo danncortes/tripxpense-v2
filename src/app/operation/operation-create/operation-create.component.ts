@@ -27,6 +27,7 @@ export class OperationCreateComponent implements OnInit {
     categories: any;
     travels: any
     payMethods: any;
+    today: Date = new Date();
 
     constructor(
         public dialogRef: MdDialogRef<OperationCreateComponent>,
@@ -42,7 +43,7 @@ export class OperationCreateComponent implements OnInit {
             'title': [null, Validators.required],
             'description': [null],
             'cost': [null, Validators.required],
-            'date_op': [null, Validators.required],
+            'date_op': [this.today, Validators.required],
             'type': ['outcome', Validators.required],
             'cod_method': [null, Validators.required],
             'cod_category': [null, Validators.required],

@@ -18,7 +18,6 @@ export class TravelDetailComponent implements OnInit {
   processing: boolean;
   stats: object;
   statsParam: any;
-  travelId: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,17 +29,18 @@ export class TravelDetailComponent implements OnInit {
     this.processing = true;
     this.route
       .queryParams
-      .subscribe(travel => {
-        this.travelService.find(travel.id).subscribe(
+      .subscribe(travelParams => {
+        this.travelService.find(travelParams.id).subscribe(
             data => {
                 this.travel = data;
                 this.processing = false;
+
+                this.statsParam = {
+                  user_id: data.user_id,
+                  travel_id: data.id
+                };
             }
         );
-        this.statsParam = {
-          user_id: travel.user_id,
-          travel_id: travel.id
-        };
       });
   }
 

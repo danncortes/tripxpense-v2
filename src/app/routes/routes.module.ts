@@ -26,21 +26,20 @@ import { AdminGuardService } from '../services/admin-guard/admin-guard.service';
 
 const appRoutes: Routes = [
   //Dashboard
-  { path: 'welcome', component:WelcomeComponent},
+  { path: 'welcome', component: WelcomeComponent},
   //{ path: 'auth', component:MainComponent, children:[
-  { path: 'auth', component:MainComponent, canActivate: [AuthGuardService], children:[
-      { path: '', redirectTo: 'dashboard', pathMatch:'full'},
-      { path: 'dashboard', component:DashboardComponent},
-      { path: 'operations', component:OperationListComponent},
-      { path: 'travels', component:TravelListComponent},
+  { path: 'auth', component: MainComponent, canActivate: [AuthGuardService], children:[
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+      { path: 'dashboard', component: DashboardComponent},
+      { path: 'operations', component: OperationListComponent},
+      { path: 'travels', component: TravelListComponent},
       { path: 'travels/travel', component: TravelDetailComponent},
-      { path: 'paymethods', component:PaymethodListComponent, canActivate: [AdminGuardService]},
-      { path: 'categories', component:CategoryListComponent, canActivate: [AdminGuardService]},
-      { path: 'profile', component:ProfileComponent}
+      { path: 'paymethods', component: PaymethodListComponent, canActivate: [AdminGuardService]},
+      { path: 'categories', component: CategoryListComponent, canActivate: [AdminGuardService]},
+      { path: 'profile', component: ProfileComponent}
     ]},
-  { path: '**', redirectTo: 'welcome', pathMatch:'full'},
-  { path: '', redirectTo: 'welcome', pathMatch:'full'}
-  
+  { path: '**', redirectTo: 'welcome', pathMatch: 'full'},
+  { path: '', redirectTo: 'welcome', pathMatch: 'full'}
 ]
 
 @NgModule({
@@ -48,7 +47,7 @@ const appRoutes: Routes = [
     CommonModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers:[
+  providers: [
     //AuthGuard
   ],
   exports: [
@@ -57,4 +56,4 @@ const appRoutes: Routes = [
   declarations: []
 })
 
-export class RoutesModule{ }
+export class RoutesModule { }

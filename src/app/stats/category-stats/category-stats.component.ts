@@ -17,8 +17,6 @@ export class CategoryStatsComponent implements OnInit {
   @Input() statsParam: any;
   processing: boolean;
   stats: Object;
-  hasOperations: boolean;
-  categories: any;
 
   constructor(
     private statsService: StatsService,

@@ -45,6 +45,7 @@ import { DeleteButtonComponent } from './ui/buttons/delete-button/delete-button.
 import { EditButtonComponent } from './ui/buttons/edit-button/edit-button.component';
 import { OperationListComponent } from './operation/operation-list/operation-list.component';
 import { OperationCreateComponent } from './operation/operation-create/operation-create.component';
+import { ActionButtonComponent } from './ui/buttons/action-button/action-button.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { OperationCreateComponent } from './operation/operation-create/operation
     EditButtonComponent,
     OperationListComponent,
     OperationCreateComponent,
+    ActionButtonComponent,
   ],
   imports: [
 //Modules

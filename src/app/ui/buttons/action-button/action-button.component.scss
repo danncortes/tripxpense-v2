@@ -1,0 +1,27 @@
+@import 'mixins';
+button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+    background-color: transparent;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    md-icon.material-icons {
+        transition: all 0.2s;
+        @include absolute-centered();
+        position: absolute;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 20px;
+    }
+    &.edit-button:hover {
+        background-color: #00b0ff;
+    }
+    &:hover .remove-button {
+        color: #ff6666;
+    }
+}

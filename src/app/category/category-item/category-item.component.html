@@ -1,6 +1,6 @@
 <app-trip-md-card>
     <span class="title-cont" [innerHTML]="category.name"></span>
     <div class="area-controls">
-        <app-delete-button (click)="deleteCategory(category)"></app-delete-button>
+        <app-action-button (click)="deleteCategory(category)" [className]="'remove-button'" [iconName]="'delete'"></app-action-button>
     </div>
 </app-trip-md-card>

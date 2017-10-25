@@ -18,10 +18,15 @@
         "testTsconfig": "tsconfig.spec.json",
         "prefix": "app",
         "styles": [
-            "helpers.scss",
-            "main.scss",
-            "material-themes.scss"
+            "styles/helpers.scss",
+            "styles/main.scss",
+            "styles/material-themes.scss"
         ],
+        "stylePreprocessorOptions": {
+            "includePaths": [
+                "styles"
+            ]
+        },
         "scripts": [
             "../node_modules/chart.js/dist/Chart.bundle.min.js"
         ],

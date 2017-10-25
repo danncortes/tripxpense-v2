@@ -38,7 +38,7 @@ export class PaymethodStatsComponent implements OnInit {
         stats.paymethod['operations'].labels = [];
         stats.paymethod['operations'].data = [];
 
-        for (let key in data) {
+        for (const key in data) {
           if (key) {
             stats.paymethod['income'].labels.push(data[key].paymethod_name);
             stats.paymethod['income'].data.push(data[key].income);

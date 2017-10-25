@@ -5,7 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCheckboxModule, MdToolbarModule, MdCardModule, MdInputModule } from '@angular/material';
 
-import {MdProgressSpinnerModule, MdDatepickerModule, MdSnackBarModule, MdNativeDateModule } from '@angular/material';
+import {MdProgressSpinnerModule, MdDatepickerModule, MdSnackBarModule, MdNativeDateModule, MatSelectModule } from '@angular/material';
 
 const modules = [
   BrowserAnimationsModule,
@@ -19,7 +19,8 @@ const modules = [
   MdProgressSpinnerModule,
   MdDatepickerModule,
   MdSnackBarModule,
-  MdNativeDateModule
+  MdNativeDateModule,
+  MatSelectModule
 ];
 
 @NgModule({

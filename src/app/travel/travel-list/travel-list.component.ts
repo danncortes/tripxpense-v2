@@ -33,8 +33,8 @@ export class TravelListComponent implements OnInit {
         this.getTravels();
     }
 
-    getTravels() {
-        var userId = this.auth.getUserId();
+    getTravels = () => {
+        const userId = this.auth.getUserId();
         this.processing = true;
         this.travelService.get(userId).subscribe(
             data => {
@@ -45,7 +45,7 @@ export class TravelListComponent implements OnInit {
     }
 
     createTravelDialog = () => {
-        let dialogRef = this.dialog.open(TravelCreateComponent, {
+        const dialogRef = this.dialog.open(TravelCreateComponent, {
             width: '500px'
         });
         dialogRef.afterClosed().subscribe(data => {
@@ -55,9 +55,9 @@ export class TravelListComponent implements OnInit {
         });
     }
 
-    deleteTravel(travel) {
-        let message = 'The travel "' + travel.name + '" will be deleted!';
-        let dialogRef = this.dialog.open(ConfirmDialogComponent, {
+    deleteTravel = travel => {
+        const message = 'The travel "' + travel.name + '" will be deleted!';
+        const dialogRef = this.dialog.open(ConfirmDialogComponent, {
             width: '300px'
         });
         dialogRef.componentInstance.message = message; //Passing data to the Dialog, this is received as 'payMethod'
@@ -69,7 +69,7 @@ export class TravelListComponent implements OnInit {
                         this.ngOnInit();
                         this.toastService.success({ message: 'Travel Deleted!' });
                     },
-                    (err) => {
+                    err => {
                         this.toastService.error({ message: 'An error has occur!' });
                     }
                     );
@@ -77,21 +77,21 @@ export class TravelListComponent implements OnInit {
         });
     };
 
-    editTravel(travelId) {
+    editTravel = travelId => {
         this.travelService.find(travelId)
             .subscribe(
             data => {
-                let dialogRef = this.dialog.open(TravelEditComponent, {
+                const dialogRef = this.dialog.open(TravelEditComponent, {
                     width: '500px'
                 });
                 dialogRef.componentInstance.travel = data; //Passing data to the Dialog, this is received as 'payMethod'
-                dialogRef.afterClosed().subscribe(data => {
-                    if (data) {
+                dialogRef.afterClosed().subscribe( response => {
+                    if (response) {
                         this.ngOnInit();
                     }
                 });
             },
-            (err) => {
+            err => {
                 this.toastService.error({ message: 'An error has occur!' });
             }
             );

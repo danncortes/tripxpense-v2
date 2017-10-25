@@ -41,6 +41,10 @@ import { CategoryStatsComponent } from './stats/category-stats/category-stats.co
 import { TitleSectionComponent } from './ui/title-section/title-section.component';
 import { CreateButtonComponent } from './ui/create-button/create-button.component';
 import { TripMdCardComponent } from './ui/trip-md-card/trip-md-card.component';
+import { DeleteButtonComponent } from './ui/buttons/delete-button/delete-button.component';
+import { EditButtonComponent } from './ui/buttons/edit-button/edit-button.component';
+import { OperationListComponent } from './operation/operation-list/operation-list.component';
+import { OperationCreateComponent } from './operation/operation-create/operation-create.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +74,11 @@ import { TripMdCardComponent } from './ui/trip-md-card/trip-md-card.component';
     CategoryStatsComponent,
     TitleSectionComponent,
     CreateButtonComponent,
-    TripMdCardComponent
+    TripMdCardComponent,
+    DeleteButtonComponent,
+    EditButtonComponent,
+    OperationListComponent,
+    OperationCreateComponent,
   ],
   imports: [
 //Modules
@@ -90,7 +98,8 @@ import { TripMdCardComponent } from './ui/trip-md-card/trip-md-card.component';
     PaymethodEditComponent,
     TravelEditComponent,
     ToastComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    OperationCreateComponent
   ],
   providers: [AuthService, AuthGuardService, AdminGuardService],
   bootstrap: [AppComponent]

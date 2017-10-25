@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {MdDialog, MdDialogRef} from '@angular/material';
+import { MdDialog, MdDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -15,12 +15,8 @@ export class ConfirmDialogComponent implements OnInit {
   ngOnInit() {
   }
 
-  confirm(){
-    this.dialogRef.close(true);
-  }
+  confirm = () => this.dialogRef.close(true);
 
-  cancel(){
-    this.dialogRef.close(false);
-  }
+  cancel = () => this.dialogRef.close(false);
 
 }

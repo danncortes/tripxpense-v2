@@ -42,7 +42,7 @@ export class PaymethodListComponent implements OnInit {
     }
 
     createPayMethodDialog = () => {
-        let dialogRef = this.dialog.open(PaymethodCreateComponent, {
+        const dialogRef = this.dialog.open(PaymethodCreateComponent, {
             width: '300px'
         });
         dialogRef.afterClosed().subscribe(data => {
@@ -52,10 +52,10 @@ export class PaymethodListComponent implements OnInit {
         });
     };
 
-    editPayMethod(id) {
+    editPayMethod = id => {
         this.paymethodService.find(id)
             .subscribe(
-            (data) => {
+            data => {
                 const payMethod = data;
                 const dialogRef = this.dialog.open(PaymethodEditComponent, {
                     width: '300px'
@@ -68,13 +68,13 @@ export class PaymethodListComponent implements OnInit {
                     }
                 });
             },
-            (err) => {
+            err => {
                 this.toastService.error({ message: 'An error has occur!' });
                 this.ngOnInit();
             });
     }
 
-    deletePayMethod = (elem) => {
+    deletePayMethod = elem => {
         const message = 'The pay method "' + elem.name + '" will be deleted!';
 
         const dialogRef = this.dialog.open(ConfirmDialogComponent, {
@@ -89,7 +89,7 @@ export class PaymethodListComponent implements OnInit {
                         this.ngOnInit();
                         this.toastService.success({ message: 'Pay Method Deleted!' });
                     },
-                    (err) => {
+                    err => {
                         this.toastService.error({ message: 'An error has occur!' });
                     }
                     );

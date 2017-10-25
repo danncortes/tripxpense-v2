@@ -14,8 +14,6 @@ export class CreateButtonComponent implements OnInit {
   ngOnInit() {
   }
 
-  create() {
-    this.createEvent.emit();
-  }
+  create = () => this.createEvent.emit();
 
 }

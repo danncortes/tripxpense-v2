@@ -37,21 +37,21 @@ export class CategoryCreateComponent implements OnInit {
     ngOnInit() {
     }
 
-    selectInputFile(event) {
+    selectInputFile = event => {
         this.createCategoryForm.controls['pic'].setValue(event.target.files[0].name);
         this.createCategoryForm.controls['file'].setValue(event.target.files[0]);
     }
 
-    createCategory(formData) {
+    createCategory = formData => {
         this.processing = true;
         this.categoryService.create(formData)
             .subscribe(
-            (data) => {
+            data => {
                 this.processing = false;
                 this.dialogRef.close(true);
                 this.toastService.success({ message: 'Category Created!' });
             },
-            (err) => {
+            err => {
                 this.processing = false;
                 this.dialogRef.close(false);
                 if (err.status === 422) {

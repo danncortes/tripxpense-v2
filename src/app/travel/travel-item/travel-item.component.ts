@@ -13,18 +13,17 @@ export class TravelItemComponent implements OnInit {
   @Output() delete = new EventEmitter();
   @Output() edit = new EventEmitter();
 
+  travelParams: object;
+
   constructor(
   ) { }
 
   ngOnInit() {
+    this.travelParams = {id: this.travel.id};
   }
 
-  deleteTravel(travel) {
-    this.delete.emit(travel);
-  };
+  deleteTravel = travel =>  this.delete.emit(travel);
 
-  editTravel(travelId) {
-    this.edit.emit(travelId);
-  };
+  editTravel = travelId => this.edit.emit(travelId);
 
 }

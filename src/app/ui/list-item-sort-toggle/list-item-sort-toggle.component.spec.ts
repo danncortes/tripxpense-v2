@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaymethodItemComponent } from './paymethod-item.component';
+import { ListItemSortToggleComponent } from './list-item-sort-toggle.component';
 
-describe('PaymethodItemComponent', () => {
-  let component: PaymethodItemComponent;
-  let fixture: ComponentFixture<PaymethodItemComponent>;
+describe('ListItemSortToggleComponent', () => {
+  let component: ListItemSortToggleComponent;
+  let fixture: ComponentFixture<ListItemSortToggleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PaymethodItemComponent ]
+      declarations: [ ListItemSortToggleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PaymethodItemComponent);
+    fixture = TestBed.createComponent(ListItemSortToggleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

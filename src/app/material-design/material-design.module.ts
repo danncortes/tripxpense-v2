@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCheckboxModule, MdToolbarModule, MdCardModule, MdInputModule } from '@angular/material';
+import { MdButtonModule, MdCheckboxModule, MdToolbarModule, MdCardModule, MdInputModule, MatButtonToggleModule } from '@angular/material';
 
 import {MdProgressSpinnerModule, MdDatepickerModule, MdSnackBarModule, MdNativeDateModule, MatSelectModule } from '@angular/material';
 
@@ -20,7 +20,8 @@ const modules = [
   MdDatepickerModule,
   MdSnackBarModule,
   MdNativeDateModule,
-  MatSelectModule
+  MatSelectModule,
+  MatButtonToggleModule
 ];
 
 @NgModule({

@@ -18,12 +18,105 @@ body {
     padding: 30px 18px;
 }
 
-.category-list app-category-item md-card.trip-md-card-1 {
-    padding-bottom: 10px;
+.category-list-view,
+.paymethod-list-view {
+    & app-trip-md-card md-card.trip-md-card-1 {
+        padding-bottom: 10px;
+    }
 }
 
-.title-area {
-    margin-bottom: 30px;
+.item-list-view {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.list-item {
+    padding: 10px 14px;
+    border-radius: 3px;
+    background-color: #333333;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    margin-bottom: 10px;
+    color: #ddd;
+    .name {
+        margin: 0;
+        font-weight: 200;
+    }
+}
+
+.controls-area {
+    margin-bottom: 26px;
+    .control-group {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .title {
+            margin-right: 6px;
+            p {
+                font-size: 14px;
+                margin: 0;
+            }
+        }
+        li {
+            display: inline-block;
+            margin-right: 14px;
+        }
+    }
+}
+
+.controlToggle {
+    background-color: rgba(255, 255, 255, 0.1);
+    md-icon {
+        color: rgba(255, 255, 255, 0.2);
+    }
+    md-button-toggle {
+        &.mat-button-toggle-checked {
+            background-color: rgba(255, 255, 255, 0.3);
+            md-icon,
+            span {
+                color: #eee;
+            }
+        }
+    }
+    .mat-button-toggle-label-content {
+        padding: 0 5px;
+        line-height: 30px;
+        md-icon {
+            font-size: 20px;
+        }
+    }
+    &.sortByToggle {
+        .mat-button-toggle-label-content {
+            padding: 0 10px;
+        }
+        span {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+    }
+}
+
+.filter-input {
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.6);
+    min-width: 200px;
+}
+
+.no-match-search {
+    font-size: 16px;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 0;
+    padding: 10px 14px;
+    text-align: center;
+    border-radius: 3px;
 }
 
 md-spinner.mat-spinner {
@@ -77,29 +170,6 @@ snack-bar-container {
 
 md-input-container {
     margin-bottom: 10px;
-}
-
-.area-controls button.mat-mini-fab {
-    width: 30px;
-    height: 30px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    md-icon.material-icons {
-        color: rgba(255, 255, 255, 0.4);
-        font-size: 16px;
-        line-height: 12px;
-    }
-    &:hover {
-        md-icon.material-icons {
-            color: rgba($color: #000000, $alpha: 0.8)
-        }
-    }
-    &.edit-button:hover {
-        background-color: #00b0ff;
-    }
-    &.remove-button:hover {
-        background-color: orangered;
-    }
 }
 
 .trip-md-card-1.travel-card {
@@ -210,7 +280,7 @@ md-input-container {
         }
     }
     .area-controls {
-        padding: 0 16px 14px 16px;
+        padding: 0 16px 10px 16px;
     }
 }
 

@@ -18,10 +18,10 @@ button {
         color: rgba(255, 255, 255, 0.4);
         font-size: 20px;
     }
-    &.edit-button:hover {
-        background-color: #00b0ff;
-    }
     &:hover .remove-button {
         color: #ff6666;
+    }
+    &:hover .edit-button {
+        color: #00b0ff;
     }
 }

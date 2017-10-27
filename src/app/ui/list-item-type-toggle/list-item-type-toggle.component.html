@@ -1,0 +1,8 @@
+<md-button-toggle-group class="controlToggle" [(ngModel)]="listViewType" (ngModelChange)="changeType(listViewType)">
+    <md-button-toggle value="list">
+        <md-icon class="material-icons">view_list</md-icon>
+    </md-button-toggle>
+    <md-button-toggle value="box">
+        <md-icon class="material-icons">view_module</md-icon>
+    </md-button-toggle>
+</md-button-toggle-group>

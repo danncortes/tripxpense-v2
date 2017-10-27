@@ -1,5 +1,4 @@
-<md-spinner class="spinner-loading-secc"
-            *ngIf="this.processing"></md-spinner>
+<md-spinner class="spinner-loading-secc" *ngIf="this.processing"></md-spinner>
 
 <app-title-section>
     <span class="title">Travels</span>
@@ -8,14 +7,23 @@
     </app-create-button>
 </app-title-section>
 
-<div fxLayout.gt-xs="row"
-     fxLayoutWrap
-     fxLayoutAlign="start start"
-     *ngIf="!this.processing">
-    <app-travel-item fxFlex="100%"
-                     fxFlex.gt-xs="50%"
-                     (edit)="editTravel($event)"
-                     (delete)="deleteTravel($event)"
-                     *ngFor="let travel of travels"
-                     [travel]="travel"></app-travel-item>
+<section class="controls-area" fxLayout="row" fxLayoutAlign="space-between center">
+    <ul class="control-group">
+        <li class="title">
+            <p>Sort By</p>
+        </li>
+        <li>
+            <app-list-item-sortby-toggle [sortByArray]="sortByArray" (sortByEmitter)="getSortByDirection($event)"></app-list-item-sortby-toggle>
+        </li>
+        <li>
+            <app-list-item-sort-toggle (sortEmitter)="getSortDirection($event)"></app-list-item-sort-toggle>
+        </li>
+    </ul>
+
+    <input class="filter-input" [(ngModel)]="travelFilter" placeholder="Filter Travel">
+</section>
+
+<div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start" *ngIf="!this.processing">
+    <app-travel-item fxFlex="100%" fxFlex.gt-sm="50%" (edit)="editTravel($event)" (delete)="deleteTravel($event)" *ngFor="let travel of travels | filterBy: {name: travelFilter} | orderBy: sortBy : sortDirection"
+        [travel]="travel"></app-travel-item>
 </div>

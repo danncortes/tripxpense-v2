@@ -18,6 +18,10 @@ export class CategoryListComponent implements OnInit {
 
     processing: boolean;
     categories: object;
+    listViewType: any;
+
+    categoryFilter: any;
+    sortDirection = '';
 
     constructor(
         private categoryService: CategoryService,
@@ -28,6 +32,15 @@ export class CategoryListComponent implements OnInit {
 
     ngOnInit() {
         this.getCategories();
+    }
+
+
+    getSortDirection = (direction) => {
+        this.sortDirection = direction
+    }
+
+    getListType = (type) => {
+        this.listViewType = type
     }
 
     getCategories = () => {

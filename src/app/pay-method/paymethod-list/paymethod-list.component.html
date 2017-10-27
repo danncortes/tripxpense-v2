@@ -1,5 +1,4 @@
-<md-spinner class="spinner-loading-secc"
-            *ngIf="this.processing"></md-spinner>
+<md-spinner class="spinner-loading-secc" *ngIf="this.processing"></md-spinner>
 
 <app-title-section>
     <span class="title">Pay Methods</span>
@@ -8,15 +7,14 @@
     </app-create-button>
 </app-title-section>
 
-<div fxLayout.gt-xs="row"
-     fxLayoutWrap
-     fxLayoutAlign="start start"
-     *ngIf="!this.processing">
-
-    <app-paymethod-item fxFlex="100%"
-                        fxFlex.gt-xs="33.3%"
-                        (edit)="editPayMethod($event)"
-                        (delete)="deletePayMethod($event)"
-                        *ngFor=" let payMethod of payMethods"
-                        [payMethod]="payMethod"></app-paymethod-item>
+<div class="paymethod-list-view" fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start" *ngIf="!this.processing">
+    <div fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="33.3%" *ngFor=" let payMethod of payMethods">
+        <app-trip-md-card>
+            <span class="title-cont" [innerHTML]="payMethod.name"></span>
+            <div class="controls">
+                <app-action-button (click)="editPayMethod(payMethod.id)" [className]="'edit-button'" [iconName]="'edit'"></app-action-button>
+                <app-action-button (click)="deletePayMethod(payMethod)" [className]="'remove-button'" [iconName]="'delete'"></app-action-button>
+            </div>
+        </app-trip-md-card>
+    </div>
 </div>

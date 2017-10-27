@@ -3,7 +3,7 @@
         <app-travel-card-content [travel]="travel"></app-travel-card-content>
     </a>
     <div fxLayout="row" fxLayoutAlign="end start" class="area-controls">
-        <app-edit-button (click)="editTravel(travel.id)"></app-edit-button>
-        <app-delete-button (click)="deleteTravel(travel)"></app-delete-button>
+            <app-action-button (click)="editTravel(travel.id)" [className]="'edit-button'" [iconName]="'edit'"></app-action-button>
+            <app-action-button (click)="deleteTravel(travel)" [className]="'remove-button'" [iconName]="'delete'"></app-action-button>
     </div>
 </md-card>

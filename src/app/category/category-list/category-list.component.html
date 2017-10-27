@@ -7,15 +7,45 @@
     </app-create-button>
 </app-title-section>
 
-<div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start" *ngIf="!this.processing" class="category-list">
+<section class="controls-area" fxLayout="row" fxLayoutAlign="space-between center">
+    <ul class="control-group">
+        <li>
+            <app-list-item-type-toggle [view]="'category'" (typeEmitter)="getListType($event)"></app-list-item-type-toggle>
+        </li>
+        <li>
+            <app-list-item-sort-toggle (sortEmitter)="getSortDirection($event)"></app-list-item-sort-toggle>
+        </li>
+    </ul>
 
-    <div fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="33.3%" *ngFor=" let category of categories">
-        <app-trip-md-card>
-            <span class="title-cont" [innerHTML]="category.name"></span>
-            <div class="area-controls">
-                <app-action-button (click)="deleteCategory(category)" [className]="'remove-button'" [iconName]="'delete'"></app-action-button>
+    <input class="filter-input" [(ngModel)]="categoryFilter" placeholder="Filter Category">
+</section>
+
+<section *ngIf="!this.processing" class="item-list-view category-list-view">
+
+    <ul *ngIf="listViewType === 'list'">
+        <li *ngFor="let category of categories | filterBy: {name: categoryFilter} | orderBy: 'sort' : sortDirection">
+            <div class="list-item">
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <h3 class="name" [innerHTML]="category.name"></h3>
+                    <div class="controls">
+                        <app-action-button (click)="deleteCategory(category)" [className]="'remove-button'" [iconName]="'delete'"></app-action-button>
+                    </div>
+                </div>
             </div>
-        </app-trip-md-card>
+        </li>
+    </ul>
+
+    <div *ngIf="listViewType === 'box'" fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start">
+        <div fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="33.3%" *ngFor=" let category of categories | filterBy: {name: categoryFilter} | orderBy: 'sort' : sortDirection">
+            <app-trip-md-card>
+                <span class="title-cont" [innerHTML]="category.name"></span>
+                <div class="controls">
+                    <app-action-button (click)="deleteCategory(category)" [className]="'remove-button'" [iconName]="'delete'"></app-action-button>
+                </div>
+            </app-trip-md-card>
+        </div>
     </div>
 
-</div>
+    <h2 class="no-match-search" *ngIf="(categories | filterBy: {name: categoryFilter}).length === 0">No matching elements</h2>
+
+</section>

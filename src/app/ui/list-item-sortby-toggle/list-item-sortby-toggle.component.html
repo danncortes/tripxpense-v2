@@ -1,0 +1,5 @@
+<md-button-toggle-group class="controlToggle sortByToggle" [(ngModel)]="listViewSortBy" (ngModelChange)="changeSortBy(listViewSortBy)">
+    <md-button-toggle *ngFor="let item of sortByArray" value="{{item.value}}">
+        <span [innerHTML]="item.name"></span>
+    </md-button-toggle>
+</md-button-toggle-group>

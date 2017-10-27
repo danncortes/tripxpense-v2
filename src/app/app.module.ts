@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialDesignModule} from './material-design/material-design.module';
 import {ChartsModule} from 'ng2-charts';
+import { FilterPipeModule } from 'ngx-filter-pipe';
+import { OrderModule } from 'ngx-order-pipe';
 
 import {RoutesModule} from './routes/routes.module';
 
@@ -17,14 +19,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
 import { PaymethodListComponent } from './pay-method/paymethod-list/paymethod-list.component';
-import { PaymethodItemComponent } from './pay-method/paymethod-item/paymethod-item.component';
 import { PaymethodCreateComponent } from './pay-method/paymethod-create/paymethod-create.component';
 import { PaymethodEditComponent } from './pay-method/paymethod-edit/paymethod-edit.component';
 import { ToastComponent } from './toast/toast.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { TravelListComponent } from './travel/travel-list/travel-list.component';
 import { CategoryListComponent } from './category/category-list/category-list.component';
-import { CategoryItemComponent } from './category/category-item/category-item.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { AuthService } from './services/auth-service/auth.service';
@@ -46,6 +46,11 @@ import { EditButtonComponent } from './ui/buttons/edit-button/edit-button.compon
 import { OperationListComponent } from './operation/operation-list/operation-list.component';
 import { OperationCreateComponent } from './operation/operation-create/operation-create.component';
 import { ActionButtonComponent } from './ui/buttons/action-button/action-button.component';
+import { ListItemTypeToggleComponent } from './ui/list-item-type-toggle/list-item-type-toggle.component';
+import { ListItemSortToggleComponent } from './ui/list-item-sort-toggle/list-item-sort-toggle.component';
+import { ListItemSortbyToggleComponent } from './ui/list-item-sortby-toggle/list-item-sortby-toggle.component';
+import { OperationItemComponent } from './operation/operation-item/operation-item.component';
+
 
 @NgModule({
   declarations: [
@@ -56,14 +61,12 @@ import { ActionButtonComponent } from './ui/buttons/action-button/action-button.
     WelcomeComponent,
     MainComponent,
     PaymethodListComponent,
-    PaymethodItemComponent,
     PaymethodCreateComponent,
     PaymethodEditComponent,
     ToastComponent,
     ConfirmDialogComponent,
     TravelListComponent,
     CategoryListComponent,
-    CategoryItemComponent,
     ProfileComponent,
     CategoryCreateComponent,
     TravelItemComponent,
@@ -81,6 +84,10 @@ import { ActionButtonComponent } from './ui/buttons/action-button/action-button.
     OperationListComponent,
     OperationCreateComponent,
     ActionButtonComponent,
+    ListItemTypeToggleComponent,
+    ListItemSortToggleComponent,
+    ListItemSortbyToggleComponent,
+    OperationItemComponent
   ],
   imports: [
 //Modules
@@ -91,9 +98,11 @@ import { ActionButtonComponent } from './ui/buttons/action-button/action-button.
     MaterialDesignModule,
     RoutesModule,
     BrowserAnimationsModule,
-    ChartsModule
+    ChartsModule,
+    FilterPipeModule,
+    OrderModule
   ],
-  entryComponents:[
+  entryComponents: [
     PaymethodCreateComponent,
     CategoryCreateComponent,
     TravelCreateComponent,

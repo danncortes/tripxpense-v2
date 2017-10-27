@@ -20,6 +20,10 @@ export class TravelListComponent implements OnInit {
 
     processing: boolean;
     travels: any;
+    sortDirection = '';
+    sortByArray: any;
+    sortBy: string;
+    travelFilter: any;
 
     constructor(
         private travelService: TravelService,
@@ -30,7 +34,25 @@ export class TravelListComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+        this.sortByArray = [
+            {
+                name: 'Start Date',
+                value: 'start_date'
+            },
+            {
+                name: 'Name',
+                value: 'name'
+            }
+        ]
         this.getTravels();
+    }
+
+    getSortDirection = (direction) => {
+        this.sortDirection = direction
+    }
+
+    getSortByDirection = (event) => {
+        this.sortBy = event
     }
 
     getTravels = () => {
@@ -85,7 +107,7 @@ export class TravelListComponent implements OnInit {
                     width: '500px'
                 });
                 dialogRef.componentInstance.travel = data; //Passing data to the Dialog, this is received as 'payMethod'
-                dialogRef.afterClosed().subscribe( response => {
+                dialogRef.afterClosed().subscribe(response => {
                     if (response) {
                         this.ngOnInit();
                     }

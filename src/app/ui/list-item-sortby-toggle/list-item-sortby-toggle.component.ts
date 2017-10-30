@@ -16,10 +16,9 @@ export class ListItemSortbyToggleComponent implements OnInit {
 
   ngOnInit() {
     this.listViewSortBy = this.sortByArray[0].value;
+    this.changeSortBy(this.listViewSortBy);
   }
 
-  changeSortBy = (sortBy) => {
-    this.sortByEmitter.emit(sortBy)
-  }
+  changeSortBy = sortBy => this.sortByEmitter.emit(sortBy);
 
 }

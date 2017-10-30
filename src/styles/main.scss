@@ -147,14 +147,6 @@ md-dialog-container.mat-dialog-container {
     }
 }
 
-app-paymethod-item {
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-}
-
 snack-bar-container {
     &.error-toast {
         color: #ff8080;
@@ -281,6 +273,48 @@ md-input-container {
     }
     .area-controls {
         padding: 0 16px 10px 16px;
+    }
+}
+
+.trip-md-card-1.operation-card {
+    background-color: #333;
+    color: #eee;
+    margin: 12px;
+    margin-bottom: 15px;
+    padding: 10px 12px;
+    .title-area {
+        margin-bottom: 10px;
+        .title {
+            font-size: 15px;
+            color: orange;
+        }
+        .date {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+    }
+    .middle-area {
+        margin-bottom: 10px;
+        .cost {
+            font-weight: 200;
+            font-size: 38px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+    .type-icon {
+        md-icon {
+            font-size: 20px;
+        }
+        .income {
+            color: green;
+        }
+        .outcome {
+            color: orangered;
+        }
+    }
+    .travel {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.5);
     }
 }
 

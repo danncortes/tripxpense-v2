@@ -1,4 +1,17 @@
-<md-card class="trip-md-card-1">
-    {{operation.title}}
-    <br/> {{operation.description}}
+<md-card class="trip-md-card-1 operation-card">
+    <div class="title-area" fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="title" [innerHTML]="operation.title"></div>
+        <div class="date" [innerHTML]="operation.date_op | date"></div>
+    </div>
+    <div fxLayout="row" class="middle-area" fxLayoutAlign="space-between center">
+        <div class="cost" [innerHTML]="operation.cost | currency:'USD':true"></div>
+        <div fxLayout="row">
+            <div class="type-icon">
+                <md-icon *ngIf="operation.type === 'outcome'" class="material-icons outcome" title="Outcome">arrow_forward</md-icon>
+                <md-icon *ngIf="operation.type === 'income'" class="material-icons income" title="Income">arrow_back</md-icon>
+            </div>
+            <div class="method" [innerHTML]="operation.cod_method"></div>
+        </div>
+    </div>
+    <div class="travel" [innerHTML]="travelName"></div>
 </md-card>

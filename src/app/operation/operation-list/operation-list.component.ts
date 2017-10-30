@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
 import { OperationService } from '../../services/operation/operation.service';
+import { TravelService } from './../../services/travel/travel.service';
 import { AuthService } from '../../services/auth-service/auth.service';
 import { ToastService } from '../../services/toast/toast.service';
 import { OperationCreateComponent } from '../operation-create/operation-create.component';
@@ -11,18 +12,21 @@ import { OperationCreateComponent } from '../operation-create/operation-create.c
     styleUrls: ['./operation-list.component.scss'],
     providers: [
         OperationService,
-        ToastService
+        ToastService,
+        TravelService
     ]
 })
 export class OperationListComponent implements OnInit {
 
     processing: boolean;
     operations: any;
+    travels: any;
 
     constructor(
         private operationService: OperationService,
         public dialog: MdDialog,
-        public auth: AuthService, ) { }
+        public auth: AuthService,
+        public travelService: TravelService ) { }
 
     ngOnInit() {
         this.getOperations();
@@ -33,8 +37,13 @@ export class OperationListComponent implements OnInit {
         this.processing = true;
         this.operationService.get(userId).subscribe(
             data => {
+                this.travelService.get(userId).subscribe(
+                    travels => {
+                        this.travels = travels;
+                        this.processing = false;
+                    }
+                )
                 this.operations = data;
-                this.processing = false;
             }
         )
     }

@@ -41,7 +41,7 @@ export class TravelEditComponent implements OnInit {
     ngOnInit() {
         this.travel.start_date = new Date(this.travel.start_date);
         this.travel.finish_date = new Date(this.travel.finish_date);
-        this.hasOperations = this.travel.operations === 0 ? false : true;
+        this.hasOperations = this.travel.operations === '0' ? false : true;
         if (this.hasOperations) {
             this.editTravelForm.controls.start_cash_balance.disable();
             this.editTravelForm.controls.start_tdc_balance.disable();

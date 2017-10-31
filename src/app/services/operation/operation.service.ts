@@ -17,6 +17,13 @@ export class OperationService {
     );
   }
 
+  getOperationsByTravels = (userId, travelId) => {
+    return this.http.get(environment.apiUrl + '/operations_by_travel/' + userId + '/' + travelId)
+    .map(
+      (data): any => data.json()
+    );
+  }
+
   create(operation) {
     return this.http.post(environment.apiUrl + '/operation/create', operation)
       .map(

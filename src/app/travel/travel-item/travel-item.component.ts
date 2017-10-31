@@ -4,7 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   selector: 'app-travel-item',
   templateUrl: './travel-item.component.html',
   styleUrls: ['./travel-item.component.scss'],
-  providers:[
+  providers: [
   ]
 })
 export class TravelItemComponent implements OnInit {
@@ -19,7 +19,10 @@ export class TravelItemComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.travelParams = {id: this.travel.id};
+    this.travelParams = {
+      travelId: this.travel.id,
+      userId: this.travel.user_id
+    }
   }
 
   deleteTravel = travel =>  this.delete.emit(travel);

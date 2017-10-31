@@ -23,9 +23,11 @@
     <input class="filter-input" [(ngModel)]="operationFilter" placeholder="Filter Operation">
 </section>
 
-<div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start" *ngIf="!this.processing">
-
-    <div fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="33.3%" *ngFor=" let operation of operations | filterBy: {title: operationFilter} | orderBy: sortBy: sortDirection ">
-        <app-operation-item [travels]="travels" [operation]="operation"></app-operation-item>
+<section *ngIf="!this.processing" class="item-list-view category-list-view">
+    <div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start">
+        <div fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="33.3%" *ngFor=" let operation of operations | filterBy: {title: operationFilter} | orderBy: sortBy: sortDirection ">
+            <app-operation-item [travels]="travels" [operation]="operation"></app-operation-item>
+        </div>
     </div>
-</div>
+    <h2 class="no-match-search" *ngIf="(operations | filterBy: {title: operationFilter}).length === 0">No matching elements</h2>
+</section>

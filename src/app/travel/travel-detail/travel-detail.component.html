@@ -10,5 +10,11 @@
     </section>
     <section fxFlex="30">
         <h4>Operations</h4>
+
+        <div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start">
+                <div fxFlex="100%" *ngFor=" let operation of operations">
+                    <app-operation-item [travels]="travels" [operation]="operation"></app-operation-item>
+                </div>
+            </div>
     </section>
 </section>

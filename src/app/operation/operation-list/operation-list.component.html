@@ -7,9 +7,25 @@
     </app-create-button>
 </app-title-section>
 
+<section class="controls-area" fxLayout="row" fxLayoutAlign="space-between center">
+    <ul class="control-group">
+        <li class="title">
+            <p>Sort By</p>
+        </li>
+        <li>
+            <app-list-item-sortby-toggle [sortByArray]="sortByArray" (sortByEmitter)="getSortByDirection($event)"></app-list-item-sortby-toggle>
+        </li>
+        <li>
+            <app-list-item-sort-toggle (sortEmitter)="getSortDirection($event)"></app-list-item-sort-toggle>
+        </li>
+    </ul>
+
+    <input class="filter-input" [(ngModel)]="operationFilter" placeholder="Filter Operation">
+</section>
+
 <div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start" *ngIf="!this.processing">
 
-    <div fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="33.3%" *ngFor=" let operation of operations">
+    <div fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="33.3%" *ngFor=" let operation of operations | filterBy: {title: operationFilter} | orderBy: sortBy: sortDirection ">
         <app-operation-item [travels]="travels" [operation]="operation"></app-operation-item>
     </div>
 </div>

@@ -34,7 +34,6 @@ export class CategoryListComponent implements OnInit {
         this.getCategories();
     }
 
-
     getSortDirection = (direction) => {
         this.sortDirection = direction
     }

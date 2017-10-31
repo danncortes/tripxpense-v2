@@ -36,7 +36,7 @@
     </ul>
 
     <div *ngIf="listViewType === 'box'" fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start">
-        <div fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="33.3%" *ngFor=" let category of categories | filterBy: {name: categoryFilter} | orderBy: 'sort' : sortDirection">
+        <div fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="33.3%" *ngFor=" let category of categories | filterBy: {name: categoryFilter} | orderBy: '': sortDirection">
             <app-trip-md-card>
                 <span class="title-cont" [innerHTML]="category.name"></span>
                 <div class="controls">

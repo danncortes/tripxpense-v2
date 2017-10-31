@@ -21,6 +21,10 @@ export class OperationListComponent implements OnInit {
     processing: boolean;
     operations: any;
     travels: any;
+    operationFilter: any;
+    sortDirection = '';
+    sortBy: string;
+    sortByArray: any;
 
     constructor(
         private operationService: OperationService,
@@ -29,7 +33,43 @@ export class OperationListComponent implements OnInit {
         public travelService: TravelService ) { }
 
     ngOnInit() {
+
+        this.sortByArray = [
+            {
+                name: 'Title',
+                value: 'title'
+            },
+            {
+                name: 'Cost',
+                value: 'cost'
+            },
+            {
+                name: 'Date',
+                value: 'date_op'
+            },
+            {
+                name: 'Travel',
+                value: 'cod_travel'
+            },
+            {
+                name: 'Type',
+                value: 'type'
+            },
+            {
+                name: 'Method',
+                value: 'cod_method'
+            }
+        ]
+
         this.getOperations();
+    }
+
+    getSortByDirection = (event) => {
+        this.sortBy = event
+    }
+
+    getSortDirection = (direction) => {
+        this.sortDirection = direction
     }
 
     getOperations = () => {

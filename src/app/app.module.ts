@@ -50,6 +50,7 @@ import { ListItemTypeToggleComponent } from './ui/list-item-type-toggle/list-ite
 import { ListItemSortToggleComponent } from './ui/list-item-sort-toggle/list-item-sort-toggle.component';
 import { ListItemSortbyToggleComponent } from './ui/list-item-sortby-toggle/list-item-sortby-toggle.component';
 import { OperationItemComponent } from './operation/operation-item/operation-item.component';
+import { EmptyViewComponent } from './ui/empty-view/empty-view.component';
 
 
 @NgModule({
@@ -87,7 +88,8 @@ import { OperationItemComponent } from './operation/operation-item/operation-ite
     ListItemTypeToggleComponent,
     ListItemSortToggleComponent,
     ListItemSortbyToggleComponent,
-    OperationItemComponent
+    OperationItemComponent,
+    EmptyViewComponent
   ],
   imports: [
 //Modules

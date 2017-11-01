@@ -64,7 +64,7 @@ export class OperationListComponent implements OnInit {
         this.getOperations();
     }
 
-    getSortByDirection = (event) => {
+    getSortBy = (event) => {
         this.sortBy = event
     }
 

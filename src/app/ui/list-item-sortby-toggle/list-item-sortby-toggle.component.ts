@@ -9,13 +9,23 @@ export class ListItemSortbyToggleComponent implements OnInit {
 
   @Output() sortByEmitter = new EventEmitter();
   @Input() sortByArray: any;
+  @Input() default: any;
 
   listViewSortBy: any;
 
   constructor() { }
 
   ngOnInit() {
-    this.listViewSortBy = this.sortByArray[0].value;
+    let item;
+    const def = this.default;
+    if (def) {
+      item = this.sortByArray.filter(function(element){
+        return element.value === def;
+      })
+      this.listViewSortBy = item.length > 0 ? item[0].value : this.sortByArray[0].value;
+    }else {
+      this.listViewSortBy = this.sortByArray[0].value;
+    }
     this.changeSortBy(this.listViewSortBy);
   }
 

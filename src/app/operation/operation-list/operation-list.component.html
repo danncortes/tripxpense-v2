@@ -7,27 +7,34 @@
     </app-create-button>
 </app-title-section>
 
-<section class="controls-area" fxLayout="row" fxLayoutAlign="space-between center">
-    <ul class="control-group">
-        <li class="title">
-            <p>Sort By</p>
-        </li>
-        <li>
-            <app-list-item-sortby-toggle [sortByArray]="sortByArray" (sortByEmitter)="getSortByDirection($event)"></app-list-item-sortby-toggle>
-        </li>
-        <li>
-            <app-list-item-sort-toggle (sortEmitter)="getSortDirection($event)"></app-list-item-sort-toggle>
-        </li>
-    </ul>
+<div *ngIf="!this.processing">
+    <app-empty-view *ngIf="operations.length === 0" [incomeText]="'Operations'"></app-empty-view>
 
-    <input class="filter-input" [(ngModel)]="operationFilter" placeholder="Filter Operation">
-</section>
+    <section *ngIf="operations.length > 0">
+        <section class="controls-area" fxLayout="row" fxLayoutAlign="space-between center">
+            <ul class="control-group">
+                <li class="title">
+                    <p>Sort By</p>
+                </li>
+                <li>
+                    <app-list-item-sortby-toggle [sortByArray]="sortByArray" (sortByEmitter)="getSortBy($event)"></app-list-item-sortby-toggle>
+                </li>
+                <li>
+                    <app-list-item-sort-toggle (sortEmitter)="getSortDirection($event)"></app-list-item-sort-toggle>
+                </li>
+            </ul>
 
-<section *ngIf="!this.processing" class="item-list-view category-list-view">
-    <div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start">
-        <div fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="33.3%" *ngFor=" let operation of operations | filterBy: {title: operationFilter} | orderBy: sortBy: sortDirection ">
-            <app-operation-item [travels]="travels" [operation]="operation"></app-operation-item>
-        </div>
-    </div>
-    <h2 class="no-match-search" *ngIf="(operations | filterBy: {title: operationFilter}).length === 0">No matching elements</h2>
-</section>
+            <input class="filter-input" [(ngModel)]="operationFilter" placeholder="Filter Operation">
+        </section>
+
+        <section class="item-list-view category-list-view">
+            <div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start">
+                <div fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="33.3%" *ngFor=" let operation of operations | filterBy: {title: operationFilter} | orderBy: sortBy: sortDirection ">
+                    <app-operation-item [travels]="travels" [operation]="operation"></app-operation-item>
+                </div>
+            </div>
+            <h2 class="no-match-search" *ngIf="(operations | filterBy: {title: operationFilter}).length === 0">No matching elements</h2>
+        </section>
+    </section>
+
+</div>

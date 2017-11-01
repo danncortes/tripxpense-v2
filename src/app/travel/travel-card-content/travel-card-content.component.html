@@ -31,20 +31,20 @@
         </div>
         <div fxFlex="25">
             <div class="capsule">
-                <p class="current" [innerHTML]="travel.current_tdc_balance"></p>
-                <p class="initial" [innerHTML]="travel.start_tdc_balance"></p>
+                <p class="current" [innerHTML]="travel.current_tdc_balance | currency:'USD':true"></p>
+                <p class="initial" [innerHTML]="travel.start_tdc_balance | currency:'USD':true"></p>
             </div>
         </div>
         <div fxFlex="25">
             <div class="capsule">
-                <p class="current" [innerHTML]="travel.current_cash_balance"></p>
-                <p class="initial" [innerHTML]="travel.start_cash_balance | number"></p>
+                <p class="current" [innerHTML]="travel.current_cash_balance | currency:'USD':true"></p>
+                <p class="initial" [innerHTML]="travel.start_cash_balance | currency:'USD':true"></p>
             </div>
         </div>
         <div fxFlex="25">
             <div class="capsule">
-                <p class="current" [innerHTML]="travel.current_tdd_balance"></p>
-                <p class="initial" [innerHTML]="travel.start_tdd_balance"></p>
+                <p class="current" [innerHTML]="travel.current_tdd_balance | currency:'USD':true"></p>
+                <p class="initial" [innerHTML]="travel.start_tdd_balance | currency:'USD':true"></p>
             </div>
         </div>
     </div>

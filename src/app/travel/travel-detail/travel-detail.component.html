@@ -1,4 +1,4 @@
-<md-spinner class="spinner-loading-secc" *ngIf="this.processing"></md-spinner>
+<md-spinner class="spinner-loading-secc" *ngIf="processing"></md-spinner>
 
 <section fxLayout="row" fxLayoutAlign="space-between start" *ngIf="!this.processing">
     <section fxFlex="65">
@@ -9,12 +9,20 @@
         <app-category-stats [statsParam]="statsParam"></app-category-stats>
     </section>
     <section fxFlex="30">
-        <h4>Operations</h4>
 
-        <div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start">
-                <div fxFlex="100%" *ngFor=" let operation of operations">
-                    <app-operation-item [travels]="travels" [operation]="operation"></app-operation-item>
-                </div>
+        <app-title-section>
+            <span class="title">Operations</span>
+        </app-title-section>
+
+        <div style="padding:20px" fxLayout="row" fxLayoutAlign="center start" *ngIf="processingOperations">
+            <md-spinner></md-spinner>
+        </div>
+
+        <div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start" *ngIf="!processingOperations">
+            <div fxFlex="100%" *ngFor=" let operation of operations">
+                <app-operation-item [travels]="travels" [operation]="operation"></app-operation-item>
             </div>
+        </div>
+
     </section>
 </section>

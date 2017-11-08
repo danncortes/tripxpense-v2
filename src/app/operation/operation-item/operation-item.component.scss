@@ -1,0 +1,30 @@
+.operation-card {
+    background-color: #333;
+    color: #eee;
+    margin: 12px;
+    margin-bottom: 15px;
+    padding: 10px 12px;
+    .title-area {
+        margin-bottom: 10px;
+        .title {
+            font-size: 15px;
+            color: orange;
+        }
+        .date {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+    }
+    .middle-area {
+        margin-bottom: 10px;
+        .cost {
+            font-weight: 200;
+            font-size: 38px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+    .travel {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+}

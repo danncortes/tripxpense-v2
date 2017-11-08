@@ -6,14 +6,30 @@ export class ListViewTypeService {
   constructor() { }
 
   get(view) {
-    if (!localStorage.getItem('list-type-view')) {
-      localStorage.setItem('list-type-view', JSON.stringify({ [view]: 'box'}))
+    let ls = JSON.parse(localStorage.getItem('list-type-view'));
+    if (ls) {
+      if (ls[view]) {
+        return ls[view];
+      }else {
+        ls[view] = 'box';
+        localStorage.setItem('list-type-view', JSON.stringify(ls))
+        return 'box'
+      }
+    }else {
+      ls = {[view]: 'box'};
+      localStorage.setItem('list-type-view', JSON.stringify(ls));
+      return 'box';
     }
-    return JSON.parse(localStorage.getItem('list-type-view'))[view];
   }
 
   set(view, listType) {
-    localStorage.setItem('list-type-view', JSON.stringify({ [view]: listType}))
+    let ls = JSON.parse(localStorage.getItem('list-type-view'));
+    if (ls) {
+      ls[view] = listType;
+    }else {
+      ls = {[view]: listType};
+    }
+    localStorage.setItem('list-type-view', JSON.stringify(ls));
   }
 
 }

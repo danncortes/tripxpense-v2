@@ -13,6 +13,9 @@
     <section *ngIf="operations.length > 0">
         <section class="controls-area" fxLayout="row" fxLayoutAlign="space-between center">
             <ul class="control-group">
+                <li>
+                    <app-list-item-type-toggle [view]="'operations'" (typeEmitter)="getListType($event)"></app-list-item-type-toggle>
+                </li>
                 <li class="title">
                     <p>Sort By</p>
                 </li>
@@ -27,14 +30,41 @@
             <input class="filter-input" [(ngModel)]="operationFilter" placeholder="Filter Operation">
         </section>
 
-        <section class="item-list-view category-list-view">
-            <div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start">
+        <section class="item-list-view">
+
+            <ul *ngIf="listViewType === 'list'">
+                <li *ngFor="let operation of operations | filterBy: {title: operationFilter} | orderBy: sortBy: sortDirection">
+                    <div class="list-item">
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                            <div class="col title" fxFlex="25">
+                                <h3 class="title" [innerHTML]="operation.title"></h3>
+                            </div>
+                            <div class="col cost" fxFlex="15" [innerHTML]="operation.cost | number | currency:'USD':true"></div>
+                            <div class="col date" fxFlex="15" [innerHTML]="operation.date_op | date"></div>
+                            <div class="col travel" fxFlex="20" [innerHTML]="travelName"></div>
+
+                            <div class="col type-icon" fxLayout="row" fxLayoutAlign="center center">
+                                <md-icon *ngIf="operation.type === 'outcome'" class="material-icons outcome" title="Outcome">arrow_forward</md-icon>
+                                <md-icon *ngIf="operation.type === 'income'" class="material-icons income" title="Income">arrow_back</md-icon>
+                                <span class="method" [innerHTML]="operation.cod_method"></span>
+                            </div>
+
+                            <div class="controls">
+                                <app-action-button [className]="'remove-button'" [iconName]="'delete'"></app-action-button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+            <div *ngIf="listViewType === 'box'" fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start">
                 <div fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="33.3%" *ngFor=" let operation of operations | filterBy: {title: operationFilter} | orderBy: sortBy: sortDirection ">
                     <app-operation-item [travels]="travels" [operation]="operation"></app-operation-item>
                 </div>
             </div>
-            <h2 class="no-match-search" *ngIf="(operations | filterBy: {title: operationFilter}).length === 0">No matching elements</h2>
         </section>
+        <h2 class="no-match-search" *ngIf="(operations | filterBy: {title: operationFilter}).length === 0">No matching elements</h2>
     </section>
 
 </div>

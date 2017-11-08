@@ -25,6 +25,7 @@ export class OperationListComponent implements OnInit {
     sortDirection = '';
     sortBy: string;
     sortByArray: any;
+    listViewType: any;
 
     constructor(
         private operationService: OperationService,
@@ -62,6 +63,10 @@ export class OperationListComponent implements OnInit {
         ]
 
         this.getOperations();
+    }
+
+    getListType = (type) => {
+        this.listViewType = type
     }
 
     getSortBy = (event) => {

@@ -4,7 +4,7 @@
         <div class="date" [innerHTML]="operation.date_op | date"></div>
     </div>
     <div fxLayout="row" class="middle-area" fxLayoutAlign="space-between center">
-        <div class="cost" [innerHTML]="operation.cost | currency:'USD':true"></div>
+        <div class="cost" [innerHTML]="operation.cost | number | currency:'USD':true"></div>
         <div fxLayout="row">
             <div class="type-icon">
                 <md-icon *ngIf="operation.type === 'outcome'" class="material-icons outcome" title="Outcome">arrow_forward</md-icon>

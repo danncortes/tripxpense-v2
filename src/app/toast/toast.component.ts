@@ -11,7 +11,7 @@ export class ToastComponent implements OnInit {
   constructor(@Inject(MD_SNACK_BAR_DATA) public data: any ) { }
 
   ngOnInit() {
-    console.log(this.data)
+    //console.log(this.data)
   }
 
 }

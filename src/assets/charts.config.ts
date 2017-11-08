@@ -21,21 +21,27 @@ export const chartPayMethodConfig = {
     labels: [],
     data: [],
     colors: [{
-      backgroundColor: chartsColorConfig.colors.income
-    }]
+      backgroundColor: chartsColorConfig.colors.income,
+      borderColor: '#222',
+      borderWidth: 4
+    }],
   },
   spent: {
     labels: [],
     data: [],
     colors: [{
-      backgroundColor: chartsColorConfig.colors.spent
+      backgroundColor: chartsColorConfig.colors.spent,
+      borderColor: '#222',
+      borderWidth: 4
     }]
   },
   operations: {
     labels: [],
     data: [],
     colors: [{
-      backgroundColor: chartsColorConfig.colors.operations
+      backgroundColor: chartsColorConfig.colors.operations,
+      borderColor: '#222',
+      borderWidth: 4
     }]
   }
 };
@@ -58,13 +64,17 @@ export const chartCategoryConfig = {
       '#ff8000',
       '#3366ff',
       '#ff9999', '#993300', '#666699', '#006600', '#cc0066', '#ff0000', '#33cccc', '#4da6ff', '#666666', '#00bfff', '#cc9900'
-    ]
+    ],
+    borderColor: '#222',
+    borderWidth: 4
   },
   {
     backgroundColor: [
       '#ffa64d',
       '#809fff',
       '#ffcccc', '#cc4400', '#8585ad', '#009900', '#ff0080', '#ff4d4d', '#70dbdb', '#99ccff', '#999999', '#4dd2ff', '#ffc61a'
-    ]
+    ],
+    borderColor: '#222',
+    borderWidth: 4
   }]
 };

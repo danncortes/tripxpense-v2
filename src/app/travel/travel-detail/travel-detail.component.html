@@ -1,14 +1,16 @@
 <md-spinner class="spinner-loading-secc" *ngIf="processing"></md-spinner>
 
-<section fxLayout="row" fxLayoutAlign="space-between start" *ngIf="!this.processing">
-    <section fxFlex="65">
+<section fxLayout="row" fxLayoutWrap fxLayoutAlign="space-between start" *ngIf="!this.processing">
+
+    <section fxFlex="100%" fxFlex.gt-sm="65">
         <md-card class="trip-md-card-1 travel-card travel-card-detail">
             <app-travel-card-content [travel]="travel"></app-travel-card-content>
         </md-card>
         <app-paymethod-stats [statsParam]="statsParam"></app-paymethod-stats>
         <app-category-stats [statsParam]="statsParam"></app-category-stats>
     </section>
-    <section fxFlex="30">
+
+    <section fxFlex="100%" fxFlex.gt-sm="30">
 
         <app-title-section>
             <span class="title">Operations</span>
@@ -19,9 +21,11 @@
         </div>
 
         <div fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start" *ngIf="!processingOperations">
-            <div fxFlex="100%" *ngFor=" let operation of operations">
+            <div fxFlex.gt-sm="100%" fxFlex.sm="50" fxFlex.xs="100" *ngFor=" let operation of operations">
                 <app-operation-item [travels]="travels" [operation]="operation"></app-operation-item>
             </div>
+
+            <app-empty-view *ngIf="operations.length === 0" [incomeText]="'Operations'"></app-empty-view>
         </div>
 
     </section>

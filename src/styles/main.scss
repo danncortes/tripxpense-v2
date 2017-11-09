@@ -219,3 +219,19 @@ md-card.trip-md-card-1 {
         }
     }
 }
+
+.method-icon {
+    font-size: 20px;
+    &.debit-card {
+        color: rgba(0, 192, 255, 0.4);
+    }
+    &.credit-card {
+        color: rgba(255, 180, 0, 0.4);
+    }
+    &.cash {
+        font-size: 17px;
+        img {
+            width: 20px;
+        }
+    }
+}

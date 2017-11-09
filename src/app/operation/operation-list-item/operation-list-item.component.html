@@ -1,0 +1,24 @@
+<div class="list-item">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxFlex="90" fxLayout="row" fxLayoutAlign="start center">
+            <div class="col" fxFlex="30">
+                <h3 class="title" [innerHTML]="operation.title"></h3>
+            </div>
+            <div class="col cost" fxFlex="20" [innerHTML]="operation.cost | number | currency:'USD':true"></div>
+            <div class="col date" fxFlex="15" [innerHTML]="operation.date_op | date"></div>
+            <div class="col travel" fxFlex="25" [codTravel]="operation.cod_travel" [travels]="travels" appTravelName></div>
+
+            <div class="col type-icon" fxFlex="10" fxLayout="row" fxLayoutAlign="center center">
+
+                <i class="method-icon" [codMethod]="operation.cod_method" appMethodIcon></i>
+                <md-icon *ngIf="operation.type === 'outcome'" class="material-icons outcome" title="Outcome">arrow_forward</md-icon>
+                <md-icon *ngIf="operation.type === 'income'" class="material-icons income" title="Income">arrow_back</md-icon>
+            </div>
+        </div>
+        <div fxFlex="10" fxLayoutAlign="end center">
+            <div class="controls">
+                <app-action-button [className]="'remove-button'" [iconName]="'delete'"></app-action-button>
+            </div>
+        </div>
+    </div>
+</div>

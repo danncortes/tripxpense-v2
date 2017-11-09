@@ -51,6 +51,9 @@ import { ListItemSortToggleComponent } from './ui/list-item-sort-toggle/list-ite
 import { ListItemSortbyToggleComponent } from './ui/list-item-sortby-toggle/list-item-sortby-toggle.component';
 import { OperationItemComponent } from './operation/operation-item/operation-item.component';
 import { EmptyViewComponent } from './ui/empty-view/empty-view.component';
+import { OperationListItemComponent } from './operation/operation-list-item/operation-list-item.component';
+import { TravelNameDirective } from './directives/travel-name/travel-name.directive';
+import { MethodIconDirective } from './directives/method-icon/method-icon.directive';
 
 
 @NgModule({
@@ -89,7 +92,10 @@ import { EmptyViewComponent } from './ui/empty-view/empty-view.component';
     ListItemSortToggleComponent,
     ListItemSortbyToggleComponent,
     OperationItemComponent,
-    EmptyViewComponent
+    EmptyViewComponent,
+    OperationListItemComponent,
+    TravelNameDirective,
+    MethodIconDirective
   ],
   imports: [
 //Modules

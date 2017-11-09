@@ -1,0 +1,22 @@
+.list-item {
+    .col {
+        text-align: center;
+        padding: 0 12px;
+        &:first-of-type {
+            padding-left: 0;
+            text-align: initial;
+        }
+        .title {
+            margin: 0;
+            font-weight: 200;
+            color: orange;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        &.date {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
+}

@@ -16,13 +16,7 @@ export class OperationItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    const ope = this.operation;
     this.operation.cost = Number(this.operation.cost);
-    const travel = this.travels.filter(function(item) {
-      return item.id === Number(ope.cod_travel)
-    })
-    this.travelName = travel[0].name;
-
   }
-
 }
+

@@ -31,4 +31,11 @@ export class OperationService {
       );
   }
 
+  delete = id => {
+    return this.http.delete(environment.apiUrl + '/operation/' + id)
+    .map(
+      (data): any => data.json()
+    );
+  }
+
 }

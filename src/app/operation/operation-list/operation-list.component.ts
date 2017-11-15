@@ -1,10 +1,11 @@
+import { ToastService } from './../../services/toast/toast.service';
 import { Component, OnInit } from '@angular/core';
 import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
 import { OperationService } from '../../services/operation/operation.service';
 import { TravelService } from './../../services/travel/travel.service';
 import { AuthService } from '../../services/auth-service/auth.service';
-import { ToastService } from '../../services/toast/toast.service';
 import { OperationCreateComponent } from '../operation-create/operation-create.component';
+import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
 
 @Component({
     selector: 'app-operation-list',
@@ -31,7 +32,8 @@ export class OperationListComponent implements OnInit {
         private operationService: OperationService,
         public dialog: MdDialog,
         public auth: AuthService,
-        public travelService: TravelService ) { }
+        public travelService: TravelService,
+        private toastService: ToastService ) { }
 
     ngOnInit() {
 
@@ -103,5 +105,27 @@ export class OperationListComponent implements OnInit {
             }
         });
     }
+
+    deleteOperation = operation => {
+        const message = 'The operation "' + operation.title + '" will be deleted!';
+        const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+            width: '300px'
+        });
+        dialogRef.componentInstance.message = message; //Passing data to the Dialog, this is received as 'payMethod'
+        dialogRef.afterClosed().subscribe(response => {
+            if (response) {
+                this.operationService.delete(operation.id)
+                    .subscribe(
+                    data => {
+                        this.ngOnInit();
+                        this.toastService.success({ message: 'Operation Deleted!' });
+                    },
+                    err => {
+                        this.toastService.error({ message: 'An error has occur!' });
+                    }
+                    );
+            }
+        });
+    };
 
 }

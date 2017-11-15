@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-operation-item',
@@ -9,6 +9,8 @@ export class OperationItemComponent implements OnInit {
 
   @Input() operation: any;
   @Input() travels: any;
+  @Output() delete = new EventEmitter();
+  @Output() edit = new EventEmitter();
 
   travelName: string;
   typeIcon: string;
@@ -18,5 +20,8 @@ export class OperationItemComponent implements OnInit {
   ngOnInit() {
     this.operation.cost = Number(this.operation.cost);
   }
+
+  deleteOperation = operation =>  this.delete.emit(operation);
+  editOperation = operation =>  this.edit.emit(operation);
 }
 

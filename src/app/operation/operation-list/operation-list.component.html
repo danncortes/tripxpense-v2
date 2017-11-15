@@ -34,14 +34,14 @@
 
             <ul *ngIf="listViewType === 'list'">
                 <li *ngFor="let operation of operations | filterBy: {title: operationFilter} | orderBy: sortBy : sortDirection">
-                    <app-operation-list-item [travels]="travels" [operation]="operation"></app-operation-list-item>
+                    <app-operation-list-item [travels]="travels" [operation]="operation" (delete)="deleteOperation($event)"></app-operation-list-item>
                 </li>
             </ul>
 
 
             <div *ngIf="listViewType === 'box'" fxLayout.gt-xs="row" fxLayoutWrap fxLayoutAlign="start start">
                 <div fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="33.3%" *ngFor=" let operation of operations | filterBy: {title: operationFilter} | orderBy: sortBy: sortDirection ">
-                    <app-operation-item [travels]="travels" [operation]="operation"></app-operation-item>
+                    <app-operation-item [travels]="travels" [operation]="operation" (delete)="deleteOperation($event)"></app-operation-item>
                 </div>
             </div>
         </section>

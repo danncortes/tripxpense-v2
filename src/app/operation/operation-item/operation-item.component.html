@@ -13,5 +13,11 @@
             </div>
         </div>
     </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
     <div class="travel" [codTravel]="operation.cod_travel" [travels]="travels" appTravelName></div>
+    <div>
+        <app-action-button (click)="editOperation(operation.id)" [className]="'edit-button'" [iconName]="'edit'"></app-action-button>
+        <app-action-button (click)="deleteOperation(operation)" [className]="'remove-button'" [iconName]="'delete'"></app-action-button>
+    </div>
+</div>
 </md-card>

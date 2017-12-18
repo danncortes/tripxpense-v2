@@ -62,8 +62,8 @@ export class PaymethodListComponent implements OnInit {
                 });
 
                 dialogRef.componentInstance.payMethod = payMethod; //Passing data to the Dialog, this is received as 'payMethod'
-                dialogRef.afterClosed().subscribe(data => {
-                    if (data) {
+                dialogRef.afterClosed().subscribe( dialogData => {
+                    if (dialogData) {
                         this.ngOnInit();
                     }
                 });
@@ -75,7 +75,7 @@ export class PaymethodListComponent implements OnInit {
     }
 
     deletePayMethod = elem => {
-        const message = 'The pay method "' + elem.name + '" will be deleted!';
+        const message = `The pay method '${elem.name}' will be deleted!`;
 
         const dialogRef = this.dialog.open(ConfirmDialogComponent, {
             width: '300px'

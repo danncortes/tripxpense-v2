@@ -37,14 +37,15 @@ export class PaymethodCreateComponent implements OnInit {
         this.processing = true;
 
         this.payMethodService.create(formData)
+            .finally(() => {
+                this.processing = false;
+            })
             .subscribe(
             data => {
-                this.processing = false;
                 this.dialogRef.close(true);
                 this.toastService.success({ message: 'Pay Method Created!' });
             },
             err => {
-                this.processing = false;
                 this.dialogRef.close(false);
                 if (err.status === 422) {
                     this.toastService.error({ message: 'The name has been already taken!' });

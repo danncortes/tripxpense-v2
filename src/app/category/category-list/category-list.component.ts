@@ -64,7 +64,7 @@ export class CategoryListComponent implements OnInit {
     }
 
     deleteCategory = category => {
-        const message = 'The category "' + category.name + '" will be deleted!';
+        const message = `The category '${category.name}' will be deleted!`;
 
         const dialogRef = this.dialog.open(ConfirmDialogComponent, {
             width: '300px'

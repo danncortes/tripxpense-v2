@@ -45,14 +45,15 @@ export class CategoryCreateComponent implements OnInit {
     createCategory = formData => {
         this.processing = true;
         this.categoryService.create(formData)
+            .finally(() => {
+                this.processing = false;
+            })
             .subscribe(
             data => {
-                this.processing = false;
                 this.dialogRef.close(true);
                 this.toastService.success({ message: 'Category Created!' });
             },
             err => {
-                this.processing = false;
                 this.dialogRef.close(false);
                 if (err.status === 422) {
                     this.toastService.error({ message: 'The name has been already taken!' });

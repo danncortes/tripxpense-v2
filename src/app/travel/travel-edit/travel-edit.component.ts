@@ -41,7 +41,7 @@ export class TravelEditComponent implements OnInit {
     ngOnInit() {
         this.travel.start_date = new Date(this.travel.start_date);
         this.travel.finish_date = new Date(this.travel.finish_date);
-        this.hasOperations = this.travel.operations === '0' ? false : true;
+        this.hasOperations = this.travel.operations === 0 ? false : true;
         if (this.hasOperations) {
             this.editTravelForm.controls.start_cash_balance.disable();
             this.editTravelForm.controls.start_tdc_balance.disable();
@@ -61,15 +61,16 @@ export class TravelEditComponent implements OnInit {
         this.processing = true;
 
         this.travelService.update(formData, travel_id)
+            .finally(() => {
+                this.processing = false;
+            })
             .subscribe(
             data => {
-                this.processing = false;
                 this.dialogRef.close(true);
                 this.toastService.success({ message: 'Travel Saved!' });
             },
             err => {
-                this.processing = false;
-                this.dialogRef.close(false);
+                this.dialogRef.close();
                 this.toastService.error({ message: 'An error has occur!' });
             }
             );

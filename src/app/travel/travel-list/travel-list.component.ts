@@ -78,7 +78,7 @@ export class TravelListComponent implements OnInit {
     }
 
     deleteTravel = travel => {
-        const message = 'The travel "' + travel.name + '" will be deleted!';
+        const message = `The travel '${travel.name}' will be deleted!`;
         const dialogRef = this.dialog.open(ConfirmDialogComponent, {
             width: '300px'
         });

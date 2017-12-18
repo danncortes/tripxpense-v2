@@ -47,18 +47,19 @@ export class TravelCreateComponent implements OnInit {
         this.processing = true;
 
         this.travelService.create(formData)
-            .subscribe(
+        .finally(() => {
+            this.processing = false;
+        })
+        .subscribe(
             data => {
-                this.processing = false;
                 this.dialogRef.close(true);
                 this.toastService.success({ message: 'Travel Created!' });
             },
             err => {
-                this.processing = false;
-                this.dialogRef.close(false);
+                this.dialogRef.close();
                 this.toastService.error({ message: 'An error has occur!' });
             }
-            )
+        )
     }
 
 }

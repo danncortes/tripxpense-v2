@@ -13,7 +13,7 @@ export class ListViewTypeService {
       }else {
         ls[view] = 'box';
         localStorage.setItem('list-type-view', JSON.stringify(ls))
-        return 'box'
+        return 'box';
       }
     }else {
       ls = {[view]: 'box'};
@@ -24,11 +24,7 @@ export class ListViewTypeService {
 
   set(view, listType) {
     let ls = JSON.parse(localStorage.getItem('list-type-view'));
-    if (ls) {
-      ls[view] = listType;
-    }else {
-      ls = {[view]: listType};
-    }
+    ls ? ls[view] = listType : ls = {[view]: listType};
     localStorage.setItem('list-type-view', JSON.stringify(ls));
   }
 

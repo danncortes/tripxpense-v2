@@ -1,50 +1,53 @@
 import { PaymethodService } from './../../services/paymethod/paymethod.service';
 import { CategoryService } from './../../services/category/category.service';
 import { TravelService } from './../../services/travel/travel.service';
-import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../../services/auth-service/auth.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { OperationService } from './../../services/operation/operation.service';
 import { ToastService } from '../../services/toast/toast.service';
-import { OperationService } from '../../services/operation/operation.service';
-import { AuthService } from '../../services/auth-service/auth.service';
+import { OperationCreateComponent } from './../operation-create/operation-create.component';
 
 @Component({
-    selector: 'app-operation-create',
-    templateUrl: './operation-create.component.html',
-    styleUrls: ['./operation-create.component.scss'],
+    selector: 'app-operation-edit',
+    templateUrl: './operation-edit.component.html',
+    styleUrls: ['./operation-edit.component.scss'],
     providers: [
-        ToastService,
         OperationService,
+        ToastService,
         TravelService,
         CategoryService,
         PaymethodService
     ]
 })
-export class OperationCreateComponent implements OnInit {
+export class OperationEditComponent implements OnInit {
 
-    createOperationForm: FormGroup;
+    editOperationForm: FormGroup;
     processing: boolean;
+    oldOperation: Object;
     categories: any;
     travels: any
     payMethods: any;
-    today: Date = new Date();
+
+    @Input() operation: any;
 
     constructor(
-        public dialogRef: MdDialogRef<OperationCreateComponent>,
+        public dialogRef: MdDialogRef<OperationEditComponent>,
         formBuilder: FormBuilder,
-        private OperationService: OperationService,
+        private operationService: OperationService,
         public toastService: ToastService,
         private travelService: TravelService,
         private categoryService: CategoryService,
         private payMethodService: PaymethodService,
-        private auth: AuthService
+        private auth: AuthService,
     ) {
-        this.createOperationForm = formBuilder.group({
+        this.editOperationForm = formBuilder.group({
             'title': [null, Validators.required],
             'description': [null],
             'cost': [null, Validators.required],
-            'date_op': [this.today, Validators.required],
-            'type': ['outcome', Validators.required],
+            'date_op': [null, Validators.required],
+            'type': [null, Validators.required],
             'cod_method': [null, Validators.required],
             'cod_category': [null, Validators.required],
             'cod_travel': [null, Validators.required]
@@ -52,6 +55,8 @@ export class OperationCreateComponent implements OnInit {
     }
 
     ngOnInit() {
+        Object.assign(this.oldOperation = {}, this.operation);
+        this.operation.date_op = new Date(this.operation.date_op);
         this.getTravels();
         this.getCategories();
         this.getPayMethods();
@@ -83,18 +88,20 @@ export class OperationCreateComponent implements OnInit {
         )
     }
 
-    createOperation = (formData) => {
+    editOperation = (formData) => {
         this.processing = true;
+
+        const operationId = this.operation.id;
         formData.user_id = this.auth.getUserId();
 
-        this.OperationService.create(formData)
+        this.operationService.update(formData, operationId)
             .finally(() => {
                 this.processing = false;
             })
             .subscribe(
             data => {
                 this.dialogRef.close(true);
-                this.toastService.success({ message: 'Operation Created!' });
+                this.toastService.success({ message: 'Operation Updated!' });
             },
             err => {
                 this.dialogRef.close(false);

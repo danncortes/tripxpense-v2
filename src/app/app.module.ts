@@ -54,6 +54,7 @@ import { EmptyViewComponent } from './ui/empty-view/empty-view.component';
 import { OperationListItemComponent } from './operation/operation-list-item/operation-list-item.component';
 import { TravelNameDirective } from './directives/travel-name/travel-name.directive';
 import { MethodIconDirective } from './directives/method-icon/method-icon.directive';
+import { OperationEditComponent } from './operation/operation-edit/operation-edit.component';
 
 
 @NgModule({
@@ -95,7 +96,8 @@ import { MethodIconDirective } from './directives/method-icon/method-icon.direct
     EmptyViewComponent,
     OperationListItemComponent,
     TravelNameDirective,
-    MethodIconDirective
+    MethodIconDirective,
+    OperationEditComponent
   ],
   imports: [
 //Modules
@@ -118,7 +120,8 @@ import { MethodIconDirective } from './directives/method-icon/method-icon.direct
     TravelEditComponent,
     ToastComponent,
     ConfirmDialogComponent,
-    OperationCreateComponent
+    OperationCreateComponent,
+    OperationEditComponent
   ],
   providers: [AuthService, AuthGuardService, AdminGuardService],
   bootstrap: [AppComponent]

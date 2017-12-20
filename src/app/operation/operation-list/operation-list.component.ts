@@ -5,6 +5,7 @@ import { OperationService } from '../../services/operation/operation.service';
 import { TravelService } from './../../services/travel/travel.service';
 import { AuthService } from '../../services/auth-service/auth.service';
 import { OperationCreateComponent } from '../operation-create/operation-create.component';
+import { OperationEditComponent } from './../operation-edit/operation-edit.component';
 import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
 
 @Component({
@@ -33,7 +34,7 @@ export class OperationListComponent implements OnInit {
         public dialog: MdDialog,
         public auth: AuthService,
         public travelService: TravelService,
-        private toastService: ToastService ) { }
+        private toastService: ToastService) { }
 
     ngOnInit() {
 
@@ -128,4 +129,24 @@ export class OperationListComponent implements OnInit {
         });
     };
 
+
+    editOperation = operation => {
+        this.operationService.find(operation.id)
+            .subscribe(
+            data => {
+                const dialogRef = this.dialog.open(OperationEditComponent, {
+                    width: '500px'
+                });
+                dialogRef.componentInstance.operation = data; //Passing data to the Dialog, this is received as 'payMethod'
+                dialogRef.afterClosed().subscribe(response => {
+                    if (response) {
+                        this.ngOnInit();
+                    }
+                });
+            },
+            err => {
+                this.toastService.error({ message: 'An error has occur!' });
+            }
+            );
+    };
 }

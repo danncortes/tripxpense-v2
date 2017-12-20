@@ -1,0 +1,74 @@
+<md-toolbar class="dialog-header">
+    <span>Edit an Operation</span>
+</md-toolbar>
+<section class="trip-md-dialog-container">
+    <md-spinner class="spinner-loading-secc" *ngIf="!categories && !travels"></md-spinner>
+    <form *ngIf="categories && travels" [formGroup]="editOperationForm" (ngSubmit)="editOperation(editOperationForm.value)" fxLayoutWrap fxLayout="row">
+
+        <md-input-container fxFlex="100">
+            <input mdInput [formControl]="editOperationForm.controls['title']" [ngModel]="operation.title" type="text" placeholder="Title" required>
+            <md-error>
+                <span *ngIf="editOperationForm.controls.title.invalid">A title is required</span>
+            </md-error>
+        </md-input-container>
+
+        <md-input-container fxFlex="100">
+            <input mdInput [formControl]="editOperationForm.controls['description']" [ngModel]="operation.description" type="text" placeholder="Description">
+        </md-input-container>
+
+        <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between start">
+
+            <div fxFlex="30">
+                <md-input-container>
+                    <input mdInput [formControl]="editOperationForm.controls['cost']" [ngModel]="operation.cost" type="number" placeholder="Amount" required>
+                    <md-error>
+                        <span *ngIf="editOperationForm.controls.cost.invalid">A cost is required</span>
+                    </md-error>
+                </md-input-container>
+            </div>
+            <div fxFlex="30">
+              <md-input-container>
+                  <input mdInput [mdDatepicker]="date" [formControl]="editOperationForm.controls['date_op']" [ngModel]="operation.date_op" placeholder="Choose a date"
+                      required>
+                  <md-datepicker-toggle mdSuffix [for]="date"></md-datepicker-toggle>
+                  <md-error>
+                      <span *ngIf="editOperationForm.controls.date_op.invalid">An operation date is required</span>
+                  </md-error>
+              </md-input-container>
+              <md-datepicker #date></md-datepicker>
+          </div>
+
+          <div fxFlex="30">
+              <md-select placeholder="Type" [formControl]="editOperationForm.controls['type']" [ngModel]="operation.type" required>
+                  <md-option [value]="'outcome'">Outcome </md-option>
+                  <md-option [value]="'income'">Income </md-option>
+              </md-select>
+          </div>
+        </div>
+        <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between start">
+            <div fxFlex="30">
+                <md-select placeholder="Category" [formControl]="editOperationForm.controls['cod_category']" [ngModel]="operation.cod_category" required>
+                    <md-option *ngFor="let category of categories" [value]="category.id">{{category.name}}</md-option>
+                </md-select>
+            </div>
+            <div fxFlex="30">
+                <md-select placeholder="Pay Method" [formControl]="editOperationForm.controls['cod_method']" [ngModel]="operation.cod_method" required>
+                    <md-option *ngFor="let payMethod of payMethods" [value]="payMethod.id">{{payMethod.name}}</md-option>
+                </md-select>
+            </div>
+            <div fxFlex="30">
+                <md-select placeholder="Travel" [formControl]="editOperationForm.controls['cod_travel']" [ngModel]="operation.cod_travel" required>
+                    <md-option *ngFor="let travel of travels" [value]="travel.id">{{travel.name}}</md-option>
+                </md-select>
+            </div>
+        </div>
+
+
+        <section fxFlex="100" fxLayout="row" fxLayoutAlign="end start">
+            <button type="submit" md-raised-button color="primary" [disabled]="editOperationForm.invalid || processing ">
+              <span *ngIf="!processing ">Create</span>
+              <md-spinner *ngIf="processing "></md-spinner>
+          </button>
+        </section>
+    </form>
+</section>

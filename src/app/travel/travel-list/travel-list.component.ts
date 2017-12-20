@@ -102,20 +102,20 @@ export class TravelListComponent implements OnInit {
     editTravel = travelId => {
         this.travelService.find(travelId)
             .subscribe(
-            data => {
-                const dialogRef = this.dialog.open(TravelEditComponent, {
-                    width: '500px'
-                });
-                dialogRef.componentInstance.travel = data; //Passing data to the Dialog, this is received as 'payMethod'
-                dialogRef.afterClosed().subscribe(response => {
-                    if (response) {
-                        this.ngOnInit();
-                    }
-                });
-            },
-            err => {
-                this.toastService.error({ message: 'An error has occur!' });
-            }
+                data => {
+                    const dialogRef = this.dialog.open(TravelEditComponent, {
+                        width: '500px'
+                    });
+                    dialogRef.componentInstance.travel = data; //Passing data to the Dialog, this is received as 'payMethod'
+                    dialogRef.afterClosed().subscribe(response => {
+                        if (response) {
+                            this.ngOnInit();
+                        }
+                    });
+                },
+                err => {
+                    this.toastService.error({ message: 'An error has occur!' });
+                }
             );
     }
 }
